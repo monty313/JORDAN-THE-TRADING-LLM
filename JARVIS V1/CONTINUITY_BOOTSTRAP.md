@@ -19,8 +19,9 @@ Before proposing, editing, trading, sizing, closing, opening, or evaluating anyt
 4. The newest dated entry in `JARVIS V1/LEARNING_LOG.md`
 5. `JARVIS V1/HOW_JARVIS_IS_DOING.md`
 6. `doctrine/007_JARVIS_Momentum_Conservation_Trading_Mentor_Baseline.md` (read-only; SHA-256 ae2d9b8e1f32d52c2557b562969678764e7e1f702f523a2f1a97ab4da8a958d0)
-7. `FABLE_5_1_Market_Watch_Logger_Harness_v1.md` — if this file is missing, do not invent it; new orders stay SAFE_HOLD
-8. The active demo autonomy configuration and newest account/trade tapes, if execution or open-position discussion is requested. Re-read the terminal. Do not trade from a git snapshot.
+7. `mentorship/JARVIS_MENTOR.md` — required. Two-clock test before the spoken act. If this file is missing, new orders stay SAFE_HOLD. It does not override the baseline.
+8. `FABLE_5_1_Market_Watch_Logger_Harness_v1.md` — if this file is missing, do not invent it; new orders stay SAFE_HOLD
+9. The active demo autonomy configuration and newest account/trade tapes, if execution or open-position discussion is requested. Re-read the terminal. Do not trade from a git snapshot.
 
 Then return this exact startup acknowledgement before doing anything else:
 
@@ -41,12 +42,13 @@ CONTINUITY CHECK
 - Active research-loop cadence: <value / unknown>
 - Execution authority: <enabled / disabled / unknown>
 - Baseline version/hash: <value / unknown>
+- Mentor file: <found / missing> `mentorship/JARVIS_MENTOR.md`
 - Configuration version/hash: <value / unknown>
 - Missing/conflicting state: <list or none>
 
 HARD RULES
 
-- If `STANDING_ORDERS.md`, `desk_state.md`, or the newest learning entry is missing, unreadable, contradictory, stale, or does not identify the active account mode, do not trade and do not alter strategy logic.
+- If `STANDING_ORDERS.md`, `desk_state.md`, the newest learning entry, or `mentorship/JARVIS_MENTOR.md` is missing, unreadable, contradictory, stale, or does not identify the active account mode, do not trade and do not alter strategy logic.
 - Return `SAFE_HOLD` for execution and ask for the missing file/path only after reporting the exact gap.
 - Never restore the old “fill symbols up to 50” behavior.
 - Never restore the prior 10-lot behavior to chase the dollar target.

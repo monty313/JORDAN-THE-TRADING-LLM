@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="2432" viewBox="0 0 960 2432" font-family="Segoe UI, Inter, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#a9a9a9"/></marker><marker id="arr-acc" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#5b9bff"/></marker></defs>
+<rect width="960" height="2432" fill="#1b1b1b"/>
+<rect x="0" y="72" width="960" height="410" fill="#242424"/>
+<text x="14" y="90" fill="#7a7a7a" font-size="10.5" font-weight="700" letter-spacing="1.4">A  BOOT</text>
+<rect x="0" y="482" width="960" height="215" fill="#202020"/>
+<text x="14" y="500" fill="#7a7a7a" font-size="10.5" font-weight="700" letter-spacing="1.4">B  EYES</text>
+<rect x="0" y="697" width="960" height="545" fill="#242424"/>
+<text x="14" y="715" fill="#7a7a7a" font-size="10.5" font-weight="700" letter-spacing="1.4">C  TWO CLOCKS</text>
+<rect x="0" y="1242" width="960" height="105" fill="#202020"/>
+<text x="14" y="1260" fill="#7a7a7a" font-size="10.5" font-weight="700" letter-spacing="1.4">D  ATTACK</text>
+<rect x="0" y="1347" width="960" height="105" fill="#242424"/>
+<text x="14" y="1365" fill="#7a7a7a" font-size="10.5" font-weight="700" letter-spacing="1.4">E  SPEAK</text>
+<rect x="0" y="1452" width="960" height="760" fill="#202020"/>
+<text x="14" y="1470" fill="#7a7a7a" font-size="10.5" font-weight="700" letter-spacing="1.4">F  DESK GATES</text>
+<rect x="0" y="2212" width="960" height="220" fill="#242424"/>
+<text x="14" y="2230" fill="#7a7a7a" font-size="10.5" font-weight="700" letter-spacing="1.4">G  MANAGE AND LEARN</text>
+<rect x="0" y="0" width="960" height="72" fill="#1b1b1b"/>
+<text x="14" y="30" fill="#ececec" font-size="17" font-weight="700">Jarvis  ·  one wake, end to end</text>
+<text x="14" y="50" fill="#a9a9a9" font-size="10.5">A market question becomes one spoken act. Blue marks where a new order stops today. Source: STANDING_ORDERS, JARVIS_MENTOR, jarvis-eyes rule, 2026-09-23.</text>
+<rect x="630" y="26" width="26" height="14" rx="2" fill="#2a2a2a" stroke="#3d3d3d"/>
+<text x="662" y="37" fill="#a9a9a9" font-size="10">step</text>
+<path d="M708,26 L721,33 L708,40 L695,33 z" fill="#262626" stroke="#3d3d3d"/>
+<text x="727" y="37" fill="#a9a9a9" font-size="10">question</text>
+<rect x="780" y="26" width="26" height="14" rx="7" fill="#343434" stroke="#3d3d3d"/>
+<text x="812" y="37" fill="#a9a9a9" font-size="10">outcome</text>
+<line x1="866" y1="33" x2="892" y2="33" stroke="#5b9bff" stroke-width="2"/>
+<text x="898" y="37" fill="#5b9bff" font-size="10">stops today</text>
+<path d="M600.0,2372 L940,2372 L940,122 L602.0,122" fill="none" stroke="#7a7a7a" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arr)"/>
+<text x="935" y="114" text-anchor="end" fill="#7a7a7a" font-size="10">next wake</text>
+<line x1="400" y1="150.5" x2="400" y2="186.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="400" y1="257.0" x2="400" y2="282.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="565.0" y1="332" x2="664.0" y2="332" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="326" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="381.0" x2="400" y2="402.5" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="395.75" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="400" y1="460.5" x2="400" y2="501.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="400" y1="572.0" x2="400" y2="597.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="565.0" y1="647" x2="664.0" y2="647" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="641" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="696.0" x2="400" y2="707.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="705.5" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="565.0" y1="757" x2="664.0" y2="757" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="751" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="806.0" x2="400" y2="817.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="815.5" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="565.0" y1="867" x2="664.0" y2="867" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="861" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="916.0" x2="400" y2="927.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="925.5" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="565.0" y1="977" x2="664.0" y2="977" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="971" text-anchor="middle" fill="#a9a9a9" font-size="10">against the side</text>
+<line x1="235.0" y1="977" x2="196.0" y2="977" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="215.5" y="971" text-anchor="middle" fill="#a9a9a9" font-size="9.5"></text>
+<line x1="400" y1="1026.0" x2="400" y2="1037.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="1035.5" fill="#a9a9a9" font-size="10">just crossed back</text>
+<line x1="565.0" y1="1087" x2="664.0" y2="1087" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="1081" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="1136.0" x2="400" y2="1157.5" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="1150.75" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="400" y1="1215.5" x2="400" y2="1249.5" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="400" y1="1333.5" x2="400" y2="1361.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="400" y1="1432.0" x2="400" y2="1457.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="565.0" y1="1507" x2="664.0" y2="1507" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="1501" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="1556.0" x2="400" y2="1567.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="1565.5" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="565.0" y1="1617" x2="664.0" y2="1617" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="1611" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="1666.0" x2="400" y2="1677.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="1675.5" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="565.0" y1="1727" x2="664.0" y2="1727" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="1721" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="1776.0" x2="400" y2="1786.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="1785.0" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="565.0" y1="1842" x2="664.0" y2="1842" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="1836" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="1897.0" x2="400" y2="1911.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="1908.0" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="400" y1="1982.0" x2="400" y2="2007.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="565.0" y1="2057" x2="664.0" y2="2057" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="614.5" y="2051" text-anchor="middle" fill="#a9a9a9" font-size="10">no</text>
+<line x1="400" y1="2106.0" x2="400" y2="2121.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="407" y="2117.5" fill="#a9a9a9" font-size="10">yes</text>
+<line x1="400" y1="2192.0" x2="400" y2="2224.5" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="400" y1="2308.5" x2="400" y2="2336.0" stroke="#a9a9a9" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="200.0" y="93.5" width="400" height="57" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="113.5" fill="#ececec" font-size="13" font-weight="700">Wake</text>
+<text x="212.0" y="130.5" fill="#a9a9a9" font-size="10">Market question, five-minute book-check wake, or a trade request</text>
+<rect x="200.0" y="187.0" width="400" height="70" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="207.0" fill="#ececec" font-size="13" font-weight="700">Load the seat</text>
+<text x="212.0" y="224.0" fill="#a9a9a9" font-size="10">FOR_THE_NEXT_LLM → BOOTSTRAP → STANDING_ORDERS → desk_state → newest LEARNING_LOG</text>
+<text x="212.0" y="237.0" fill="#a9a9a9" font-size="10">→ HOW_JARVIS_IS_DOING → 007 baseline (hash checked) → JARVIS_MENTOR</text>
+<path d="M400,283.0 L565.0,332 L400,381.0 L235.0,332 z" fill="#262626" stroke="#3d3d3d" stroke-width="1"/>
+<text x="400" y="329" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Every seat file present?</text>
+<text x="400" y="343" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Baseline hash unchanged?</text>
+<rect x="665.0" y="302.0" width="250" height="60" rx="10" fill="#343434" stroke="#e0554d" stroke-width="1.2"/>
+<text x="677.0" y="320.0" fill="#e0554d" font-size="12.5" font-weight="700">SAFE_HOLD</text>
+<text x="677.0" y="335.0" fill="#a9a9a9" font-size="9.5">Report the exact gap.</text>
+<text x="677.0" y="347.0" fill="#a9a9a9" font-size="9.5">No trade. No strategy edit.</text>
+<rect x="200.0" y="403.5" width="400" height="57" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="423.5" fill="#ececec" font-size="13" font-weight="700">Print CONTINUITY CHECK</text>
+<text x="212.0" y="440.5" fill="#a9a9a9" font-size="10">Mode, magic, score window, floor, authority, hash, mentor file</text>
+<rect x="200.0" y="502.0" width="400" height="70" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="522.0" fill="#ececec" font-size="13" font-weight="700">Read the eyes</text>
+<text x="212.0" y="539.0" fill="#a9a9a9" font-size="10">board.csv, last closed anchor bar (index 1). Forming bar is telemetry.</text>
+<text x="212.0" y="552.0" fill="#a9a9a9" font-size="10">Re-read the MT5 open book. Name L1–L4, G1, H1 in plain words.</text>
+<path d="M400,598.0 L565.0,647 L400,696.0 L235.0,647 z" fill="#262626" stroke="#3d3d3d" stroke-width="1"/>
+<text x="400" y="644" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Board fresh, quote present,</text>
+<text x="400" y="658" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">closed bar time current?</text>
+<rect x="665.0" y="617.0" width="250" height="60" rx="10" fill="#343434" stroke="#d8a444" stroke-width="1.2"/>
+<text x="677.0" y="635.0" fill="#d8a444" font-size="12.5" font-weight="700">WAIT_NO_TRADE</text>
+<text x="677.0" y="650.0" fill="#a9a9a9" font-size="9.5">Say the board is stale.</text>
+<text x="677.0" y="662.0" fill="#a9a9a9" font-size="9.5">Do not hide it.</text>
+<path d="M400,708.0 L565.0,757 L400,806.0 L235.0,757 z" fill="#262626" stroke="#3d3d3d" stroke-width="1"/>
+<text x="400" y="754" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Both support timeframes</text>
+<text x="400" y="768" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">agree on one side?</text>
+<rect x="665.0" y="727.0" width="250" height="60" rx="10" fill="#343434" stroke="#7a7a7a" stroke-width="1.2"/>
+<text x="677.0" y="745.0" fill="#7a7a7a" font-size="12.5" font-weight="700">Tide flat</text>
+<text x="677.0" y="760.0" fill="#a9a9a9" font-size="9.5">No permission. Say flat even if</text>
+<text x="677.0" y="772.0" fill="#a9a9a9" font-size="9.5">a band row says long_only.</text>
+<path d="M400,818.0 L565.0,867 L400,916.0 L235.0,867 z" fill="#262626" stroke="#3d3d3d" stroke-width="1"/>
+<text x="400" y="864" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">CCI 100 on the anchor</text>
+<text x="400" y="878" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">still on that side?</text>
+<rect x="665.0" y="837.0" width="250" height="60" rx="10" fill="#343434" stroke="#e0554d" stroke-width="1.2"/>
+<text x="677.0" y="855.0" fill="#e0554d" font-size="12.5" font-weight="700">KILL</text>
+<text x="677.0" y="870.0" fill="#a9a9a9" font-size="9.5">Force failed. A fast cross</text>
+<text x="677.0" y="882.0" fill="#a9a9a9" font-size="9.5">back is not a rescue.</text>
+<path d="M400,928.0 L565.0,977 L400,1026.0 L235.0,977 z" fill="#262626" stroke="#3d3d3d" stroke-width="1"/>
+<text x="400" y="974" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Where is CCI 30</text>
+<text x="400" y="988" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">on the closed bar?</text>
+<rect x="665.0" y="947.0" width="250" height="60" rx="10" fill="#343434" stroke="#d8a444" stroke-width="1.2"/>
+<text x="677.0" y="965.0" fill="#d8a444" font-size="12.5" font-weight="700">WAIT_LOADED</text>
+<text x="677.0" y="980.0" fill="#a9a9a9" font-size="9.5">Pullback is loaded. Name the</text>
+<text x="677.0" y="992.0" fill="#a9a9a9" font-size="9.5">rejoin that would release it.</text>
+<rect x="15.0" y="941.0" width="180" height="72" rx="10" fill="#343434" stroke="#5aa9d8" stroke-width="1.2"/>
+<text x="27.0" y="959.0" fill="#5aa9d8" font-size="12.5" font-weight="700">Continuation</text>
+<text x="27.0" y="974.0" fill="#a9a9a9" font-size="9.5">CCI 30 already with it, price</text>
+<text x="27.0" y="986.0" fill="#a9a9a9" font-size="9.5">clearing structure. S3 language.</text>
+<text x="27.0" y="998.0" fill="#a9a9a9" font-size="9.5">Not a pullback.</text>
+<path d="M400,1038.0 L565.0,1087 L400,1136.0 L235.0,1087 z" fill="#262626" stroke="#3d3d3d" stroke-width="1"/>
+<text x="400" y="1084" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Bar itself still passes the S1–S4 relation?</text>
+<text x="400" y="1098" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">No opposite S1–S4 fire on the symbol?</text>
+<rect x="665.0" y="1057.0" width="250" height="60" rx="10" fill="#343434" stroke="#7a7a7a" stroke-width="1.2"/>
+<text x="677.0" y="1075.0" fill="#7a7a7a" font-size="12.5" font-weight="700">Not a fire</text>
+<text x="677.0" y="1090.0" fill="#a9a9a9" font-size="9.5">An older cross does not stay a fire.</text>
+<text x="677.0" y="1102.0" fill="#a9a9a9" font-size="9.5">An opposite fire kills a new order.</text>
+<rect x="200.0" y="1158.5" width="400" height="57" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="1178.5" fill="#4fb383" font-size="13" font-weight="700">Technical act: FIRE shape</text>
+<text x="212.0" y="1195.5" fill="#a9a9a9" font-size="10">S1 typical price · S2 close · S3 rails high/low, body open/close · S4 close</text>
+<rect x="200.0" y="1250.5" width="400" height="83" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="1270.5" fill="#ececec" font-size="13" font-weight="700">Attack</text>
+<text x="212.0" y="1287.5" fill="#a9a9a9" font-size="10">Spread in points, bar high−low and close−open, heat, open book.</text>
+<text x="212.0" y="1300.5" fill="#a9a9a9" font-size="10">Regime from S5. UNDEFINED quotes the BB(200) and BB(20) middles.</text>
+<text x="212.0" y="1313.5" fill="#a9a9a9" font-size="10">G1, H1, L1–L4 named as context. They do not vote.</text>
+<rect x="200.0" y="1362.0" width="400" height="70" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="1382.0" fill="#ececec" font-size="13" font-weight="700">Speak one 007 block</text>
+<text x="212.0" y="1399.0" fill="#a9a9a9" font-size="10">MARKET · SET · TIDE · REGIME · STATE · ROLE MAP</text>
+<text x="212.0" y="1412.0" fill="#a9a9a9" font-size="10">TOPOLOGY · ACT · WHY · INVALIDATION · RISK</text>
+<path d="M400,1458.0 L565.0,1507 L400,1556.0 L235.0,1507 z" fill="#262626" stroke="#3d3d3d" stroke-width="1"/>
+<text x="400" y="1504" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Did Mark name a symbol or ticket</text>
+<text x="400" y="1518" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">to trade in this message?</text>
+<rect x="665.0" y="1477.0" width="250" height="60" rx="10" fill="#343434" stroke="#7a7a7a" stroke-width="1.2"/>
+<text x="677.0" y="1495.0" fill="#7a7a7a" font-size="12.5" font-weight="700">Report only</text>
+<text x="677.0" y="1510.0" fill="#a9a9a9" font-size="9.5">No order offered. A short name</text>
+<text x="677.0" y="1522.0" fill="#a9a9a9" font-size="9.5">count is not a request.</text>
+<path d="M400,1568.0 L565.0,1617 L400,1666.0 L235.0,1617 z" fill="#262626" stroke="#5b9bff" stroke-width="1.6"/>
+<text x="400" y="1614" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Today's target and</text>
+<text x="400" y="1628" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">risk_floor both set?</text>
+<rect x="665.0" y="1587.0" width="250" height="60" rx="10" fill="#343434" stroke="#5b9bff" stroke-width="1.6"/>
+<text x="677.0" y="1605.0" fill="#d8a444" font-size="12.5" font-weight="700">WAIT_NO_TRADE</text>
+<text x="677.0" y="1620.0" fill="#a9a9a9" font-size="9.5">Say the technical act beside it.</text>
+<text x="677.0" y="1632.0" fill="#a9a9a9" font-size="9.5">A blank floor is not a fire.</text>
+<text x="790" y="1661.0" text-anchor="middle" fill="#5b9bff" font-size="10" font-weight="600">today every new order ends here</text>
+<path d="M400,1678.0 L565.0,1727 L400,1776.0 L235.0,1727 z" fill="#262626" stroke="#5b9bff" stroke-width="1.6"/>
+<text x="400" y="1724" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Harness file present? Rung above</text>
+<text x="400" y="1738" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">OBSERVATION_ONLY? Server says demo?</text>
+<rect x="665.0" y="1697.0" width="250" height="60" rx="10" fill="#343434" stroke="#5b9bff" stroke-width="1.6"/>
+<text x="677.0" y="1715.0" fill="#e0554d" font-size="12.5" font-weight="700">SAFE_HOLD</text>
+<text x="677.0" y="1730.0" fill="#a9a9a9" font-size="9.5">No new order. Reading the</text>
+<text x="677.0" y="1742.0" fill="#a9a9a9" font-size="9.5">book is still allowed.</text>
+<text x="790" y="1771.0" text-anchor="middle" fill="#5b9bff" font-size="10" font-weight="600">today every new order ends here</text>
+<path d="M400,1787.0 L565.0,1842 L400,1897.0 L235.0,1842 z" fill="#262626" stroke="#3d3d3d" stroke-width="1"/>
+<text x="400" y="1832" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Thesis gate: set 1 or 2, official FIRE (not emerged,</text>
+<text x="400" y="1846" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">not WAIT_LOADED), regime defined, release bar fresh,</text>
+<text x="400" y="1860" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">symbol not held, no Client ticket on it?</text>
+<rect x="665.0" y="1812.0" width="250" height="60" rx="10" fill="#343434" stroke="#7a7a7a" stroke-width="1.2"/>
+<text x="677.0" y="1830.0" fill="#7a7a7a" font-size="12.5" font-weight="700">Refused</text>
+<text x="677.0" y="1845.0" fill="#a9a9a9" font-size="9.5">No ticket. Emergence is</text>
+<text x="677.0" y="1857.0" fill="#a9a9a9" font-size="9.5">not execution authority.</text>
+<rect x="200.0" y="1912.0" width="400" height="70" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="1932.0" fill="#ececec" font-size="13" font-weight="700">Write the thesis to disk</text>
+<text x="212.0" y="1949.0" fill="#a9a9a9" font-size="10">Set, tide, regime, topology, force clock, velocity clock,</text>
+<text x="212.0" y="1962.0" fill="#a9a9a9" font-size="10">release, structural stop, kill, size, duration. fsync, then reread.</text>
+<path d="M400,2008.0 L565.0,2057 L400,2106.0 L235.0,2057 z" fill="#262626" stroke="#3d3d3d" stroke-width="1"/>
+<text x="400" y="2054" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">Live bid still on the right</text>
+<text x="400" y="2068" text-anchor="middle" fill="#ececec" font-size="11" font-weight="600">side of the kill?</text>
+<rect x="665.0" y="2027.0" width="250" height="60" rx="10" fill="#343434" stroke="#7a7a7a" stroke-width="1.2"/>
+<text x="677.0" y="2045.0" fill="#7a7a7a" font-size="12.5" font-weight="700">Dead bar</text>
+<text x="677.0" y="2060.0" fill="#a9a9a9" font-size="9.5">Send nothing. No retry. Do not reuse</text>
+<text x="677.0" y="2072.0" fill="#a9a9a9" font-size="9.5">that bar. (GBPCHF 07:36, bid 1.09404)</text>
+<rect x="200.0" y="2122.0" width="400" height="70" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="2142.0" fill="#ececec" font-size="13" font-weight="700">Send one order</text>
+<text x="212.0" y="2159.0" fill="#a9a9a9" font-size="10">Magic 771249, lot Mark named (1.0 default), deviation 30, FOK or IOC.</text>
+<text x="212.0" y="2172.0" fill="#a9a9a9" font-size="10">Timeout or ambiguous result: no retry. Reconcile from the book.</text>
+<rect x="200.0" y="2225.5" width="400" height="83" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="2245.5" fill="#ececec" font-size="13" font-weight="700">Manage</text>
+<text x="212.0" y="2262.5" fill="#a9a9a9" font-size="10">Hold while tide, regime, and structure hold on the closed bar.</text>
+<text x="212.0" y="2275.5" fill="#a9a9a9" font-size="10">Close only for momentum_dying or will_not_rejoin. Clients untouched.</text>
+<text x="212.0" y="2288.5" fill="#a9a9a9" font-size="10">A close is not a reason to open the next name.</text>
+<rect x="200.0" y="2337.0" width="400" height="70" rx="4" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+<text x="212.0" y="2357.0" fill="#ececec" font-size="13" font-weight="700">Record and learn</text>
+<text x="212.0" y="2374.0" fill="#a9a9a9" font-size="10">decision_tape, LEARNING_LOG, JOURNAL proposals. Baseline stays read-only.</text>
+<text x="212.0" y="2387.0" fill="#a9a9a9" font-size="10">Score = closed P/L on 771249 opened after 12:36. Floating does not count.</text>
+</svg>

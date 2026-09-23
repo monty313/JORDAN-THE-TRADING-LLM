@@ -72,6 +72,7 @@ If you do want a new operating rule, say it in a message and have him append it 
 | `JARVIS V1/desk_state.md` | Mode, score window, authority. |
 | `JARVIS V1/LEARNING_LOG.md` | What each pass taught. Newest entry is at the top. |
 | `doctrine/007_...Baseline.md` | The playbook. Read-only. |
+| `mentorship/JARVIS_MENTOR.md` | The teaching he must use before an act. Two clocks. It does not replace the playbook. |
 | `.cursor/rules/jarvis-eyes.mdc` | Loaded automatically when this folder is the Cursor project. |
 
 ## What did not go to GitHub

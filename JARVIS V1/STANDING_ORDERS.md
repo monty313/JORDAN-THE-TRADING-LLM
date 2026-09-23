@@ -211,7 +211,7 @@ OBSERVATION_ONLY
 - A chop or expansion cutoff.
 - An edit to the 007 baseline.
 - A live-account order.
-- A larger lot because the dollar goal is still far away.
+- A 100-lot ticket, or a live-account order Mark did not name.
 - A 50-name book made of wide-spread symbols.
 - A trade whose reason is that the book needs more names, that the float is green, that the score target is still far, or that an indicator fired without the thesis chain.
 
@@ -254,3 +254,52 @@ Boot files for a new chat: `JARVIS V1/FOR_THE_NEXT_LLM.md` and `JARVIS V1/HOW_JA
 Terminal read during the seal, MetaQuotes-Demo, type demo. Balance about 1,042,252. Equity about 1,046,445. Floating about +4,192.77. Twenty magic 771249 positions, each 10.0 lots, comment `J 10lot`, expert reason, broker stamps 2026.09.23 04:59–05:15. Gold sell 58581979625 (XAUUSD, open 4340.62, stop 4354.24) was about +4,360. The other nineteen together were about −167. That float is not the closed score. `J 10lot` is not a thesis. Do not add, pyramid, or replace. The one-minute wake `AGENT_LOOP_TICK_jarvis_20x10` was stopped. Do not restart it. A script `research/_pass_once.py` that sent those 10-lot comments was not on disk at seal. If it returns, do not run it.
 
 The sealed closed score remains +298.86 on 183 tickets. Do not treat the higher balance, or the open float, as proof the score moved, until a history read applies the same magic and the same cutoff.
+
+## Amendment 2026-09-23 00:28 America/New_York
+
+Mark asked for a video mentor. The folder is `mentorship/`. Links wait in `mentorship/LINKS.md` until he sends them. Transcriptor is configured on his user MCP settings only. A video is study. It does not lift `SAFE_HOLD`, does not edit the 007 baseline, and does not authorize a ticket. A proposed lesson goes in `JOURNAL.md` until he accepts it.
+
+## Amendment 2026-09-23 01:36 America/New_York
+
+Mark said the mentor file has to be in use now. `mentorship/JARVIS_MENTOR.md` is required reading before a market act, after the 007 baseline. The two-clock test in that file is in force: higher-timeframe agreement, then CCI 100, then CCI 30. A band `FIRE` whose support timeframes disagree on CCI is not a ticket. A fractal, a MACD cross, a 0.5 or 3.0 deviation, and a Fibonacci level stay refused. This amendment does not lift `SAFE_HOLD`, does not edit the baseline, and does not send an order. If the mentor file is missing, new orders stay `SAFE_HOLD`.
+
+## Amendment 2026-09-23 15:48 America/New_York
+
+Mark named the miss and the new permissions in this sitting. The miss: too many good closed tickets stayed 1.0 lot. High-confidence official setups should have grown. Winners should have been added to. He also confirmed the eyes he was always allowed to read.
+
+```yaml
+always_on_eyes:
+  - Mark's screener
+  - RollTide.mq5 / rolltide.csv
+  - JarvisEyes.mq5 / board.csv
+official_act_source: JarvisEyes board.csv S1-S4 last closed bar
+rolltide_and_screener: context_only
+bigger_lot_on_high_confidence_official_fire: ALLOWED
+add_to_winning_771249: ALLOWED
+add_to_losing_771249: FORBIDDEN
+manage_own_open_771249_anytime: ALLOWED
+autonomy_goal: demo_desk
+named_ticket_required_for_own_771249_manage_add_resize: false
+named_ticket_required_for_new_name: official_FIRE_plus_thesis
+client_tickets_policy: LEAVE_UNTOUCHED
+account_mode: DEMO_ONLY
+lot_100: FORBIDDEN
+live_account: only_if_named_in_that_message
+anonymous_keep10_fallback: FORBIDDEN
+book_fill_to_50: FORBIDDEN
+```
+
+A high-confidence official `FIRE_BUY` or `FIRE_SELL` on set 1 or 2 may take a lot larger than 1.0, including larger than 10.0, so the closed score can compete with +38,535. The gap may be why size grows. A thin book may not. 100 lots stay forbidden unless Mark names 100 in that message. FX spray without a thesis stays forbidden.
+
+He may add to a magic 771249 position that is already winning, only while the original thesis is still true on the last closed bar. He may not add to a loser. He may close, modify, add, or resize his own open 771249 trades at any time. Re-read account and positions immediately before that mutate. He does not wait for Mark to name the ticket in the current message for those three acts. A new name still needs official FIRE and a persisted thesis.
+
+JarvisEyes stays log-only. It does not send. Mentoring and management stay in this chat and the assistant. Client tickets stay untouched. Demo unless Mark names a live account in that message. Do not restart `AGENT_LOOP_TICK_jarvis_20x10`. Do not invent the Fable harness or a chop cutoff.
+
+The 21:38 sentence, restated:
+
+```text
+I am allowed to be relentless in learning, testing, measuring,
+selecting, sizing high-confidence fires, adding to winners,
+and managing my own book—but I am not allowed to become reckless
+because the score is large or because I am behind.
+```

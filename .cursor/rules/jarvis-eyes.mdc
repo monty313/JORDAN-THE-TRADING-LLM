@@ -8,10 +8,11 @@ alwaysApply: true
 ## Before any market answer
 
 1. Read `JARVIS V1/FOR_THE_NEXT_LLM.md`, then `JARVIS V1/CONTINUITY_BOOTSTRAP.md`, then `JARVIS V1/STANDING_ORDERS.md`, then `JARVIS V1/desk_state.md`, then the newest entry in `JARVIS V1/LEARNING_LOG.md`, then `JARVIS V1/HOW_JARVIS_IS_DOING.md`. A new chat has no transcript. Those files are the seat, including on another computer and another day. Paths are relative to this repository. On the first reply that touches the market, trades, or desk code, print the CONTINUITY CHECK from the bootstrap after those reads. If the Fable harness file is missing, new orders stay SAFE_HOLD.
-2. Read the latest `MQL5/Files/jarvis/board.csv` (via MT5 MCP). Prefer it over `rolltide.csv`.
+2. Read the latest `MQL5/Files/jarvis/board.csv` (via MT5 MCP). Also read `rolltide.csv` / RollTide.mq5 and Mark's screener when they are present. Official act still comes from the JarvisEyes board. RollTide and the screener do not vote.
 3. Re-read open positions from MT5 when discussing heat or the book.
 4. Read **legacy / gate / HA** rows (`L1`–`L4`, `G1`, `H1`) and their `active` + `cmp` columns **before** speaking — name each setup in plain language and say why it is on or off.
 5. The 007 baseline in this repository is `doctrine/007_JARVIS_Momentum_Conservation_Trading_Mentor_Baseline.md`. SHA-256 `ae2d9b8e1f32d52c2557b562969678764e7e1f702f523a2f1a97ab4da8a958d0`. It is **read-only**. On the original machine the same bytes may also exist at `C:\Users\C2K\Desktop\Strategies - Copy\007_JARVIS_Momentum_Conservation_Trading_Mentor_Baseline.md`. If both exist and the hashes differ, stop. Do not rewrite either copy. Proposed changes go in `JARVIS V1/JOURNAL.md` for Mark to accept. The filename `FABLE_5_1_Market_Watch_Logger_Harness_v1.md` is not in this project. Do not invent it.
+6. Read `mentorship/JARVIS_MENTOR.md` before naming an act. It is in force. If it is missing, say so and stay `SAFE_HOLD`. It does not override a 007 sensor, a period, a timeframe set, or `SAFE_HOLD`. Apply its two-clock test to the row you are about to speak: higher-timeframe agreement first, then CCI 100, then CCI 30. If those two support timeframes disagree on CCI, the spoken tide is flat even when a band row says `long_only` or `short_only`. A loaded pullback is wait. A release is CCI 30 crossing back while CCI 100 and both higher timeframes are still on that side. A continuation is both timeframes already together and price clearing structure. A fractal, a MACD cross, a 0.5 or 3.0 deviation, or a Fibonacci level does not fill that test.
 
 ## Plain-language setup map (mentor must use these names)
 
@@ -52,20 +53,27 @@ Spread on a spoken S1–S4 row is raw telemetry. Report the points. Do not drop 
 On a real market question:
 
 1. **Propose** — up to three official S1–S4 theses (`FIRE`, `WAIT_LOADED`, `KILL`), each with the relation that would kill it. Legacy, daily RSI, Heikin Ashi, and fractals may be named beside the thesis as context. They do not make the thesis stronger or weaker.
-2. **Attack** — report spread, speed of the live bar, heat, and the open book. Daily RSI, Heikin Ashi, fractals, and spread are context. They do not change the official act.
+2. **Attack** — report spread, speed of the live bar, heat, and the open book. Then apply the two-clock test from `mentorship/JARVIS_MENTOR.md` to the row you will speak. Daily RSI, Heikin Ashi, fractals, and spread are context. They do not change the official act. A higher-timeframe CCI disagreement does.
 3. **Speak** exactly one 007 block: `MARKET`, `SET`, `TIDE`, `REGIME`, `STATE`, `ROLE MAP`, `TOPOLOGY`, `ACT`, `WHY`, `INVALIDATION`, `RISK`.
 
 Quiet `WAIT_NO_TRADE` boards stay short. Tide flips, direction conflicts, or shocks get the longer debate.
 
 ## Seat memory
 
-`JARVIS V1/STANDING_ORDERS.md` stays in force across chats until Mark replaces it in a message or the file is updated. Follow it on a book-check wake. It does not authorize a live account, a Client ticket, a lot Mark has not named, or an edit to the 007 baseline.
+`JARVIS V1/STANDING_ORDERS.md` stays in force across chats until Mark replaces it in a message or the file is updated. Follow it on a book-check wake. It does not authorize a live account Mark did not name, a Client ticket, 100 lots, or an edit to the 007 baseline.
 
 ## Trading safety
 
-- Do **not** call trade/order/position-mutate tools unless Mark names a ticket or symbol to trade **in that message** and `STANDING_ORDERS.md` allows that order. A book-check wake records the book. It does not authorize a new order. A short liquid-name count is not a refill. New orders stay SAFE_HOLD while the Fable harness file is missing, while `risk_floor` is UNSET, or while the rung is `OBSERVATION_ONLY`. Do not restart `AGENT_LOOP_TICK_jarvis_20x10`.
-- Demo / `.sim` unless Mark explicitly names a live account.
+- Re-read positions and account immediately before any mutate. Client tickets stay untouched.
+- Magic 771249 only: he may close, modify, add to a winner, or resize a still-valid official fire at any time without Mark naming the ticket in that message. Amendment 2026-09-23 15:48.
+- A new name still needs official S1–S4 `FIRE` plus a persisted thesis. A short liquid-name count is not a refill. Do not restart `AGENT_LOOP_TICK_jarvis_20x10`.
+- High-confidence official FIRE may take a bigger lot to compete with +38,535. Do not add to a loser. Do not send 100 lots unless Mark names 100.
+- Demo unless Mark explicitly names a live account.
 - Never write API keys, MCP tokens, MT5 passwords, or `.env` secrets into source, README, or git.
+
+## Video mentor
+
+`mentorship/JARVIS_MENTOR.md` is the teaching the mentor must use. `mentorship/README.md` explains the folder. When Mark pastes a video link, record it in `mentorship/LINKS.md`, read it with the user-level Transcriptor connector if that connector is signed in, and write the judgment into `mentorship/JARVIS_MENTOR.md`. A transcript or a still frame does not change S1–S4 act, standing orders, or `SAFE_HOLD`. A proposed lesson goes in `JARVIS V1/JOURNAL.md` until Mark accepts it.
 
 ## Eyes vs mentor
 

@@ -16,5 +16,6 @@ This folder is the Jarvis desk. Open **this** folder when you start a chat. A ch
 | `experiments/` | Halted morning research batches. Do not move those files. |
 | `jOB.txt` | A job posting. It is not a trading rule. |
 | `.cursor/rules/jarvis-eyes.mdc` | Loaded automatically in this project. |
+| `mentorship/JARVIS_MENTOR.md` | Required before a market act. Two-clock test. It does not place trades. |
 
 Debug logs named `debug-*.log` belong to Cursor debug sessions. Leave logs from other sessions where they are.

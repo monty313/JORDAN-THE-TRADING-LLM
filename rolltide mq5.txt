@@ -1,0 +1,1370 @@
+//+------------------------------------------------------------------+
+//| ROLLTIDE                                                           |
+//| Live glass + Market Watch board. Every knob is an input.           |
+//+------------------------------------------------------------------+
+#property copyright   "ROLLTIDE"
+#property version     "1.10"
+#property description "ROLLTIDE — live tide / current / rip. Click a row to load the chart. Drag the header to move."
+#property indicator_chart_window
+#property indicator_plots 0
+#property indicator_buffers 0
+
+#include <Canvas/Canvas.mqh>
+#include "RollTide.mqh"
+
+input group "1. Tide / setup"
+input ENUM_TIMEFRAMES    InpTideTf    = PERIOD_D1;        // tide timeframe
+input ENUM_TIMEFRAMES    InpHourTf    = PERIOD_H1;        // current timeframe
+input ENUM_TIMEFRAMES    InpRipTf     = PERIOD_M5;        // rip timeframe
+input int                InpRsiPeriod = 14;               // RSI period
+input int                InpSmaPeriod = 1;                // SMA period on RSI
+input int                InpShift     = 4;                // SMA shift
+input ENUM_MA_METHOD     InpMaMethod  = MODE_SMA;         // MA method
+input ENUM_APPLIED_PRICE InpPrice     = PRICE_TYPICAL;    // RSI applied price
+
+input group "2. Speed"
+input ENUM_TIMEFRAMES    InpSpeedTf   = PERIOD_M15;       // speed timeframe
+input int                InpCciPeriod = 30;               // CCI period
+input ENUM_APPLIED_PRICE InpCciPrice  = PRICE_TYPICAL;    // CCI applied price
+input double             InpCciMeter  = 200.0;            // CCI meter full-scale
+
+input group "3. Board"
+input string InpSymbols     = "";          // watchlist (empty = Market Watch)
+input int    InpMaxSyms     = 64;          // max symbols
+input int    InpMaxRows     = 24;          // board rows
+input int    InpTimerMs     = 400;         // live refresh (ms)
+input bool   InpHitsOnly    = true;        // fires only
+input bool   InpShowWait    = false;       // show WAIT RIP
+input bool   InpShowBlocked = false;       // show BLOCKED
+input bool   InpAlerts      = true;        // alert on new fire
+input string InpAlertSound  = "alert.wav"; // alert sound
+input bool   InpWriteCsv    = true;        // write MQL5/Files csv
+input string InpCsvName     = "rolltide.csv"; // csv file name
+input bool   InpClickChart  = true;        // click row loads chart
+input bool   InpDragPanel   = true;        // drag header to move
+
+input group "4. Glass"
+input bool             InpHideChart  = true;                 // hide candles — board only
+input bool             InpFillWindow = true;                 // stretch glass to the chart
+input bool             InpShowGlass  = false;                // four cards
+input bool             InpShowBoard  = true;                 // symbol list
+input bool             InpShowValues = true;                 // RSI / delta on cards
+input bool             InpShowMeter  = true;                 // CCI speed bar
+input string           InpFont       = "Arial";              // font
+input double           InpScale      = 1.0;                  // size scale
+input ENUM_BASE_CORNER InpCorner     = CORNER_LEFT_UPPER;    // panel corner
+input int              InpPanelX     = 0;                    // offset X
+input int              InpPanelY     = 0;                    // offset Y
+
+input group "5. Colors"
+input color InpColBg      = C'1,6,12';
+input color InpColCard    = C'3,14,22';
+input color InpColText    = C'176,236,255';
+input color InpColMute    = C'70,150,170';
+input color InpColFaint   = C'28,68,82';
+input color InpColAccent  = C'0,220,255';
+input color InpColLong    = C'0,255,196';
+input color InpColShort   = C'255,64,80';
+input color InpColGold    = C'255,188,48';
+input color InpColIdle    = C'4,16,24';
+input int   InpBgAlpha    = 255;           // panel alpha 0-255
+input int   InpFillAlpha  = 40;            // long/short fill alpha
+
+#define HUD_NAME "RollTideHUD"
+
+SRollSet g_set;
+SRollRow g_rows[];
+int      g_n = 0;
+int      g_chart = -1;
+bool     g_armed = false;
+CCanvas  g_cv;
+int      g_cv_w = 0;
+int      g_cv_h = 0;
+uint     g_last_ms = 0;
+int      g_px = 0;
+int      g_py = 0;
+bool     g_drag = false;
+int      g_drag_x = 0;
+int      g_drag_y = 0;
+int      g_head_h = 0;
+int      g_mx = 0;
+int      g_my = 0;
+string   g_hit_sym[];
+int      g_hit_y0[];
+int      g_hit_y1[];
+int      g_hits = 0;
+string   g_focus = "";
+bool     g_prev_show = true;
+bool     g_hid_chart = false;
+
+uint C_BG;
+uint C_SHADOW;
+uint C_STROKE;
+uint C_CARD;
+uint C_TEXT;
+uint C_MUTE;
+uint C_FAINT;
+uint C_ACCENT;
+uint C_LONG;
+uint C_LONG_FILL;
+uint C_SHORT;
+uint C_SHORT_FILL;
+uint C_IDLE;
+uint C_GOLD;
+uint C_GOLD_FILL;
+uint C_HEAD;
+uint C_GRID;
+uint C_LINE;
+
+int Sx(const int v)
+  {
+   double s = InpScale;
+   if(s < 0.6)
+      s = 0.6;
+   if(s > 2.0)
+      s = 2.0;
+   return (int)MathRound(v * s);
+  }
+
+int OnInit()
+  {
+   IndicatorSetString(INDICATOR_SHORTNAME, "ROLLTIDE");
+   g_set.tide_tf    = InpTideTf;
+   g_set.hour_tf    = InpHourTf;
+   g_set.rip_tf     = InpRipTf;
+   g_set.speed_tf   = InpSpeedTf;
+   g_set.rsi_len    = InpRsiPeriod;
+   g_set.sma_len    = InpSmaPeriod;
+   g_set.shift      = InpShift;
+   g_set.ma_method  = InpMaMethod;
+   g_set.price      = InpPrice;
+   g_set.cci_len    = InpCciPeriod;
+   g_set.cci_price  = InpCciPrice;
+   g_set.csv_name   = InpCsvName;
+   RtPrepSet(g_set);
+   g_px = InpFillWindow ? 0 : InpPanelX;
+   g_py = InpFillWindow ? 0 : InpPanelY;
+   g_focus = _Symbol;
+   PaintPalette();
+   ChartSetInteger(0, CHART_EVENT_MOUSE_MOVE, true);
+   ApplyChartMode(true);
+   if(!LoadWatch())
+      Print("ROLLTIDE: no symbols in Market Watch — board will stay empty");
+   ScanChartSymbol();
+   EventSetMillisecondTimer(MathMax(80, InpTimerMs));
+   Print("ROLLTIDE ready | ", g_n, " symbols | live ", RtPriceWord(InpPrice),
+         " | rsi ", InpRsiPeriod, " sma ", InpSmaPeriod, " shift +", InpShift);
+   Pulse(true);
+   return INIT_SUCCEEDED;
+  }
+
+void OnDeinit(const int reason)
+  {
+   EventKillTimer();
+   ChartSetInteger(0, CHART_EVENT_MOUSE_MOVE, false);
+   ApplyChartMode(false);
+   for(int i = 0; i < g_n; i++)
+      RtReleaseRow(g_rows[i]);
+   g_cv.Destroy();
+   ObjectDelete(0, HUD_NAME);
+   ChartRedraw(0);
+  }
+
+void ApplyChartMode(const bool attach)
+  {
+   if(attach)
+     {
+      g_prev_show = (ChartGetInteger(0, CHART_SHOW) != 0);
+      g_hid_chart = InpHideChart;
+      if(InpHideChart)
+        {
+         ChartSetInteger(0, CHART_SHOW, false);
+         ChartSetInteger(0, CHART_SHOW_GRID, false);
+         ChartSetInteger(0, CHART_SHOW_OHLC, false);
+         ChartSetInteger(0, CHART_SHOW_BID_LINE, false);
+         ChartSetInteger(0, CHART_SHOW_ASK_LINE, false);
+         ChartSetInteger(0, CHART_SHOW_LAST_LINE, false);
+         ChartSetInteger(0, CHART_SHOW_PERIOD_SEP, false);
+         ChartSetInteger(0, CHART_SHOW_VOLUMES, CHART_VOLUME_HIDE);
+         ChartSetInteger(0, CHART_SHOW_DATE_SCALE, false);
+         ChartSetInteger(0, CHART_SHOW_PRICE_SCALE, false);
+         ChartSetInteger(0, CHART_SHOW_ONE_CLICK, false);
+         ChartSetInteger(0, CHART_COLOR_BACKGROUND, InpColBg);
+         ChartSetInteger(0, CHART_COLOR_FOREGROUND, InpColBg);
+        }
+      return;
+     }
+   if(!g_hid_chart)
+      return;
+   ChartSetInteger(0, CHART_SHOW, g_prev_show);
+   ChartSetInteger(0, CHART_SHOW_DATE_SCALE, true);
+   ChartSetInteger(0, CHART_SHOW_PRICE_SCALE, true);
+  }
+
+void OnTimer()
+  {
+   Pulse(false);
+  }
+
+int OnCalculate(const int rates_total,
+                const int prev_calculated,
+                const datetime &time[],
+                const double &open[],
+                const double &high[],
+                const double &low[],
+                const double &close[],
+                const long &tick_volume[],
+                const long &volume[],
+                const int &spread[])
+  {
+   return rates_total;
+  }
+
+void Pulse(const bool force)
+  {
+   const uint now = GetTickCount();
+   if(!force && g_last_ms != 0 && (now - g_last_ms) < (uint)MathMax(200, InpTimerMs))
+      return;
+   g_last_ms = now;
+   ScanAll();
+   DrawHud();
+  }
+
+void OnChartEvent(const int id, const long &lparam, const double &dparam, const string &sparam)
+  {
+   if(id == CHARTEVENT_CHART_CHANGE)
+     {
+      const int w = (int)ChartGetInteger(0, CHART_WIDTH_IN_PIXELS);
+      const int h = (int)ChartGetInteger(0, CHART_HEIGHT_IN_PIXELS);
+      if(MathAbs(w - g_cv_w) > 20 || MathAbs(h - g_cv_h) > 20)
+         DrawHud();
+      return;
+     }
+   if(id == CHARTEVENT_MOUSE_MOVE)
+     {
+      g_mx = (int)lparam;
+      g_my = (int)dparam;
+      HandleMouse(g_mx, g_my, sparam);
+      return;
+     }
+   if(id == CHARTEVENT_CLICK)
+     {
+      HandleClick((int)lparam, (int)dparam);
+      return;
+     }
+   if(id == CHARTEVENT_OBJECT_CLICK && sparam == HUD_NAME)
+      HandleClick(g_mx, g_my);
+  }
+
+void PaintPalette()
+  {
+   const int bg_a = (int)MathMax(80, MathMin(255, InpBgAlpha));
+   const int fl_a = (int)MathMax(10, MathMin(180, InpFillAlpha));
+   C_BG         = ColorToARGB(InpColBg, (uchar)bg_a);
+   C_SHADOW     = ColorToARGB(clrBlack, 110);
+   C_STROKE     = ColorToARGB(C'28,35,48', 255);
+   C_CARD       = ColorToARGB(InpColCard, 255);
+   C_TEXT       = ColorToARGB(InpColText, 255);
+   C_MUTE       = ColorToARGB(InpColMute, 255);
+   C_FAINT      = ColorToARGB(InpColFaint, 255);
+   C_ACCENT     = ColorToARGB(InpColAccent, 255);
+   C_LONG       = ColorToARGB(InpColLong, 255);
+   C_LONG_FILL  = ColorToARGB(InpColLong, (uchar)fl_a);
+   C_SHORT      = ColorToARGB(InpColShort, 255);
+   C_SHORT_FILL = ColorToARGB(InpColShort, (uchar)fl_a);
+   C_IDLE       = ColorToARGB(InpColIdle, 255);
+   C_GOLD       = ColorToARGB(InpColGold, 255);
+   C_GOLD_FILL  = ColorToARGB(InpColGold, (uchar)fl_a);
+   C_HEAD       = ColorToARGB(C'4,20,30', 255);
+   C_GRID       = ColorToARGB(InpColAccent, 18);
+   C_LINE       = ColorToARGB(InpColAccent, 90);
+  }
+
+bool LoadWatch()
+  {
+   string raw[];
+   int n = RtSplitList(InpSymbols, raw);
+   if(n <= 0)
+     {
+      n = SymbolsTotal(true);
+      ArrayResize(raw, n);
+      int k = 0;
+      for(int i = 0; i < n; i++)
+        {
+         string s = SymbolName(i, true);
+         if(s != "")
+           {
+            raw[k] = s;
+            k++;
+           }
+        }
+      ArrayResize(raw, k);
+      n = k;
+     }
+
+   const int cap = MathMax(1, MathMin(InpMaxSyms, RT_MAX_SYMS));
+   ArrayResize(g_rows, cap);
+   g_n = 0;
+   g_chart = -1;
+   for(int i = 0; i < n && g_n < cap; i++)
+     {
+      if(!RtBindRow(g_rows[g_n], raw[i], g_set))
+        {
+         Print("ROLLTIDE: cannot bind ", raw[i]);
+         continue;
+        }
+      if(raw[i] == _Symbol)
+         g_chart = g_n;
+      g_n++;
+     }
+   ArrayResize(g_rows, g_n);
+   return (g_n > 0);
+  }
+
+bool ScanChartSymbol()
+  {
+   if(g_chart >= 0)
+      return false;
+   if(g_n >= RT_MAX_SYMS)
+      return false;
+   ArrayResize(g_rows, g_n + 1);
+   if(!RtBindRow(g_rows[g_n], _Symbol, g_set))
+     {
+      ArrayResize(g_rows, g_n);
+      return false;
+     }
+   g_chart = g_n;
+   g_n++;
+   return true;
+  }
+
+void ScanAll()
+  {
+   for(int i = 0; i < g_n; i++)
+     {
+      if(g_focus != "" && g_rows[i].name == g_focus)
+         g_chart = i;
+      else if(g_focus == "" && g_rows[i].name == _Symbol)
+         g_chart = i;
+      const int before = g_rows[i].state;
+      RtScoreRow(g_rows[i], g_set);
+      if(!g_armed)
+        {
+         g_rows[i].prev_state = g_rows[i].state;
+         continue;
+        }
+      if(RtIsFire(g_rows[i].state) && g_rows[i].state != before)
+        {
+         if(InpWriteCsv)
+            RtWriteSignal(g_rows[i], InpCsvName);
+         if(InpAlerts)
+            FireAlert(g_rows[i]);
+        }
+      g_rows[i].prev_state = g_rows[i].state;
+     }
+   g_armed = true;
+  }
+
+void FireAlert(const SRollRow &row)
+  {
+   const string side = RtSideWord(row.state);
+   const string msg = "ROLLTIDE  " + row.name + "  " + side
+                      + "  " + RtTfLabel(g_set.speed_tf) + " CCI "
+                      + DoubleToString(row.cci_lock, 1);
+   Alert(msg);
+   if(InpAlertSound != "")
+      PlaySound(InpAlertSound);
+   Print(msg);
+  }
+
+bool WantRow(const SRollRow &row)
+  {
+   return RtIsFire(row.state);
+  }
+
+void DrawHud()
+  {
+   if(!InpShowGlass && !InpShowBoard)
+      return;
+
+   SRollRow view[];
+   ArrayResize(view, MathMax(1, g_n));
+   int shown = 0;
+   for(int i = 0; i < g_n; i++)
+     {
+      if(!WantRow(g_rows[i]))
+         continue;
+      view[shown] = g_rows[i];
+      shown++;
+     }
+   ArrayResize(view, shown);
+   RtSortRows(view, shown);
+
+   int chart_w = (int)ChartGetInteger(0, CHART_WIDTH_IN_PIXELS);
+   int chart_h = (int)ChartGetInteger(0, CHART_HEIGHT_IN_PIXELS);
+   if(chart_w < 400)
+      chart_w = (g_cv_w >= 400 ? g_cv_w : 1200);
+   if(chart_h < 280)
+      chart_h = (g_cv_h >= 280 ? g_cv_h : 720);
+   const int pad = Sx(22);
+   const int brandH = Sx(26);
+   const int headH = Sx(28);
+   const int rowH = Sx(36);
+   const int innerW = InpFillWindow ? MathMax(Sx(520), chart_w - pad * 2) : Sx(520);
+   g_head_h = pad + brandH + Sx(10);
+
+   int max_rows = InpMaxRows;
+   int h = InpFillWindow ? chart_h : (g_head_h + Sx(4));
+   int w = InpFillWindow ? chart_w : (pad * 2 + innerW);
+   if(!InpFillWindow)
+     {
+      const int fit = MathMax(1, (chart_h - g_py - h - pad) / rowH);
+      max_rows = MathMax(1, MathMin(InpMaxRows, fit));
+      h += headH + MathMax(1, MathMin(shown, max_rows)) * rowH + pad;
+     }
+   else
+     {
+      const int fit = MathMax(1, (chart_h - g_head_h - headH - pad) / rowH);
+      max_rows = MathMax(1, MathMin(InpMaxRows, fit));
+     }
+
+   if(!EnsureCanvas(w, h))
+      return;
+
+   g_cv.Erase(C_BG);
+   g_cv.FillRectangle(0, 0, Sx(4), h, C_ACCENT);
+
+   Font(InpFont, 16, FW_BOLD);
+   Text(pad, pad, Sx(220), brandH, "ROLLTIDE", C_ACCENT, TA_LEFT);
+   Font(InpFont, 12, FW_BOLD);
+   Text(w - pad - Sx(180), pad, Sx(180), brandH,
+        IntegerToString(shown) + " SIGNALS", shown > 0 ? C_LONG : C_MUTE, TA_RIGHT);
+
+   const int gx = pad;
+   const int cy = g_head_h;
+   const int c0 = gx;
+   const int c1 = gx + innerW * 10 / 100;
+   const int c2 = gx + innerW * 40 / 100;
+   const int c3 = gx + innerW * 70 / 100;
+   const int w0 = c1 - c0;
+   const int w1 = c2 - c1;
+   const int w2 = c3 - c2;
+   const int w3 = gx + innerW - c3;
+
+   FillRound(gx, cy, innerW, headH, Sx(4), C_HEAD);
+   Font(InpFont, 10, FW_BOLD);
+   Text(c0, cy, w0, headH, "#", C_MUTE, TA_CENTER);
+   Text(c1 + Sx(8), cy, w1, headH, "SYMBOL", C_MUTE, TA_LEFT);
+   Text(c2, cy, w2, headH, "SIDE", C_MUTE, TA_CENTER);
+   Text(c3, cy, w3, headH, "CCI", C_MUTE, TA_CENTER);
+
+   g_hits = 0;
+   ArrayResize(g_hit_sym, InpMaxRows + 2);
+   ArrayResize(g_hit_y0, InpMaxRows + 2);
+   ArrayResize(g_hit_y1, InpMaxRows + 2);
+
+   const int rows = MathMax(1, MathMin(shown, max_rows));
+   if(shown == 0)
+     {
+      Font(InpFont, 12, FW_BOLD);
+      Text(gx, cy + headH, innerW, rowH, "NO SIGNALS", C_MUTE, TA_CENTER);
+     }
+   else
+     {
+      for(int r = 0; r < rows; r++)
+        {
+         const int ry = cy + headH + r * rowH;
+         const bool lng = (view[r].state == RT_FIRE_LONG);
+         if((r % 2) == 1)
+            g_cv.FillRectangle(gx, ry + 1, gx + innerW, ry + rowH - 2, C_HEAD);
+         FillRound(c2 + (w2 - Sx(88)) / 2, ry + Sx(6), Sx(88), rowH - Sx(12), Sx(6),
+                   lng ? C_LONG_FILL : C_SHORT_FILL);
+         string num = IntegerToString(r + 1);
+         if(r + 1 < 10)
+            num = "0" + num;
+         Font(InpFont, 12, FW_BOLD);
+         Text(c0, ry, w0, rowH, num, C_ACCENT, TA_CENTER);
+         Text(c1 + Sx(8), ry, w1, rowH, view[r].name, C_TEXT, TA_LEFT);
+         Text(c2, ry, w2, rowH, lng ? "LONG" : "SHORT", lng ? C_LONG : C_SHORT, TA_CENTER);
+         Text(c3, ry, w3, rowH, RtSigned(view[r].cci_live, 1), lng ? C_LONG : C_SHORT, TA_CENTER);
+         if(g_hits < ArraySize(g_hit_sym))
+           {
+            g_hit_sym[g_hits] = view[r].name;
+            g_hit_y0[g_hits] = ry;
+            g_hit_y1[g_hits] = ry + rowH;
+            g_hits++;
+           }
+        }
+     }
+
+   g_cv.Update(false);
+  }
+
+void PaintCard(const int x, const int y, const int w, const int h,
+               const string eye, const string stack, const string body,
+               const bool ready, const int side, const double rsi, const double delta)
+  {
+   FillRound(x + 3, y + 4, w, h, Sx(10), C_SHADOW);
+   StrokeRound(x, y, w, h, Sx(10), C_LINE, C_CARD);
+   Font(InpFont, 11, FW_BOLD);
+   Text(x + Sx(14), y + Sx(10), w - Sx(28), Sx(18), eye, C_ACCENT, TA_LEFT);
+   Font(InpFont, 10, FW_NORMAL);
+   Text(x + Sx(14), y + Sx(30), w - Sx(28), Sx(16), stack, C_MUTE, TA_LEFT);
+
+   const int bx = x + Sx(10);
+   const int by = y + Sx(52);
+   const int bw = w - Sx(20);
+   const int bh = InpShowValues ? Sx(48) : Sx(32);
+   uint fill = C_IDLE;
+   uint ink = C_MUTE;
+   if(ready && side == RT_ABOVE)
+     {
+      fill = C_LONG_FILL;
+      ink = C_LONG;
+     }
+   else if(ready && side == RT_BELOW)
+     {
+      fill = C_SHORT_FILL;
+      ink = C_SHORT;
+     }
+   g_cv.FillRectangle(bx, by, bx + bw, by + bh, fill);
+   Font(InpFont, ready && side != RT_DEAD ? 14 : 11, FW_BOLD);
+   if(InpShowValues && ready)
+     {
+      Text(bx, by + Sx(2), bw, Sx(22), body, ink, TA_CENTER);
+      Font(InpFont, 9, FW_NORMAL);
+      Text(bx, by + Sx(22), bw, Sx(22),
+           DoubleToString(rsi, 1) + "   " + RtSigned(delta, 1), C_MUTE, TA_CENTER);
+     }
+   else
+      Text(bx, by, bw, bh, body, ink, TA_CENTER);
+  }
+
+void PaintSpeed(const int x, const int y, const int w, const int h, const SRollRow &row)
+  {
+   FillRound(x + 3, y + 4, w, h, Sx(10), C_SHADOW);
+   StrokeRound(x, y, w, h, Sx(10), C_LINE, C_CARD);
+   Font(InpFont, 11, FW_BOLD);
+   Text(x + Sx(14), y + Sx(10), w - Sx(28), Sx(18), "SPEED", C_ACCENT, TA_LEFT);
+   Font(InpFont, 10, FW_NORMAL);
+   Text(x + Sx(14), y + Sx(30), w - Sx(28), Sx(16),
+        RtTfLabel(g_set.speed_tf) + "  CCI " + IntegerToString(g_set.cci_len), C_MUTE, TA_LEFT);
+
+   const int bx = x + Sx(10);
+   const int by = y + Sx(52);
+   const int bw = w - Sx(20);
+   const int bh = InpShowValues ? Sx(48) : Sx(32);
+   string body = WaitText(RtTfLabel(g_set.speed_tf), row.have_cci, g_set.need_cci);
+   uint ink = C_MUTE;
+   if(row.ready)
+     {
+      body = RtSigned(row.cci_live, 1);
+      if(row.cci_live > 0.0)
+         ink = C_LONG;
+      else if(row.cci_live < 0.0)
+         ink = C_SHORT;
+     }
+   g_cv.FillRectangle(bx, by, bx + bw, by + bh, C_IDLE);
+   Font(InpFont, 14, FW_BOLD);
+   Text(bx, by, bw, InpShowMeter && row.ready ? Sx(26) : bh, body, ink, TA_CENTER);
+   if(InpShowMeter && row.ready)
+      PaintZeroBar(bx + Sx(8), by + bh - Sx(14), bw - Sx(16), Sx(8), row.cci_live);
+  }
+
+void PaintBanner(const int x, const int y, const int w, const int h, const SRollRow &row)
+  {
+   uint fill = C_HEAD;
+   uint ink = C_MUTE;
+   if(row.ready && row.state == RT_FIRE_LONG)
+     {
+      fill = C_LONG_FILL;
+      ink = C_LONG;
+     }
+   else if(row.ready && row.state == RT_FIRE_SHORT)
+     {
+      fill = C_SHORT_FILL;
+      ink = C_SHORT;
+     }
+   else if(row.ready && (row.state == RT_WAIT_LONG || row.state == RT_WAIT_SHORT))
+     {
+      fill = C_GOLD_FILL;
+      ink = C_GOLD;
+     }
+   FillRound(x, y, w, h, Sx(8), fill);
+   Font(InpFont, 12, FW_BOLD);
+   Text(x, y, w, h, RtBanner(row, g_set), ink, TA_CENTER);
+  }
+
+void PaintBoardRow(const int x, const int y, const int w, const int h, const SRollRow &row, const int rank,
+                   const int c0, const int c1, const int c2, const int c3, const int c4, const int c5,
+                   const int w0, const int w1, const int w2, const int w3, const int w4, const int w5)
+  {
+   string num = IntegerToString(rank);
+   if(rank < 10)
+      num = "0" + num;
+   Font(InpFont, 10, FW_BOLD);
+   Text(c0, y, w0, h, num, C_ACCENT, TA_CENTER);
+   Text(c1 + Sx(6), y, w1 - Sx(6), h, row.name, row.name == g_focus ? C_ACCENT : C_TEXT, TA_LEFT);
+
+   uint tide_ink = C_MUTE;
+   if(row.d1 == RT_ABOVE) tide_ink = C_LONG;
+   if(row.d1 == RT_BELOW) tide_ink = C_SHORT;
+   Font(InpFont, 9, FW_BOLD);
+   Text(c2, y, w2, h, RtTideWord(row.d1), tide_ink, TA_CENTER);
+
+   uint setup_fill = C_IDLE;
+   uint setup_ink = C_MUTE;
+   if(row.state == RT_FIRE_LONG)
+     {
+      setup_fill = C_LONG_FILL;
+      setup_ink = C_LONG;
+     }
+   else if(row.state == RT_FIRE_SHORT)
+     {
+      setup_fill = C_SHORT_FILL;
+      setup_ink = C_SHORT;
+     }
+   else if(row.state == RT_WAIT_LONG || row.state == RT_WAIT_SHORT)
+     {
+      setup_fill = C_GOLD_FILL;
+      setup_ink = C_GOLD;
+     }
+   const int pill = MathMin(w3 - Sx(12), Sx(96));
+   g_cv.FillRectangle(c3 + (w3 - pill) / 2, y + Sx(5), c3 + (w3 - pill) / 2 + pill, y + h - Sx(5), setup_fill);
+   Font(InpFont, 9, FW_BOLD);
+   Text(c3, y, w3, h, RtSetupWord(row.state), setup_ink, TA_CENTER);
+
+   PaintZeroBar(c4 + Sx(6), y + Sx(8), w4 - Sx(12), h - Sx(16), row.cci_live);
+
+   const double cci = row.cci_live;
+   uint cci_ink = C_MUTE;
+   if(cci > 0.0) cci_ink = C_LONG;
+   if(cci < 0.0) cci_ink = C_SHORT;
+   Font(InpFont, 10, FW_BOLD);
+   Text(c5, y, w5, h, row.ready ? RtSigned(cci, 1) : "—", cci_ink, TA_CENTER);
+  }
+
+string WaitText(const string tf, const int have, const int need)
+  {
+   int n = have;
+   if(n < 0)
+      n = 0;
+   return tf + " " + IntegerToString(n) + "/" + IntegerToString(need);
+  }
+
+void LocalXY(const int cx, const int cy, int &lx, int &ly)
+  {
+   if(InpFillWindow)
+     {
+      lx = cx;
+      ly = cy;
+      return;
+     }
+   const int cw = (int)ChartGetInteger(0, CHART_WIDTH_IN_PIXELS);
+   const int ch = (int)ChartGetInteger(0, CHART_HEIGHT_IN_PIXELS);
+   int left = g_px;
+   int top = g_py;
+   if(InpCorner == CORNER_RIGHT_UPPER || InpCorner == CORNER_RIGHT_LOWER)
+      left = cw - g_px - g_cv_w;
+   if(InpCorner == CORNER_LEFT_LOWER || InpCorner == CORNER_RIGHT_LOWER)
+      top = ch - g_py - g_cv_h;
+   lx = cx - left;
+   ly = cy - top;
+  }
+
+void HandleMouse(const int cx, const int cy, const string flags)
+  {
+   if(!InpDragPanel || InpFillWindow)
+      return;
+   const bool down = (StringFind(flags, "1") >= 0);
+   int lx, ly;
+   LocalXY(cx, cy, lx, ly);
+   if(!g_drag && down && lx >= 0 && ly >= 0 && lx < g_cv_w && ly < g_head_h)
+     {
+      g_drag = true;
+      g_drag_x = cx;
+      g_drag_y = cy;
+      return;
+     }
+   if(g_drag && down)
+     {
+      const int dx = cx - g_drag_x;
+      const int dy = cy - g_drag_y;
+      g_drag_x = cx;
+      g_drag_y = cy;
+      if(InpCorner == CORNER_RIGHT_UPPER || InpCorner == CORNER_RIGHT_LOWER)
+         g_px -= dx;
+      else
+         g_px += dx;
+      if(InpCorner == CORNER_LEFT_LOWER || InpCorner == CORNER_RIGHT_LOWER)
+         g_py -= dy;
+      else
+         g_py += dy;
+      if(g_px < 0) g_px = 0;
+      if(g_py < 0) g_py = 0;
+      EnsureCanvas(g_cv_w, g_cv_h);
+      return;
+     }
+   g_drag = false;
+  }
+
+void HandleClick(const int cx, const int cy)
+  {
+   if(!InpClickChart)
+      return;
+   int lx, ly;
+   LocalXY(cx, cy, lx, ly);
+   for(int i = 0; i < g_hits; i++)
+     {
+      if(ly >= g_hit_y0[i] && ly < g_hit_y1[i])
+        {
+         if(g_hit_sym[i] != "")
+           {
+            g_focus = g_hit_sym[i];
+            for(int k = 0; k < g_n; k++)
+              {
+               if(g_rows[k].name == g_focus)
+                  g_chart = k;
+              }
+            DrawHud();
+           }
+         return;
+        }
+     }
+  }
+
+bool EnsureCanvas(const int w, const int h)
+  {
+   const ENUM_BASE_CORNER corner = InpFillWindow ? CORNER_LEFT_UPPER : InpCorner;
+   const int px = InpFillWindow ? 0 : g_px;
+   const int py = InpFillWindow ? 0 : g_py;
+   const bool exists = (ObjectFind(0, HUD_NAME) >= 0 && g_cv_w > 0);
+   if(exists && MathAbs(w - g_cv_w) < 24 && MathAbs(h - g_cv_h) < 24)
+     {
+      ObjectSetInteger(0, HUD_NAME, OBJPROP_CORNER, corner);
+      ObjectSetInteger(0, HUD_NAME, OBJPROP_XDISTANCE, px);
+      ObjectSetInteger(0, HUD_NAME, OBJPROP_YDISTANCE, py);
+      ObjectSetInteger(0, HUD_NAME, OBJPROP_BACK, false);
+      ObjectSetInteger(0, HUD_NAME, OBJPROP_ZORDER, 1000);
+      return true;
+     }
+   g_cv.Destroy();
+   ObjectDelete(0, HUD_NAME);
+   if(!g_cv.CreateBitmapLabel(0, 0, HUD_NAME, px, py, w, h, COLOR_FORMAT_XRGB_NOALPHA))
+     {
+      Print("ROLLTIDE: canvas failed w=", w, " h=", h);
+      return false;
+     }
+   ObjectSetInteger(0, HUD_NAME, OBJPROP_CORNER, corner);
+   ObjectSetInteger(0, HUD_NAME, OBJPROP_XDISTANCE, px);
+   ObjectSetInteger(0, HUD_NAME, OBJPROP_YDISTANCE, py);
+   ObjectSetInteger(0, HUD_NAME, OBJPROP_SELECTABLE, false);
+   ObjectSetInteger(0, HUD_NAME, OBJPROP_HIDDEN, true);
+   ObjectSetInteger(0, HUD_NAME, OBJPROP_BACK, false);
+   ObjectSetInteger(0, HUD_NAME, OBJPROP_ZORDER, 1000);
+   g_cv_w = w;
+   g_cv_h = h;
+   return true;
+  }
+
+void PaintScan(const int w, const int h)
+  {
+   for(int y = 0; y < h; y += 4)
+      g_cv.Line(0, y, w, y, C_GRID);
+  }
+
+void PaintBrackets(const int x, const int y, const int w, const int h, const int len, const uint clr)
+  {
+   const int L = MathMax(6, len);
+   g_cv.Line(x, y, x + L, y, clr);
+   g_cv.Line(x, y, x, y + L, clr);
+   g_cv.Line(x + w - 1, y, x + w - 1 - L, y, clr);
+   g_cv.Line(x + w - 1, y, x + w - 1, y + L, clr);
+   g_cv.Line(x, y + h - 1, x + L, y + h - 1, clr);
+   g_cv.Line(x, y + h - 1, x, y + h - 1 - L, clr);
+   g_cv.Line(x + w - 1, y + h - 1, x + w - 1 - L, y + h - 1, clr);
+   g_cv.Line(x + w - 1, y + h - 1, x + w - 1, y + h - 1 - L, clr);
+  }
+
+void HudPanel(const int x, const int y, const int w, const int h)
+  {
+   g_cv.FillRectangle(x, y, x + w, y + h, C_CARD);
+   g_cv.Line(x, y, x + w, y, C_LINE);
+   g_cv.Line(x, y + h, x + w, y + h, C_LINE);
+   g_cv.Line(x, y, x, y + h, C_LINE);
+   g_cv.Line(x + w, y, x + w, y + h, C_LINE);
+  }
+
+void PaintZeroBar(const int x, const int y, const int w, const int h, const double cci)
+  {
+   if(w < 8 || h < 3)
+      return;
+   g_cv.FillRectangle(x, y, x + w, y + h, C_IDLE);
+   const int mid = x + w / 2;
+   g_cv.Line(mid, y, mid, y + h, C_ACCENT);
+   double scale = InpCciMeter;
+   if(scale < 20.0)
+      scale = 20.0;
+   double pct = MathAbs(cci) / scale;
+   if(pct > 1.0)
+      pct = 1.0;
+   const int span = MathMax(1, (int)MathRound((w / 2 - 1) * pct));
+   uint ink = C_MUTE;
+   if(cci > 0.0)
+      ink = C_LONG;
+   else if(cci < 0.0)
+      ink = C_SHORT;
+   if(cci >= 0.0)
+      g_cv.FillRectangle(mid, y + 1, mid + span, y + h - 1, ink);
+   else
+      g_cv.FillRectangle(mid - span, y + 1, mid, y + h - 1, ink);
+  }
+
+void FillRound(const int x, const int y, const int w, const int h, const int r, const uint clr)
+  {
+   if(w < 2 || h < 2)
+      return;
+   int rad = r;
+   if(rad * 2 > w)
+      rad = w / 2;
+   if(rad * 2 > h)
+      rad = h / 2;
+   if(rad < 1)
+     {
+      g_cv.FillRectangle(x, y, x + w - 1, y + h - 1, clr);
+      return;
+     }
+   g_cv.FillRectangle(x + rad, y, x + w - 1 - rad, y + h - 1, clr);
+   g_cv.FillRectangle(x, y + rad, x + rad, y + h - 1 - rad, clr);
+   g_cv.FillRectangle(x + w - 1 - rad, y + rad, x + w - 1, y + h - 1 - rad, clr);
+   g_cv.FillCircle(x + rad, y + rad, rad, clr);
+   g_cv.FillCircle(x + w - 1 - rad, y + rad, rad, clr);
+   g_cv.FillCircle(x + rad, y + h - 1 - rad, rad, clr);
+   g_cv.FillCircle(x + w - 1 - rad, y + h - 1 - rad, rad, clr);
+  }
+
+void StrokeRound(const int x, const int y, const int w, const int h,
+                 const int r, const uint border, const uint inner)
+  {
+   FillRound(x, y, w, h, r, border);
+   FillRound(x + 1, y + 1, w - 2, h - 2, MathMax(1, r - 1), inner);
+  }
+
+void Font(const string face, const int px, const uint weight)
+  {
+   const int size = -MathMax(100, Sx(px) * 10);
+   if(!g_cv.FontSet("Arial", size, weight))
+      g_cv.FontSet("Arial", -140, 0);
+  }
+
+void Text(const int x, const int y, const int w, const int h,
+          const string s, const uint clr, const uint align)
+  {
+   if(s == "")
+      return;
+   int tw = g_cv.TextWidth(s);
+   if(tw <= 0)
+      tw = StringLen(s) * Sx(8);
+   int tx = x + 2;
+   if((align & TA_CENTER) == TA_CENTER)
+      tx = x + (w - tw) / 2;
+   else if((align & TA_RIGHT) == TA_RIGHT)
+      tx = x + w - tw - 2;
+   int ty = y + MathMax(0, (h - Sx(16)) / 2);
+   g_cv.TextOut(tx, ty, s, clr, TA_LEFT | TA_TOP);
+  }
+
+
+.mqh
+// ROLLTIDE — live forming bar. Typical price by default.
+// RSI vs SMA(shift) on that RSI. D1 tide, 1H current, 5m rip, 15m CCI speed.
+
+#ifndef ROLLTIDE_MQH
+#define ROLLTIDE_MQH
+
+#define RT_MAX_SYMS      80
+
+#define RT_DEAD          0
+#define RT_ABOVE         1
+#define RT_BELOW        -1
+
+#define RT_FLAT          0
+#define RT_FIRE_LONG     1
+#define RT_FIRE_SHORT   -1
+#define RT_WAIT_LONG     2
+#define RT_WAIT_SHORT   -2
+#define RT_BLOCK_BUY     3
+#define RT_BLOCK_SELL   -3
+
+struct SRollSet
+  {
+   ENUM_TIMEFRAMES     tide_tf;
+   ENUM_TIMEFRAMES     hour_tf;
+   ENUM_TIMEFRAMES     rip_tf;
+   ENUM_TIMEFRAMES     speed_tf;
+   int                 rsi_len;
+   int                 sma_len;
+   int                 shift;
+   ENUM_MA_METHOD      ma_method;
+   ENUM_APPLIED_PRICE  price;
+   int                 cci_len;
+   ENUM_APPLIED_PRICE  cci_price;
+   int                 need_rsi;
+   int                 need_cci;
+   string              csv_name;
+  };
+
+struct SRollRow
+  {
+   string name;
+   bool   ready;
+   int    d1;
+   int    h1;
+   int    m5;
+   int    state;
+   int    prev_state;
+   double rsi_d1;
+   double rsi_h1;
+   double rsi_m5;
+   double sh_d1;
+   double sh_h1;
+   double sh_m5;
+   double cci_live;
+   double cci_lock;
+   bool   locked;
+   int    h_d1;
+   int    h_d1m;
+   int    h_h1;
+   int    h_h1m;
+   int    h_m5;
+   int    h_m5m;
+   int    h_cci;
+   int    have_d1;
+   int    have_h1;
+   int    have_m5;
+   int    have_cci;
+  };
+
+void RtPrepSet(SRollSet &s)
+  {
+   if(s.rsi_len < 2)
+      s.rsi_len = 2;
+   if(s.sma_len < 1)
+      s.sma_len = 1;
+   if(s.shift < 0)
+      s.shift = 0;
+   if(s.cci_len < 2)
+      s.cci_len = 2;
+   s.need_rsi = s.rsi_len + s.sma_len + s.shift + 2;
+   s.need_cci = s.cci_len + 2;
+  }
+
+int RtSplitList(const string text, string &out[])
+  {
+   string t = text;
+   StringTrimLeft(t);
+   StringTrimRight(t);
+   if(t == "")
+     {
+      ArrayResize(out, 0);
+      return 0;
+     }
+   string parts[];
+   int n = StringSplit(t, ',', parts);
+   int k = 0;
+   ArrayResize(out, n);
+   for(int i = 0; i < n; i++)
+     {
+      StringTrimLeft(parts[i]);
+      StringTrimRight(parts[i]);
+      if(parts[i] != "")
+        {
+         out[k] = parts[i];
+         k++;
+        }
+     }
+   ArrayResize(out, k);
+   return k;
+  }
+
+string RtTfLabel(const ENUM_TIMEFRAMES tf)
+  {
+   switch(tf)
+     {
+      case PERIOD_M1:  return "1M";
+      case PERIOD_M2:  return "2M";
+      case PERIOD_M3:  return "3M";
+      case PERIOD_M4:  return "4M";
+      case PERIOD_M5:  return "5M";
+      case PERIOD_M6:  return "6M";
+      case PERIOD_M10: return "10M";
+      case PERIOD_M12: return "12M";
+      case PERIOD_M15: return "15M";
+      case PERIOD_M20: return "20M";
+      case PERIOD_M30: return "30M";
+      case PERIOD_H1:  return "1H";
+      case PERIOD_H2:  return "2H";
+      case PERIOD_H3:  return "3H";
+      case PERIOD_H4:  return "4H";
+      case PERIOD_H6:  return "6H";
+      case PERIOD_H8:  return "8H";
+      case PERIOD_H12: return "12H";
+      case PERIOD_D1:  return "1D";
+      case PERIOD_W1:  return "1W";
+      case PERIOD_MN1: return "MN";
+     }
+   return IntegerToString((int)tf);
+  }
+
+string RtPriceWord(const ENUM_APPLIED_PRICE p)
+  {
+   if(p == PRICE_TYPICAL)
+      return "typical";
+   if(p == PRICE_CLOSE)
+      return "close";
+   if(p == PRICE_MEDIAN)
+      return "median";
+   if(p == PRICE_WEIGHTED)
+      return "weighted";
+   if(p == PRICE_OPEN)
+      return "open";
+   return "price";
+  }
+
+int RtClock(const double rsi, const double shadow)
+  {
+   if(!MathIsValidNumber(rsi) || !MathIsValidNumber(shadow))
+      return RT_DEAD;
+   if(rsi > shadow)
+      return RT_ABOVE;
+   if(rsi < shadow)
+      return RT_BELOW;
+   return RT_DEAD;
+  }
+
+int RtState(const int d1, const int h1, const int m5)
+  {
+   const bool setup_buy  = (h1 == RT_ABOVE && m5 == RT_BELOW);
+   const bool setup_sell = (h1 == RT_BELOW && m5 == RT_ABOVE);
+   if(d1 == RT_ABOVE && setup_buy)
+      return RT_FIRE_LONG;
+   if(d1 == RT_BELOW && setup_sell)
+      return RT_FIRE_SHORT;
+   if(d1 == RT_ABOVE && setup_sell)
+      return RT_BLOCK_SELL;
+   if(d1 == RT_BELOW && setup_buy)
+      return RT_BLOCK_BUY;
+   if(d1 == RT_ABOVE && h1 == RT_ABOVE)
+      return RT_WAIT_LONG;
+   if(d1 == RT_BELOW && h1 == RT_BELOW)
+      return RT_WAIT_SHORT;
+   return RT_FLAT;
+  }
+
+int RtBucket(const int state)
+  {
+   if(state == RT_FIRE_LONG || state == RT_FIRE_SHORT)
+      return 0;
+   if(state == RT_WAIT_LONG || state == RT_WAIT_SHORT)
+      return 1;
+   if(state == RT_BLOCK_BUY || state == RT_BLOCK_SELL)
+      return 2;
+   return 3;
+  }
+
+bool RtIsFire(const int state)
+  {
+   return (state == RT_FIRE_LONG || state == RT_FIRE_SHORT);
+  }
+
+double RtSortCci(const SRollRow &row)
+  {
+   return row.cci_live;
+  }
+
+string RtSideWord(const int state)
+  {
+   if(state == RT_FIRE_LONG)
+      return "LONG";
+   if(state == RT_FIRE_SHORT)
+      return "SHORT";
+   return "";
+  }
+
+string RtSetupWord(const int state)
+  {
+   if(state == RT_FIRE_LONG)
+      return "LONG";
+   if(state == RT_FIRE_SHORT)
+      return "SHORT";
+   if(state == RT_WAIT_LONG || state == RT_WAIT_SHORT)
+      return "WAIT RIP";
+   if(state == RT_BLOCK_BUY || state == RT_BLOCK_SELL)
+      return "BLOCKED";
+   return "—";
+  }
+
+string RtTideWord(const int d1)
+  {
+   if(d1 == RT_ABOVE)
+      return "BUY ONLY";
+   if(d1 == RT_BELOW)
+      return "SELL ONLY";
+   return "—";
+  }
+
+string RtDirWord(const int side)
+  {
+   if(side == RT_ABOVE)
+      return "ABOVE";
+   if(side == RT_BELOW)
+      return "BELOW";
+   return "—";
+  }
+
+string RtSigned(const double v, const int digits)
+  {
+   if(v > 0.0)
+      return "+" + DoubleToString(v, digits);
+   return DoubleToString(v, digits);
+  }
+
+string RtBanner(const SRollRow &row, const SRollSet &set)
+  {
+   const string rip = RtTfLabel(set.rip_tf);
+   const string tide = RtTfLabel(set.tide_tf);
+   if(!row.ready)
+      return "LOADING CLOCKS…";
+   if(row.state == RT_FIRE_LONG)
+      return "FIRE LONG  ·  TIDE + CURRENT + RIP";
+   if(row.state == RT_FIRE_SHORT)
+      return "FIRE SHORT  ·  TIDE + CURRENT + RIP";
+   if(row.state == RT_WAIT_LONG)
+      return "WAIT " + rip + " DIP  ·  HOUR IS UP";
+   if(row.state == RT_WAIT_SHORT)
+      return "WAIT " + rip + " POP  ·  HOUR IS DOWN";
+   if(row.state == RT_BLOCK_SELL)
+      return tide + " BLOCKS SELL";
+   if(row.state == RT_BLOCK_BUY)
+      return tide + " BLOCKS BUY";
+   return "NO FIRE  ·  WAIT";
+  }
+
+void RtClearRow(SRollRow &row)
+  {
+   row.name = "";
+   row.ready = false;
+   row.d1 = RT_DEAD;
+   row.h1 = RT_DEAD;
+   row.m5 = RT_DEAD;
+   row.state = RT_FLAT;
+   row.prev_state = RT_FLAT;
+   row.rsi_d1 = 0.0;
+   row.rsi_h1 = 0.0;
+   row.rsi_m5 = 0.0;
+   row.sh_d1 = 0.0;
+   row.sh_h1 = 0.0;
+   row.sh_m5 = 0.0;
+   row.cci_live = 0.0;
+   row.cci_lock = 0.0;
+   row.locked = false;
+   row.h_d1 = INVALID_HANDLE;
+   row.h_d1m = INVALID_HANDLE;
+   row.h_h1 = INVALID_HANDLE;
+   row.h_h1m = INVALID_HANDLE;
+   row.h_m5 = INVALID_HANDLE;
+   row.h_m5m = INVALID_HANDLE;
+   row.h_cci = INVALID_HANDLE;
+   row.have_d1 = 0;
+   row.have_h1 = 0;
+   row.have_m5 = 0;
+   row.have_cci = 0;
+  }
+
+void RtKillHandle(int &h)
+  {
+   if(h != INVALID_HANDLE)
+     {
+      IndicatorRelease(h);
+      h = INVALID_HANDLE;
+     }
+  }
+
+void RtReleaseRow(SRollRow &row)
+  {
+   RtKillHandle(row.h_d1);
+   RtKillHandle(row.h_d1m);
+   RtKillHandle(row.h_h1);
+   RtKillHandle(row.h_h1m);
+   RtKillHandle(row.h_m5);
+   RtKillHandle(row.h_m5m);
+   RtKillHandle(row.h_cci);
+  }
+
+int RtMakeRsi(const string symbol, const ENUM_TIMEFRAMES tf, const SRollSet &set)
+  {
+   return iRSI(symbol, tf, set.rsi_len, set.price);
+  }
+
+int RtMakeMa(const string symbol, const ENUM_TIMEFRAMES tf, const int rsi_handle, const SRollSet &set)
+  {
+   return iMA(symbol, tf, set.sma_len, set.shift, set.ma_method, rsi_handle);
+  }
+
+bool RtBindRow(SRollRow &row, const string symbol, const SRollSet &set)
+  {
+   RtClearRow(row);
+   row.name = symbol;
+   if(!SymbolSelect(symbol, true))
+      return false;
+   row.h_d1  = RtMakeRsi(symbol, set.tide_tf, set);
+   row.h_d1m = RtMakeMa(symbol, set.tide_tf, row.h_d1, set);
+   row.h_h1  = RtMakeRsi(symbol, set.hour_tf, set);
+   row.h_h1m = RtMakeMa(symbol, set.hour_tf, row.h_h1, set);
+   row.h_m5  = RtMakeRsi(symbol, set.rip_tf, set);
+   row.h_m5m = RtMakeMa(symbol, set.rip_tf, row.h_m5, set);
+   row.h_cci = iCCI(symbol, set.speed_tf, set.cci_len, set.cci_price);
+   if(row.h_d1 == INVALID_HANDLE || row.h_d1m == INVALID_HANDLE
+      || row.h_h1 == INVALID_HANDLE || row.h_h1m == INVALID_HANDLE
+      || row.h_m5 == INVALID_HANDLE || row.h_m5m == INVALID_HANDLE
+      || row.h_cci == INVALID_HANDLE)
+     {
+      RtReleaseRow(row);
+      return false;
+     }
+   return true;
+  }
+
+bool RtReadPair(const int h_rsi, const int h_ma, const int need,
+                double &now, double &shadow, int &have)
+  {
+   now = 0.0;
+   shadow = 0.0;
+   const int a = BarsCalculated(h_rsi);
+   const int b = BarsCalculated(h_ma);
+   have = MathMin(a, b);
+   if(have < need)
+      return false;
+   double rsi[], ma[];
+   ArraySetAsSeries(rsi, true);
+   ArraySetAsSeries(ma, true);
+   if(CopyBuffer(h_rsi, 0, 0, 1, rsi) < 1)
+      return false;
+   if(CopyBuffer(h_ma, 0, 0, 1, ma) < 1)
+      return false;
+   if(rsi[0] == EMPTY_VALUE || ma[0] == EMPTY_VALUE)
+      return false;
+   if(!MathIsValidNumber(rsi[0]) || !MathIsValidNumber(ma[0]))
+      return false;
+   now = rsi[0];
+   shadow = ma[0];
+   return true;
+  }
+
+bool RtReadCci(const int handle, const int need, double &cci, int &have)
+  {
+   cci = 0.0;
+   have = BarsCalculated(handle);
+   if(have < need)
+      return false;
+   double buf[];
+   ArraySetAsSeries(buf, true);
+   if(CopyBuffer(handle, 0, 0, 1, buf) < 1)
+      return false;
+   if(buf[0] == EMPTY_VALUE || !MathIsValidNumber(buf[0]))
+      return false;
+   cci = buf[0];
+   return true;
+  }
+
+void RtScoreRow(SRollRow &row, const SRollSet &set)
+  {
+   double d1_now, d1_sh, h1_now, h1_sh, m5_now, m5_sh, cci;
+   const bool ok_d1 = RtReadPair(row.h_d1, row.h_d1m, set.need_rsi, d1_now, d1_sh, row.have_d1);
+   const bool ok_h1 = RtReadPair(row.h_h1, row.h_h1m, set.need_rsi, h1_now, h1_sh, row.have_h1);
+   const bool ok_m5 = RtReadPair(row.h_m5, row.h_m5m, set.need_rsi, m5_now, m5_sh, row.have_m5);
+   const bool ok_cci = RtReadCci(row.h_cci, set.need_cci, cci, row.have_cci);
+
+   row.ready = (ok_d1 && ok_h1 && ok_m5 && ok_cci);
+   if(!row.ready)
+     {
+      row.d1 = RT_DEAD;
+      row.h1 = RT_DEAD;
+      row.m5 = RT_DEAD;
+      row.state = RT_FLAT;
+      return;
+     }
+
+   row.rsi_d1 = d1_now;
+   row.rsi_h1 = h1_now;
+   row.rsi_m5 = m5_now;
+   row.sh_d1 = d1_sh;
+   row.sh_h1 = h1_sh;
+   row.sh_m5 = m5_sh;
+   row.cci_live = cci;
+   row.d1 = RtClock(d1_now, d1_sh);
+   row.h1 = RtClock(h1_now, h1_sh);
+   row.m5 = RtClock(m5_now, m5_sh);
+   row.state = RtState(row.d1, row.h1, row.m5);
+
+   if(RtIsFire(row.state) && !row.locked)
+     {
+      row.cci_lock = cci;
+      row.locked = true;
+     }
+   if(!RtIsFire(row.state))
+      row.locked = false;
+  }
+
+bool RtWorse(const SRollRow &a, const SRollRow &b)
+  {
+   const double da = MathAbs(RtSortCci(a));
+   const double db = MathAbs(RtSortCci(b));
+   if(da != db)
+      return (da < db);
+   return (RtBucket(a.state) > RtBucket(b.state));
+  }
+
+void RtSortRows(SRollRow &rows[], const int n)
+  {
+   for(int i = 0; i < n; i++)
+     {
+      for(int j = i + 1; j < n; j++)
+        {
+         if(RtWorse(rows[i], rows[j]))
+           {
+            SRollRow tmp = rows[i];
+            rows[i] = rows[j];
+            rows[j] = tmp;
+           }
+        }
+     }
+  }
+
+void RtWriteSignal(const SRollRow &row, const string file_name)
+  {
+   const string side = RtSideWord(row.state);
+   if(side == "" || file_name == "")
+      return;
+   const int flags = FILE_READ | FILE_WRITE | FILE_TXT | FILE_ANSI | FILE_SHARE_READ | FILE_SHARE_WRITE;
+   int h = FileOpen(file_name, flags);
+   if(h == INVALID_HANDLE)
+      h = FileOpen(file_name, FILE_WRITE | FILE_TXT | FILE_ANSI);
+   if(h == INVALID_HANDLE)
+      return;
+   if(FileSize(h) == 0)
+      FileWriteString(h, "time,symbol,side,cci,rsi_tide,rsi_hour,rsi_rip\n");
+   FileSeek(h, 0, SEEK_END);
+   string line = TimeToString(TimeLocal(), TIME_DATE | TIME_SECONDS)
+                 + "," + row.name
+                 + "," + side
+                 + "," + DoubleToString(row.cci_lock, 2)
+                 + "," + DoubleToString(row.rsi_d1, 2)
+                 + "," + DoubleToString(row.rsi_h1, 2)
+                 + "," + DoubleToString(row.rsi_m5, 2)
+                 + "\n";
+   FileWriteString(h, line);
+   FileClose(h);
+  }
+
+#endif

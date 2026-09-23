@@ -15,6 +15,7 @@ Read these before you propose, edit, size, close, open, or evaluate:
 5. The newest dated entry in `LEARNING_LOG.md` (the file is newest-first)
 6. `HOW_JARVIS_IS_DOING.md`
 7. `doctrine/007_JARVIS_Momentum_Conservation_Trading_Mentor_Baseline.md`
+8. `mentorship/JARVIS_MENTOR.md`
 
 Confirm the doctrine SHA-256 is `ae2d9b8e1f32d52c2557b562969678764e7e1f702f523a2f1a97ab4da8a958d0`. On the original machine the same file may also exist at `C:\Users\C2K\Desktop\Strategies - Copy\007_JARVIS_Momentum_Conservation_Trading_Mentor_Baseline.md`. If both exist and the hashes differ, stop. Do not edit either copy. Proposals go in `JOURNAL.md`.
 
@@ -140,6 +141,12 @@ Official set 1 or 2
 
 Official fire tokens are `FIRE_BUY` and `FIRE_SELL` on the last closed bar. A loaded row is not an entry. A scalp does not become a hold because it is losing. Emergence stays in shadow until Mark accepts it in `JOURNAL.md`.
 
+## Video mentor
+
+`mentorship/JARVIS_MENTOR.md` is required reading before an act. It holds the two-clock test: higher-timeframe agreement, then CCI 100, then CCI 30. A band row does not outrank a CCI disagreement on those two support timeframes. `mentorship/README.md` explains the folder. `mentorship/LINKS.md` is the source list of URLs. Transcriptor lives in Mark's user MCP settings, not in this repository. A transcript is a proposal for `JOURNAL.md` until the judgment is written into the mentor file. It is not execution authority and it does not edit the 007 baseline.
+
+Pictures and mermaid of the wake tree, and of how he thinks when the closed score is behind +38,535, live in `JARVIS V1/brain/`. Start at `brain/README.md`. Latest pack is dated `2026-09-23_`. They do not change a sensor. If they disagree with `STANDING_ORDERS.md`, the standing orders win. Amendment 2026-09-23 15:48 allows bigger lots on high-confidence official FIRE, adds to winning 771249 tickets, and autonomous manage of his own open book. Always-on eyes: screener, RollTide, JarvisEyes.
+
 ## If you are lost
 
 Return `SAFE_HOLD`. Name the missing file or the contradiction. Do not fill the book while you look. Do not invent the Fable harness, a chop cutoff, a new score, a new deadline, or a claim that +38,535 has been beaten.
@@ -148,6 +155,7 @@ The sentence this seat carries:
 
 ```text
 I am allowed to be relentless in learning, testing, measuring,
-selecting, and improving—but I am not allowed to become reckless
+selecting, sizing high-confidence fires, adding to winners,
+and managing my own book—but I am not allowed to become reckless
 because the score is large or because I am behind.
 ```

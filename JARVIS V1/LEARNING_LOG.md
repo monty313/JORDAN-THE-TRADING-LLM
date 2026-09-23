@@ -2,6 +2,76 @@
 
 Supervisor record. Each entry has the time, the goal of the work, and what success and failure taught relative to intuition. Demo account only. This file does not change doctrine and does not place orders. The operating order is `STANDING_ORDERS.md`. The folder map is `README.md`.
 
+## 2026-09-23 15:48 America/New_York
+
+**Goal of this pass.** Date the brain folder, and write the score loop the way Mark just allowed it to work.
+
+**Lesson.** The miss was size, not vision. The metal sells and other keep10 winners paid, and they stayed 1.0 lot. High-confidence official fires may now take a bigger lot to compete with +38,535. A winning 771249 ticket may be added to while the original story is still true. He may manage his own open book at any time. The goal is an autonomous demo desk. Client tickets stay untouched. 100 lots stay forbidden. A live account stays off unless named. He was always allowed to read Mark's screener, RollTide.mq5 / rolltide.csv, and JarvisEyes.mq5 / board.csv. Official act still comes from S1–S4 on the JarvisEyes closed bar. No ticket was sent in this pass.
+
+**Written down.** `JARVIS V1/brain/` dated pack. Standing-orders amendment 15:48. `desk_state.md`. This entry. `JOURNAL.md` accepted row.
+
+**Next.** On the next wake that sees a still-valid official FIRE or a winning 771249 ticket, size and add are legal acts after a fresh book read.
+
+## 2026-09-23 01:36 America/New_York
+
+**Goal of this pass.** Make the mentor file part of the boot, so a market answer cannot skip it.
+
+**Lesson.** The file existed and the last chat used it once. The seat did not require it. `AGENTS.md`, the next-LLM contract, the continuity checklist, the standing orders, and the always-on eyes rule now load `mentorship/JARVIS_MENTOR.md` after the baseline. The two-clock test is in force. A missing mentor file is `SAFE_HOLD`. The baseline hash is unchanged. No ticket.
+
+**Written down.** Those boot files, `desk_state.md`, and standing-orders amendment 01:36.
+
+**Next.** The next market answer reads the mentor file before it names an act.
+
+## 2026-09-23 01:10 America/New_York
+
+**Goal of this pass.** Put the mentorship into one file a later model can teach from, without editing the baseline.
+
+**Lesson.** The sensor contract stays the 007 file, hash unchanged. The mentor file adds what that contract does not: the two-clock test that tells a pullback from a continuation, the judgment on both teachers, the refused periods, the score, and the GBPCHF bar that died at 1.09404. Path: `mentorship/JARVIS_MENTOR.md`.
+
+**Written down.** That file. Pointers in `mentorship/README.md`, `LINKS.md`, `JOURNAL.md`, and the two notes.
+
+**Next.** A market answer still reads the seat files and the live board. This file does not send.
+
+## 2026-09-23 01:07 America/New_York
+
+**Goal of this pass.** File mentor 2 and judge whether it gives Jarvis a better continuation or pullback entry.
+
+**Lesson.** Mark's notes are the part that helps. CCI 100 leads. CCI 30 times the swing. Two timeframes tell a pullback from a continuation: the higher frame is the force, the lower frame is either against it (pullback) or already with it (continuation). The fractal video is a breakout of a 9-candle fractal and does not light L4. The double-CCI video's own settings are 25, 50, and a 34 EMA; those are not the desk. The dual-MACD numbers and the 0.5-deviation band are recipes. No ticket.
+
+**Written down.** `mentorship/notes/2026-09-23_mentor_2.md`, `mentorship/LINKS.md`, `mentorship/JOURNAL.md`, a proposed journal row.
+
+**Next.** A test ticket still needs a fresh set 1 or 2 row where CCI 100 and the higher timeframe agree, and CCI 30 shows either the rejoin or the cross back. Do not enter from a fractal or a MACD cross alone.
+
+## 2026-09-23 00:36 America/New_York
+
+**Goal of this pass.** Judge the pullback mentor on the live demo board and send one test ticket if the entry was still there.
+
+**Lesson.** The useful part is the filter: higher-timeframe pullback, not a chase, not a Fibonacci recipe. GBPCHF set 1 S2 was that sell on the 07:36 bar. The terminal ran out of memory before the order, and the next bid was 1.09404, through the kill at 1.09403. No ticket. The open 10-lot book, floating about −12,638, was not this test and was not touched.
+
+**Written down.** `mentorship/JOURNAL.md`.
+
+**Next.** The next pullback test waits for a fresh set 1 or 2 S1 or S2 pullback on a symbol that is not already held, with the bid still on the right side of the kill. Do not reuse the 07:36 GBPCHF bar.
+
+## 2026-09-23 00:31 America/New_York
+
+**Goal of this pass.** File the video Mark pasted and say what it teaches, without turning it into an order.
+
+**Lesson.** The three links are one video, id `GSkB2hPkoAU`, 35 minutes, channel Com Lucro Trader, title "David Paul's 3 Trading Rules Explained with ICT and Smart Money Concepts." The spoken rules are: the good trade is a hard trade; fade the short-term trend in the direction of the long-term trend; put the entry where the masses put their stops. The channel explains those with liquidity sweeps, premium and discount, and a 70.5% Fibonacci limit. That explanation agrees with waiting for a higher-timeframe pullback. It does not add a cutoff, a fair-value-gap fire, or a ticket. Sample of videos is one. A title is not a backtest.
+
+**Written down.** `mentorship/LINKS.md`, `mentorship/notes/2026-09-23_david_paul_three_rules.md`, a proposed row in `JOURNAL.md`.
+
+**Next.** Leave the row proposed until Mark accepts or rejects it. Do not trade the Euro-dollar example from the video.
+
+## 2026-09-23 00:28 America/New_York
+
+**Goal of this pass.** Give Jarvis a place to study a human teacher on video, without letting that video trade.
+
+**Lesson.** Transcriptor can read a transcript, chapters, and a still frame. It does not play the video, and it does not become the 007 baseline. The connector was added to Mark's user MCP file, not the public project file. No link has been supplied yet. `mentorship/LINKS.md` stays empty until he pastes one. A lesson from a video is a journal proposal. New orders stay SAFE_HOLD.
+
+**Written down.** `mentorship/README.md`, `mentorship/LINKS.md`, standing-orders amendment 00:28.
+
+**Next.** Wait for the links. Do not invent a teacher.
+
 ## 2026-09-22 22:20 America/New_York
 
 **Goal of this pass.** Seal the desk into git so another computer, on another day, still boots this Jarvis. Tell Mark and the next model how the desk is actually doing.
