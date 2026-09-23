@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "mt5-terminal": {
+      "url": "http://127.0.0.1:22344/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:MT5_MCP_TOKEN}"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+Mark order, 2026-09-22 05:43 America/New_York.
+
+Demo round-trips for magic 771249 close five minutes after the fill.
+Do not attach a stop loss. Do not attach a take profit.
+Do not call ProtectiveSL. Do not pass a stop into Buy or Sell.
+The only exit is PositionClose / trade_close_single_position at five minutes.
+Volume stays 0.01. Demo account only. Unsuffixed symbols.
+
+Selection, 2026-09-22 06:06. Open only when the board act is FIRE_BUY or FIRE_SELL and the reason is not emerged_no_edge. fire_long=0 on a short row is the long flag, not a failed fire. Skip when spread divided by the signal bar high-low is above 0.25.

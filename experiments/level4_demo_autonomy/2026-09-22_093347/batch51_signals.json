@@ -1,0 +1,397 @@
+[
+  {
+    "signal_id": "20260922T155903Z_USDCAD_3_S3_1",
+    "cycle_id": "20260922T155903Z",
+    "slot": 1,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T15:59:03Z",
+    "timestamp_broker": "2026.09.22 18:59:03",
+    "timestamp_ny": "2026-09-22T11:59:03-04:00",
+    "symbol": "USDCAD",
+    "set_id": 3,
+    "anchor_tf": "M15",
+    "htf1": "H1",
+    "htf2": "H4",
+    "anchor_closed_bar_time": "2026.09.22 18:30:00",
+    "data_age_seconds": 1743,
+    "spread_points": 1,
+    "spread_price": 1e-05,
+    "point_size": 1e-05,
+    "digits": 5,
+    "research_direction": "BUY",
+    "research_confidence_0_100": 50,
+    "research_topology": "forced_quote_roundtrip",
+    "strategy_alignment": "S3",
+    "tide": "long_only",
+    "regime": "bull_trend",
+    "ltf_state": "forced",
+    "role_map": {
+      "force": [
+        "Forced Level4 five \u2014 thin FIRE board not allowed to skip"
+      ],
+      "inertia": [
+        "Board/act FIRE_BUY"
+      ],
+      "velocity": [
+        "px=ohlc;bar=1;tide=long_only;body_long=1;body_short=0;close_long=1;rail_hi=1.40659;rail_lo=1.40587;o=1.40672;c=1.40725;official_act=FIRE_BUY;phase=momentum;best=momentum;best_n=14;best_mean=0.00017000;emerged=0"
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Forced act FIRE_BUY",
+      "Tradeable demo FX quote"
+    ],
+    "raw_snapshot": {
+      "open": 1.40672,
+      "high": 1.4073,
+      "low": 1.40658,
+      "close": 1.40725,
+      "cmp": "px=ohlc;bar=1;tide=long_only;body_long=1;body_short=0;close_long=1;rail_hi=1.40659;rail_lo=1.40587;o=1.40672;c=1.40725;official_act=FIRE_BUY;phase=momentum;best=momentum;best_n=14;best_mean=0.00017000;emerged=0",
+      "live_bid": 1.40723,
+      "live_ask": 1.40724,
+      "planned_sl": 1.40644,
+      "planned_sl_points": 80,
+      "sl_tier": "major",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Forced research BUY USDCAD; act=FIRE_BUY. Five-minute demo; SL 80 pts (abort override: thin FIRE board).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; L6c forced five"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 1.40723,
+    "entry_ask": 1.40724,
+    "entry_executable_price": 1.40724,
+    "planned_stop": 1.40644,
+    "evaluation_due_utc": "2026-09-22T16:04:03Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-forced-five-l6c"
+  },
+  {
+    "signal_id": "20260922T155903Z_EURCHF_3_S2_2",
+    "cycle_id": "20260922T155903Z",
+    "slot": 2,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T15:59:03Z",
+    "timestamp_broker": "2026.09.22 18:59:03",
+    "timestamp_ny": "2026-09-22T11:59:03-04:00",
+    "symbol": "EURCHF",
+    "set_id": 3,
+    "anchor_tf": "M15",
+    "htf1": "H1",
+    "htf2": "H4",
+    "anchor_closed_bar_time": "2026.09.22 18:30:00",
+    "data_age_seconds": 1743,
+    "spread_points": 2,
+    "spread_price": 2e-05,
+    "point_size": 1e-05,
+    "digits": 5,
+    "research_direction": "SELL",
+    "research_confidence_0_100": 50,
+    "research_topology": "forced_quote_roundtrip",
+    "strategy_alignment": "S2",
+    "tide": "short_only",
+    "regime": "bear_trend",
+    "ltf_state": "forced",
+    "role_map": {
+      "force": [
+        "Forced Level4 five \u2014 thin FIRE board not allowed to skip"
+      ],
+      "inertia": [
+        "Board/act FIRE_SELL"
+      ],
+      "velocity": [
+        "px=close;bar=1;tide=short_only;struct_long=0;struct_short=1;load_long=0;load_short=1;fire_long=0;fire_short=0;close=0.93974;mid10=0.939332;mid100=0.940803;sma50=0.940081;official_act=WAIT_LOADED;phase=pullback;best=pullback;best_n=10;best_mean=0.00001400;emerged=1"
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Forced act FIRE_SELL",
+      "Tradeable demo FX quote"
+    ],
+    "raw_snapshot": {
+      "open": 0.93961,
+      "high": 0.93977,
+      "low": 0.93951,
+      "close": 0.93974,
+      "cmp": "px=close;bar=1;tide=short_only;struct_long=0;struct_short=1;load_long=0;load_short=1;fire_long=0;fire_short=0;close=0.93974;mid10=0.939332;mid100=0.940803;sma50=0.940081;official_act=WAIT_LOADED;phase=pullback;best=pullback;best_n=10;best_mean=0.00001400;emerged=1",
+      "live_bid": 0.93957,
+      "live_ask": 0.93959,
+      "planned_sl": 0.94037,
+      "planned_sl_points": 80,
+      "sl_tier": "major",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Forced research SELL EURCHF; act=FIRE_SELL. Five-minute demo; SL 80 pts (abort override: thin FIRE board).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; L6c forced five"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 0.93957,
+    "entry_ask": 0.93959,
+    "entry_executable_price": 0.93957,
+    "planned_stop": 0.94037,
+    "evaluation_due_utc": "2026-09-22T16:04:03Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-forced-five-l6c"
+  },
+  {
+    "signal_id": "20260922T155903Z_EURGBP_1_S1_3",
+    "cycle_id": "20260922T155903Z",
+    "slot": 3,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T15:59:03Z",
+    "timestamp_broker": "2026.09.22 18:59:03",
+    "timestamp_ny": "2026-09-22T11:59:03-04:00",
+    "symbol": "EURGBP",
+    "set_id": 1,
+    "anchor_tf": "M1",
+    "htf1": "M15",
+    "htf2": "M30",
+    "anchor_closed_bar_time": "2026.09.22 18:56:00",
+    "data_age_seconds": 183,
+    "spread_points": 2,
+    "spread_price": 2e-05,
+    "point_size": 1e-05,
+    "digits": 5,
+    "research_direction": "BUY",
+    "research_confidence_0_100": 50,
+    "research_topology": "forced_quote_roundtrip",
+    "strategy_alignment": "S1",
+    "tide": "long_only",
+    "regime": "bull_trend",
+    "ltf_state": "forced",
+    "role_map": {
+      "force": [
+        "Forced Level4 five \u2014 thin FIRE board not allowed to skip"
+      ],
+      "inertia": [
+        "Board/act FORCED_TIDE_LONG"
+      ],
+      "velocity": [
+        "px=typical;bar=1;tide=long_only;slow_ok_long=0;load_long=0;fire_long=0;load_short=0;fire_short=0;cci30=80.3247;sma=93.2145;cci30_prev=81.6693"
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Forced act FORCED_TIDE_LONG",
+      "Tradeable demo FX quote"
+    ],
+    "raw_snapshot": {
+      "open": 0.85787,
+      "high": 0.85794,
+      "low": 0.85787,
+      "close": 0.85794,
+      "cmp": "px=typical;bar=1;tide=long_only;slow_ok_long=0;load_long=0;fire_long=0;load_short=0;fire_short=0;cci30=80.3247;sma=93.2145;cci30_prev=81.6693",
+      "live_bid": 0.85795,
+      "live_ask": 0.85797,
+      "planned_sl": 0.85717,
+      "planned_sl_points": 80,
+      "sl_tier": "major",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Forced research BUY EURGBP; act=FORCED_TIDE_LONG. Five-minute demo; SL 80 pts (abort override: thin FIRE board).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; L6c forced five"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 0.85795,
+    "entry_ask": 0.85797,
+    "entry_executable_price": 0.85797,
+    "planned_stop": 0.85717,
+    "evaluation_due_utc": "2026-09-22T16:04:03Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-forced-five-l6c"
+  },
+  {
+    "signal_id": "20260922T155903Z_EURJPY_1_S2_4",
+    "cycle_id": "20260922T155903Z",
+    "slot": 4,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T15:59:03Z",
+    "timestamp_broker": "2026.09.22 18:59:03",
+    "timestamp_ny": "2026-09-22T11:59:03-04:00",
+    "symbol": "EURJPY",
+    "set_id": 1,
+    "anchor_tf": "M1",
+    "htf1": "M15",
+    "htf2": "M30",
+    "anchor_closed_bar_time": "2026.09.22 18:56:00",
+    "data_age_seconds": 183,
+    "spread_points": 2,
+    "spread_price": 0.002,
+    "point_size": 0.001,
+    "digits": 3,
+    "research_direction": "SELL",
+    "research_confidence_0_100": 50,
+    "research_topology": "forced_quote_roundtrip",
+    "strategy_alignment": "S2",
+    "tide": "short_only",
+    "regime": "bear_trend",
+    "ltf_state": "forced",
+    "role_map": {
+      "force": [
+        "Forced Level4 five \u2014 thin FIRE board not allowed to skip"
+      ],
+      "inertia": [
+        "Board/act FORCED_TIDE_SHORT"
+      ],
+      "velocity": [
+        "px=close;bar=1;tide=short_only;struct_long=1;struct_short=0;load_long=0;load_short=0;fire_long=0;fire_short=0;close=180.113;mid10=180.086;mid100=180.037;sma50=180.05"
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Forced act FORCED_TIDE_SHORT",
+      "Tradeable demo FX quote"
+    ],
+    "raw_snapshot": {
+      "open": 180.115,
+      "high": 180.121,
+      "low": 180.109,
+      "close": 180.113,
+      "cmp": "px=close;bar=1;tide=short_only;struct_long=1;struct_short=0;load_long=0;load_short=0;fire_long=0;fire_short=0;close=180.113;mid10=180.086;mid100=180.037;sma50=180.05",
+      "live_bid": 180.097,
+      "live_ask": 180.099,
+      "planned_sl": 180.347,
+      "planned_sl_points": 250,
+      "sl_tier": "jpy_cnh",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Forced research SELL EURJPY; act=FORCED_TIDE_SHORT. Five-minute demo; SL 250 pts (abort override: thin FIRE board).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; L6c forced five"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 180.097,
+    "entry_ask": 180.099,
+    "entry_executable_price": 180.097,
+    "planned_stop": 180.347,
+    "evaluation_due_utc": "2026-09-22T16:04:03Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-forced-five-l6c"
+  },
+  {
+    "signal_id": "20260922T155903Z_AUDCHF_0_S0_5",
+    "cycle_id": "20260922T155903Z",
+    "slot": 5,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T15:59:03Z",
+    "timestamp_broker": "2026.09.22 18:59:03",
+    "timestamp_ny": "2026-09-22T11:59:03-04:00",
+    "symbol": "AUDCHF",
+    "set_id": 0,
+    "anchor_tf": "M5",
+    "htf1": "M15",
+    "htf2": "H1",
+    "anchor_closed_bar_time": "2026.09.22 21:50:00",
+    "data_age_seconds": -10256,
+    "spread_points": 3,
+    "spread_price": 3e-05,
+    "point_size": 1e-05,
+    "digits": 5,
+    "research_direction": "SELL",
+    "research_confidence_0_100": 50,
+    "research_topology": "forced_quote_roundtrip",
+    "strategy_alignment": "S0",
+    "tide": "forced",
+    "regime": "forced",
+    "ltf_state": "forced",
+    "role_map": {
+      "force": [
+        "Forced Level4 five \u2014 thin FIRE board not allowed to skip"
+      ],
+      "inertia": [
+        "Board/act FORCED_M5"
+      ],
+      "velocity": [
+        ""
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Forced act FORCED_M5",
+      "Tradeable demo FX quote"
+    ],
+    "raw_snapshot": {
+      "open": 0.58342,
+      "high": 0.58346,
+      "low": 0.58336,
+      "close": 0.58341,
+      "cmp": "",
+      "live_bid": 0.58348,
+      "live_ask": 0.58351,
+      "planned_sl": 0.58428,
+      "planned_sl_points": 80,
+      "sl_tier": "major",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Forced research SELL AUDCHF; act=FORCED_M5. Five-minute demo; SL 80 pts (abort override: thin FIRE board).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; L6c forced five"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 0.58348,
+    "entry_ask": 0.58351,
+    "entry_executable_price": 0.58348,
+    "planned_stop": 0.58428,
+    "evaluation_due_utc": "2026-09-22T16:04:03Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-forced-five-l6c"
+  }
+]

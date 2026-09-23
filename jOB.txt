@@ -1,0 +1,70 @@
+jOB
+
+Quantitative Trader
+LOCATION
+
+New York
+
+DEPARTMENT
+
+Trading, Research, and Machine Learning
+
+TEAM
+
+Quantitative Trading
+
+Apply
+Share this job
+About the Position
+Our trading is based on our own proprietary models and on busy days we engage in over a million trades. Traders work in teams to seek out and trade on pricing inefficiencies, develop models, manage risk, investigate new products, and push into new business areas. Experienced traders teach and oversee the less-experienced. New traders serve as assistants while they learn the ropes, getting increasing responsibility as they demonstrate their ability to handle it.
+
+Technology is at the core of how we approach trading, and we consider ourselves as much a technology company as a trading firm. We use OCaml, a statically-typed functional programming language, as our primary development language, and have the largest team of OCaml engineers in any industrial setting.
+
+About You
+We are looking for people who have a strong quantitative mind and enjoy working collaboratively to solve challenging problems in a practical setting. Prior knowledge of finance or economics is not expected or required. Experience with particular programming languages is also not required, although generally being comfortable programming in your language of choice is a plus. 
+
+ 
+
+If you're a recruiting agency and want to partner with us, please reach out to agency-partnerships@janestreet.com.
+
+Machine Learning Performance Engineer
+LOCATION
+
+New York
+
+DEPARTMENT
+
+Trading, Research, and Machine Learning
+
+TEAM
+
+Machine Learning
+
+Apply
+Share this job
+We are looking for an engineer with experience in low-level systems programming and optimization to join our growing ML team. 
+
+Machine learning is a critical pillar of Jane Street's global business. Our ever-evolving trading environment serves as a unique, rapid-feedback platform for ML experimentation, allowing us to incorporate new ideas with relatively little friction.
+
+Your part here is optimizing the performance of our models – both training and inference. We care about efficient large-scale training, low-latency inference in real-time systems, and high-throughput inference in research. Part of this is improving straightforward CUDA, but the interesting part needs a whole-systems approach, including storage systems, networking, and host- and GPU-level considerations. Zooming in, we also want to ensure our platform makes sense even at the lowest level – is all that throughput actually goodput? Does loading that vector from the L2 cache really take that long?
+
+If you’ve never thought about a career in finance, you’re in good company. Many of us were in the same position before working here. If you have a curious mind and a passion for solving interesting problems, we have a feeling you’ll fit right in. 
+
+There’s no fixed set of skills, but here are some of the things we’re looking for:
+
+An understanding of modern ML techniques and toolsets
+The experience and systems knowledge required to debug a training run’s performance end to end
+Low-level GPU knowledge of PTX, SASS, warps, cooperative groups, Tensor Cores, and the memory hierarchy
+Debugging and optimization experience using tools like CUDA GDB, NSight Systems, NSight Compute
+Library knowledge of Triton, CUTLASS, CUB, Thrust, cuDNN, and cuBLAS
+Intuition about the latency and throughput characteristics of CUDA graph launch, tensor core arithmetic, warp-level synchronization, and asynchronous memory loads
+Background in Infiniband, RoCE, GPUDirect, PXN, rail optimization, and NVLink, and how to use these networking technologies to link up GPU clusters
+An understanding of the collective algorithms supporting distributed GPU training in NCCL or MPI
+An inventive approach and the willingness to ask hard questions about whether we're taking the right approaches and using the right tools
+ 
+
+If you're a recruiting agency and want to partner with us, please reach out to agency-partnerships@janestreet.com.
+
+Base salary is $300,000. Base salary is only one part of Jane Street total compensation, which includes an annual discretionary bonus.
+
+Jane Street is an Equal Opportunity Employer

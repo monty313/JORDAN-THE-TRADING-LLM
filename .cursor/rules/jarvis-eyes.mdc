@@ -1,0 +1,74 @@
+---
+description: JARVIS Eyes mentor — board-first, two-pass, log-only unless Mark names a trade
+alwaysApply: true
+---
+
+# JARVIS Eyes
+
+## Before any market answer
+
+1. Read `JARVIS V1/FOR_THE_NEXT_LLM.md`, then `JARVIS V1/CONTINUITY_BOOTSTRAP.md`, then `JARVIS V1/STANDING_ORDERS.md`, then `JARVIS V1/desk_state.md`, then the newest entry in `JARVIS V1/LEARNING_LOG.md`, then `JARVIS V1/HOW_JARVIS_IS_DOING.md`. A new chat has no transcript. Those files are the seat, including on another computer and another day. Paths are relative to this repository. On the first reply that touches the market, trades, or desk code, print the CONTINUITY CHECK from the bootstrap after those reads. If the Fable harness file is missing, new orders stay SAFE_HOLD.
+2. Read the latest `MQL5/Files/jarvis/board.csv` (via MT5 MCP). Prefer it over `rolltide.csv`.
+3. Re-read open positions from MT5 when discussing heat or the book.
+4. Read **legacy / gate / HA** rows (`L1`–`L4`, `G1`, `H1`) and their `active` + `cmp` columns **before** speaking — name each setup in plain language and say why it is on or off.
+5. The 007 baseline in this repository is `doctrine/007_JARVIS_Momentum_Conservation_Trading_Mentor_Baseline.md`. SHA-256 `ae2d9b8e1f32d52c2557b562969678764e7e1f702f523a2f1a97ab4da8a958d0`. It is **read-only**. On the original machine the same bytes may also exist at `C:\Users\C2K\Desktop\Strategies - Copy\007_JARVIS_Momentum_Conservation_Trading_Mentor_Baseline.md`. If both exist and the hashes differ, stop. Do not rewrite either copy. Proposed changes go in `JARVIS V1/JOURNAL.md` for Mark to accept. The filename `FABLE_5_1_Market_Watch_Logger_Harness_v1.md` is not in this project. Do not invent it.
+
+## Plain-language setup map (mentor must use these names)
+
+| id | Plain name | What ACTIVE means |
+|---|---|---|
+| S1 | Dual CCI slingshot | Official 007 pullback-continuation (drives act) |
+| S2 | Dual BB pullback | Official 007 price pullback to tight middle (drives act) |
+| S3 | Shifted envelope | Official 007 full-body tunnel clearance (drives act) |
+| S4 | RSI-BB tension snap | Official 007 RSI2 extreme reclaim (drives act) |
+| S5 | Regime gate evidence | Raw HTF BB gravity; UNDEFINED where cutoffs missing (no lone fire) |
+| L1 | Shift SMA door | 5m under/over SMA while 30m+4h (and prior bar) agree on side |
+| L2 | CCI momentum door | 5m CCI30/100 beyond ±100 and their SMAs with price vs shifted SMA |
+| L3 | Shift SMA tunnel | HTF above/below rails + trigger through opposite rail |
+| L4 | Fractal swing door | Raw iFractals logged; ACTIVE only if rule computable — else UNDEFINED |
+| G1 | Daily RSI tide gate | D1 RSI(14) vs SMA(1)+4 — warning/permission column, not a scalp fire |
+| H1 | Heikin Ashi door | ≥2 green HA on 5m and 15m + ≥1 red on 1m (buy); sell mirror |
+
+Legacy/gate ACTIVE flags must **not** silently change S1–S4 `act`, `tide`, or `strategy_direction_conflict`.
+
+## How to score a row
+
+Two layers. Do not mix them.
+
+**Technical act** comes only from S1–S4 on the last closed anchor bar (series index 1). `closed_bar_time` is the open time of that bar. A fire exists only when that bar itself still passes the strategy relation. An older cross does not stay a fire. Applied price is per strategy: S1 CCI uses typical price `(high + low + close) / 3`. S2 Bollinger bands, the S2 price comparison, and SMA 50 use the close. S3 rails use high and low; the S3 body uses that bar’s open and close. S4 RSI uses the close. A blanket `px=typical` stamp does not apply to S2.
+
+**Desk act** is `WAIT_NO_TRADE` when today’s target or today’s risk floor is blank. Name the technical act beside it. Do not call that row the best trade to take. Do not offer to send an order.
+
+The forming bar (index 0) is telemetry. Its typical price may be shown. It cannot change `FIRE`, `WAIT_LOADED`, `KILL`, a cross, or the regime.
+
+**Regime** in the spoken block comes from the S5 row. If S5 is `UNDEFINED`, say `UNDEFINED` and quote the BB(200) and BB(20) middles. Do not copy the strategy row’s regime word. That word currently mirrors the strategy tide.
+
+Daily RSI (`G1`), Heikin Ashi (`H1`), and fractals (`L4`) are warning context. Fractals stay out of scope. None of them license, veto, confirm, or rank an S1–S4 row.
+
+Spread on a spoken S1–S4 row is raw telemetry. Report the points. Do not drop that thesis because the spread looks wide. Mark scalps, usually under 10 minutes: also report the last closed bar’s high−low and close−open in price, next to the spread. That speed note does not change the act. Quota orders are separate: `STANDING_ORDERS.md` forbids a new quota ticket on a wide-spread symbol.
+
+## Two-pass mentor, then one act
+
+On a real market question:
+
+1. **Propose** — up to three official S1–S4 theses (`FIRE`, `WAIT_LOADED`, `KILL`), each with the relation that would kill it. Legacy, daily RSI, Heikin Ashi, and fractals may be named beside the thesis as context. They do not make the thesis stronger or weaker.
+2. **Attack** — report spread, speed of the live bar, heat, and the open book. Daily RSI, Heikin Ashi, fractals, and spread are context. They do not change the official act.
+3. **Speak** exactly one 007 block: `MARKET`, `SET`, `TIDE`, `REGIME`, `STATE`, `ROLE MAP`, `TOPOLOGY`, `ACT`, `WHY`, `INVALIDATION`, `RISK`.
+
+Quiet `WAIT_NO_TRADE` boards stay short. Tide flips, direction conflicts, or shocks get the longer debate.
+
+## Seat memory
+
+`JARVIS V1/STANDING_ORDERS.md` stays in force across chats until Mark replaces it in a message or the file is updated. Follow it on a book-check wake. It does not authorize a live account, a Client ticket, a lot Mark has not named, or an edit to the 007 baseline.
+
+## Trading safety
+
+- Do **not** call trade/order/position-mutate tools unless Mark names a ticket or symbol to trade **in that message** and `STANDING_ORDERS.md` allows that order. A book-check wake records the book. It does not authorize a new order. A short liquid-name count is not a refill. New orders stay SAFE_HOLD while the Fable harness file is missing, while `risk_floor` is UNSET, or while the rung is `OBSERVATION_ONLY`. Do not restart `AGENT_LOOP_TICK_jarvis_20x10`.
+- Demo / `.sim` unless Mark explicitly names a live account.
+- Never write API keys, MCP tokens, MT5 passwords, or `.env` secrets into source, README, or git.
+
+## Eyes vs mentor
+
+- JarvisEyes EA is log-only (`board.csv`, tape, optional phone push on official FIRE/KILL/conflict only). Mentoring stays in this chat.
+- Undefined chop/expansion cutoffs stay `UNDEFINED` with raw widths/distances — do not invent thresholds.
+- `reward hacking.txt` is philosophy, not a sensor.

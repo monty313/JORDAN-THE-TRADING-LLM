@@ -1,0 +1,76 @@
+{
+  "cycle_id": "20260922T102651Z",
+  "fills": [
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T10:26:52Z",
+      "signal_id": "20260922T102651Z_EURCAD_1_S3_1",
+      "symbol": "EURCAD",
+      "direction": "BUY",
+      "ticket": 58568462450,
+      "entry": 1.60874,
+      "sl": 1.60795,
+      "sl_points": 80,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T10:26:53Z",
+      "signal_id": "20260922T102651Z_GBPUSD_3_S2_2",
+      "symbol": "GBPUSD",
+      "direction": "SELL",
+      "ticket": 58568462582,
+      "entry": 1.33652,
+      "sl": 1.33732,
+      "sl_points": 80,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T10:26:53Z",
+      "signal_id": "20260922T102651Z_USDCAD_4_S2_3",
+      "symbol": "USDCAD",
+      "direction": "BUY",
+      "ticket": 58568462698,
+      "entry": 1.40366,
+      "sl": 1.40286,
+      "sl_points": 80,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T10:26:54Z",
+      "signal_id": "20260922T102651Z_EURGBP_4_S2_4",
+      "symbol": "EURGBP",
+      "direction": "SELL",
+      "ticket": 58568462782,
+      "entry": 0.85754,
+      "sl": 0.85834,
+      "sl_points": 80,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T10:26:55Z",
+      "signal_id": "20260922T102651Z_GBPCAD_4_S2_5",
+      "symbol": "GBPCAD",
+      "direction": "BUY",
+      "ticket": 58568462879,
+      "entry": 1.8759700000000001,
+      "sl": 1.87517,
+      "sl_points": 80,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    }
+  ],
+  "hold_start": "2026-09-22T10:26:55Z"
+}

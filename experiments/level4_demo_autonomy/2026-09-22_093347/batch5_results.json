@@ -1,0 +1,116 @@
+{
+  "cycle_id": "20260922T101810Z",
+  "fills": [
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T10:18:11Z",
+      "signal_id": "20260922T101810Z_CADCHF_1_S2_1",
+      "symbol": "CADCHF",
+      "direction": "SELL",
+      "ticket": 58568324211,
+      "entry": 0.58373,
+      "sl": 0.58453,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T10:18:11Z",
+      "signal_id": "20260922T101810Z_EURUSD_4_S2_3",
+      "symbol": "EURUSD",
+      "direction": "SELL",
+      "ticket": 58568324325,
+      "entry": 1.1461999999999999,
+      "sl": 1.147,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T10:18:12Z",
+      "signal_id": "20260922T101810Z_GBPUSD_2_S4_4",
+      "symbol": "GBPUSD",
+      "direction": "BUY",
+      "ticket": 58568324455,
+      "entry": 1.33677,
+      "sl": 1.33597,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T10:18:12Z",
+      "signal_id": "20260922T101810Z_USDCAD_2_S4_5",
+      "symbol": "USDCAD",
+      "direction": "SELL",
+      "ticket": 58568324777,
+      "entry": 1.40341,
+      "sl": 1.40421,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    }
+  ],
+  "results": [
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T10:23:12Z",
+      "signal_id": "20260922T101810Z_CADCHF_1_S2_1",
+      "symbol": "CADCHF",
+      "direction": "SELL",
+      "ticket": 58568324211,
+      "entry": 0.58373,
+      "sl": 0.58453,
+      "exit": null,
+      "net_points": null,
+      "close_path": "unknown",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T10:23:12Z",
+      "signal_id": "20260922T101810Z_EURUSD_4_S2_3",
+      "symbol": "EURUSD",
+      "direction": "SELL",
+      "ticket": 58568324325,
+      "entry": 1.1461999999999999,
+      "sl": 1.147,
+      "exit": null,
+      "net_points": null,
+      "close_path": "unknown",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T10:23:12Z",
+      "signal_id": "20260922T101810Z_GBPUSD_2_S4_4",
+      "symbol": "GBPUSD",
+      "direction": "BUY",
+      "ticket": 58568324455,
+      "entry": 1.33677,
+      "sl": 1.33597,
+      "exit": null,
+      "net_points": null,
+      "close_path": "unknown",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T10:23:12Z",
+      "signal_id": "20260922T101810Z_USDCAD_2_S4_5",
+      "symbol": "USDCAD",
+      "direction": "SELL",
+      "ticket": 58568324777,
+      "entry": 1.40341,
+      "sl": 1.40421,
+      "exit": 1.40348,
+      "net_points": -7.0,
+      "close_path": "five_minute",
+      "flat": true
+    }
+  ],
+  "left": []
+}

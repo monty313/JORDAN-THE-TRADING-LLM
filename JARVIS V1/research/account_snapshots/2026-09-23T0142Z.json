@@ -1,0 +1,16 @@
+{
+  "record_type": "account_snapshot",
+  "timestamp_utc": "2026-09-23T01:42:00Z",
+  "server": "MetaQuotes-Demo",
+  "balance": 1038684.91,
+  "equity": 1038684.91,
+  "open_771249": 0,
+  "score_clock": "deal.time matches UTC; cutoff is 2026-09-22 16:36 UTC which is 12:36 America/New_York",
+  "score_closed_771249_opened_after_cutoff": 300.28,
+  "score_positions": 181,
+  "score_target": 38535,
+  "gap_to_target": 38234.72,
+  "floating_counts_toward_score": false,
+  "execution": "no new ticket; EURUSD S2 act FIRE_SELL is emerged from official_act WAIT_LOADED",
+  "note": "A wider stuffed-server cutoff had shown +4147.18. That clock does not match deal.time, which lines up with UTC."
+}

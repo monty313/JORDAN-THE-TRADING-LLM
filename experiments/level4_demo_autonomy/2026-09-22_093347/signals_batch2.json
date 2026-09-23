@@ -1,0 +1,447 @@
+[
+  {
+    "signal_id": "20260922T094730Z_USDJPY_1_S4_1",
+    "cycle_id": "20260922T094730Z",
+    "slot": 1,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T09:47:30Z",
+    "timestamp_broker": "2026.09.22 12:47:30",
+    "timestamp_ny": "2026-09-22T05:47:30-04:00",
+    "symbol": "USDJPY",
+    "set_id": 1,
+    "anchor_tf": "M1",
+    "htf1": "M15",
+    "htf2": "M30",
+    "anchor_closed_bar_time": "2026.09.22 12:43:00",
+    "data_age_seconds": 270,
+    "spread_points": 2,
+    "spread_price": 0.002,
+    "point_size": 0.001,
+    "digits": 3,
+    "research_direction": "SELL",
+    "research_confidence_0_100": 45,
+    "research_topology": "launch_continuation_bet",
+    "strategy_alignment": "S4",
+    "tide": "short_only",
+    "regime": "bear_trend",
+    "ltf_state": "none",
+    "role_map": {
+      "force": [
+        "Strategy tide short_only"
+      ],
+      "inertia": [
+        "Board reason rsi2_reclaim_upper_band"
+      ],
+      "velocity": [
+        "px=close;bar=1;tide=short_only;slow_long=0;load_long=0;fire_long=0;rsi2=9.43422;lo=12.1623;rsi20=37.1831;mid20=43.2926;emerged=0;need_samples=1;phase=continuation"
+      ],
+      "equilibrium": [],
+      "regime_gate": [
+        "S5 not used to license research row"
+      ],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act on freeze: FIRE_SELL",
+      "Board reason: rsi2_reclaim_upper_band",
+      "Unsuffixed demo Market Watch quote"
+    ],
+    "raw_snapshot": {
+      "open": 157.111,
+      "high": 157.119,
+      "low": 157.074,
+      "close": 157.085,
+      "cmp": "px=close;bar=1;tide=short_only;slow_long=0;load_long=0;fire_long=0;rsi2=9.43422;lo=12.1623;rsi20=37.1831;mid20=43.2926;emerged=0;need_samples=1;phase=continuation",
+      "live_bid": 157.032,
+      "live_ask": 157.034,
+      "planned_sl": 157.112,
+      "planned_sl_points": 80
+    },
+    "reason_locked_before_outcome": "Closed-bar S4 FIRE_SELL on set 1 with tide short_only. Research SELL bets that relation holds five minutes on the demo book.",
+    "known_counterevidence": [
+      "Research round-trip with wide protective stop; not an official desk FIRE license",
+      "Prior batch stopped out early on 3-spread stops"
+    ],
+    "warning_context": [
+      "Desk act WAIT_NO_TRADE for mentoring; Level 4 demo autonomy ordered by Mark",
+      "Foreign magic-771249 tickets on other symbols left untouched"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "forced research signal; Level 4 demo round-trip separate",
+    "entry_bid": 157.032,
+    "entry_ask": 157.034,
+    "entry_executable_price": 157.032,
+    "planned_stop": 157.112,
+    "evaluation_due_utc": "2026-09-22T09:52:30Z",
+    "outcome_status": "PENDING",
+    "exit_bid": null,
+    "exit_ask": null,
+    "exit_executable_price": null,
+    "net_points_after_spread": null,
+    "net_price_after_spread": null,
+    "commission_status": "NOT_INCLUDED",
+    "outcome_reason": "",
+    "post_outcome_review": "",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-wide-sl-80pts"
+  },
+  {
+    "signal_id": "20260922T094730Z_USDSEK_1_S4_2",
+    "cycle_id": "20260922T094730Z",
+    "slot": 2,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T09:47:30Z",
+    "timestamp_broker": "2026.09.22 12:47:30",
+    "timestamp_ny": "2026-09-22T05:47:30-04:00",
+    "symbol": "USDSEK",
+    "set_id": 1,
+    "anchor_tf": "M1",
+    "htf1": "M15",
+    "htf2": "M30",
+    "anchor_closed_bar_time": "2026.09.22 12:43:00",
+    "data_age_seconds": 270,
+    "spread_points": 100,
+    "spread_price": 0.001,
+    "point_size": 1e-05,
+    "digits": 5,
+    "research_direction": "SELL",
+    "research_confidence_0_100": 45,
+    "research_topology": "launch_continuation_bet",
+    "strategy_alignment": "S4",
+    "tide": "short_only",
+    "regime": "bear_trend",
+    "ltf_state": "none",
+    "role_map": {
+      "force": [
+        "Strategy tide short_only"
+      ],
+      "inertia": [
+        "Board reason rsi2_reclaim_upper_band"
+      ],
+      "velocity": [
+        "px=close;bar=1;tide=short_only;slow_long=0;load_long=0;fire_long=0;rsi2=44.9895;lo=25.2208;rsi20=43.4199;mid20=46.3803;emerged=0;need_samples=1;phase=continuation"
+      ],
+      "equilibrium": [],
+      "regime_gate": [
+        "S5 not used to license research row"
+      ],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act on freeze: FIRE_SELL",
+      "Board reason: rsi2_reclaim_upper_band",
+      "Unsuffixed demo Market Watch quote"
+    ],
+    "raw_snapshot": {
+      "open": 9.824,
+      "high": 9.8244,
+      "low": 9.8234,
+      "close": 9.8236,
+      "cmp": "px=close;bar=1;tide=short_only;slow_long=0;load_long=0;fire_long=0;rsi2=44.9895;lo=25.2208;rsi20=43.4199;mid20=46.3803;emerged=0;need_samples=1;phase=continuation",
+      "live_bid": 9.82,
+      "live_ask": 9.821,
+      "planned_sl": 9.8208,
+      "planned_sl_points": 80
+    },
+    "reason_locked_before_outcome": "Closed-bar S4 FIRE_SELL on set 1 with tide short_only. Research SELL bets that relation holds five minutes on the demo book.",
+    "known_counterevidence": [
+      "Research round-trip with wide protective stop; not an official desk FIRE license",
+      "Prior batch stopped out early on 3-spread stops"
+    ],
+    "warning_context": [
+      "Desk act WAIT_NO_TRADE for mentoring; Level 4 demo autonomy ordered by Mark",
+      "Foreign magic-771249 tickets on other symbols left untouched"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "forced research signal; Level 4 demo round-trip separate",
+    "entry_bid": 9.82,
+    "entry_ask": 9.821,
+    "entry_executable_price": 9.82,
+    "planned_stop": 9.8208,
+    "evaluation_due_utc": "2026-09-22T09:52:30Z",
+    "outcome_status": "PENDING",
+    "exit_bid": null,
+    "exit_ask": null,
+    "exit_executable_price": null,
+    "net_points_after_spread": null,
+    "net_price_after_spread": null,
+    "commission_status": "NOT_INCLUDED",
+    "outcome_reason": "",
+    "post_outcome_review": "",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-wide-sl-80pts"
+  },
+  {
+    "signal_id": "20260922T094730Z_FRA40_1_S3_3",
+    "cycle_id": "20260922T094730Z",
+    "slot": 3,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T09:47:30Z",
+    "timestamp_broker": "2026.09.22 12:47:30",
+    "timestamp_ny": "2026-09-22T05:47:30-04:00",
+    "symbol": "FRA40",
+    "set_id": 1,
+    "anchor_tf": "M1",
+    "htf1": "M15",
+    "htf2": "M30",
+    "anchor_closed_bar_time": "2026.09.22 12:43:00",
+    "data_age_seconds": 270,
+    "spread_points": 16,
+    "spread_price": 1.6,
+    "point_size": 0.1,
+    "digits": 1,
+    "research_direction": "BUY",
+    "research_confidence_0_100": 45,
+    "research_topology": "launch_continuation_bet",
+    "strategy_alignment": "S3",
+    "tide": "long_only",
+    "regime": "bull_trend",
+    "ltf_state": "launch",
+    "role_map": {
+      "force": [
+        "Strategy tide long_only"
+      ],
+      "inertia": [
+        "Board reason full_body_above_tunnel"
+      ],
+      "velocity": [
+        "px=ohlc;bar=1;tide=long_only;body_long=1;body_short=0;close_long=1;rail_hi=8160.35;rail_lo=8156.7;o=8160.9;c=8163.9;emerged=0;need_samples=1;phase=momentum"
+      ],
+      "equilibrium": [],
+      "regime_gate": [
+        "S5 not used to license research row"
+      ],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act on freeze: FIRE_BUY",
+      "Board reason: full_body_above_tunnel",
+      "Unsuffixed demo Market Watch quote"
+    ],
+    "raw_snapshot": {
+      "open": 8160.9,
+      "high": 8165.4,
+      "low": 8160.9,
+      "close": 8163.9,
+      "cmp": "px=ohlc;bar=1;tide=long_only;body_long=1;body_short=0;close_long=1;rail_hi=8160.35;rail_lo=8156.7;o=8160.9;c=8163.9;emerged=0;need_samples=1;phase=momentum",
+      "live_bid": 8165.4,
+      "live_ask": 8167.0,
+      "planned_sl": 8159.0,
+      "planned_sl_points": 80
+    },
+    "reason_locked_before_outcome": "Closed-bar S3 FIRE_BUY on set 1 with tide long_only. Research BUY bets that relation holds five minutes on the demo book.",
+    "known_counterevidence": [
+      "Research round-trip with wide protective stop; not an official desk FIRE license",
+      "Prior batch stopped out early on 3-spread stops"
+    ],
+    "warning_context": [
+      "Desk act WAIT_NO_TRADE for mentoring; Level 4 demo autonomy ordered by Mark",
+      "Foreign magic-771249 tickets on other symbols left untouched"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "forced research signal; Level 4 demo round-trip separate",
+    "entry_bid": 8165.4,
+    "entry_ask": 8167.0,
+    "entry_executable_price": 8167.0,
+    "planned_stop": 8159.0,
+    "evaluation_due_utc": "2026-09-22T09:52:30Z",
+    "outcome_status": "PENDING",
+    "exit_bid": null,
+    "exit_ask": null,
+    "exit_executable_price": null,
+    "net_points_after_spread": null,
+    "net_price_after_spread": null,
+    "commission_status": "NOT_INCLUDED",
+    "outcome_reason": "",
+    "post_outcome_review": "",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-wide-sl-80pts"
+  },
+  {
+    "signal_id": "20260922T094730Z_HK50_1_S3_4",
+    "cycle_id": "20260922T094730Z",
+    "slot": 4,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T09:47:30Z",
+    "timestamp_broker": "2026.09.22 12:47:30",
+    "timestamp_ny": "2026-09-22T05:47:30-04:00",
+    "symbol": "HK50",
+    "set_id": 1,
+    "anchor_tf": "M1",
+    "htf1": "M15",
+    "htf2": "M30",
+    "anchor_closed_bar_time": "2026.09.22 12:43:00",
+    "data_age_seconds": 270,
+    "spread_points": 90,
+    "spread_price": 9.0,
+    "point_size": 0.1,
+    "digits": 1,
+    "research_direction": "BUY",
+    "research_confidence_0_100": 45,
+    "research_topology": "launch_continuation_bet",
+    "strategy_alignment": "S3",
+    "tide": "long_only",
+    "regime": "bull_trend",
+    "ltf_state": "launch",
+    "role_map": {
+      "force": [
+        "Strategy tide long_only"
+      ],
+      "inertia": [
+        "Board reason full_body_above_tunnel"
+      ],
+      "velocity": [
+        "px=ohlc;bar=1;tide=long_only;body_long=1;body_short=0;close_long=1;rail_hi=25148.8;rail_lo=25139;o=25156.5;c=25163;emerged=0;need_samples=1;phase=momentum"
+      ],
+      "equilibrium": [],
+      "regime_gate": [
+        "S5 not used to license research row"
+      ],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act on freeze: FIRE_BUY",
+      "Board reason: full_body_above_tunnel",
+      "Unsuffixed demo Market Watch quote"
+    ],
+    "raw_snapshot": {
+      "open": 25156.5,
+      "high": 25164.0,
+      "low": 25156.0,
+      "close": 25163.0,
+      "cmp": "px=ohlc;bar=1;tide=long_only;body_long=1;body_short=0;close_long=1;rail_hi=25148.8;rail_lo=25139;o=25156.5;c=25163;emerged=0;need_samples=1;phase=momentum",
+      "live_bid": 25169.5,
+      "live_ask": 25178.5,
+      "planned_sl": 25170.5,
+      "planned_sl_points": 80
+    },
+    "reason_locked_before_outcome": "Closed-bar S3 FIRE_BUY on set 1 with tide long_only. Research BUY bets that relation holds five minutes on the demo book.",
+    "known_counterevidence": [
+      "Research round-trip with wide protective stop; not an official desk FIRE license",
+      "Prior batch stopped out early on 3-spread stops"
+    ],
+    "warning_context": [
+      "Desk act WAIT_NO_TRADE for mentoring; Level 4 demo autonomy ordered by Mark",
+      "Foreign magic-771249 tickets on other symbols left untouched"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "forced research signal; Level 4 demo round-trip separate",
+    "entry_bid": 25169.5,
+    "entry_ask": 25178.5,
+    "entry_executable_price": 25178.5,
+    "planned_stop": 25170.5,
+    "evaluation_due_utc": "2026-09-22T09:52:30Z",
+    "outcome_status": "PENDING",
+    "exit_bid": null,
+    "exit_ask": null,
+    "exit_executable_price": null,
+    "net_points_after_spread": null,
+    "net_price_after_spread": null,
+    "commission_status": "NOT_INCLUDED",
+    "outcome_reason": "",
+    "post_outcome_review": "",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-wide-sl-80pts"
+  },
+  {
+    "signal_id": "20260922T094730Z_US30M_2_S2_5",
+    "cycle_id": "20260922T094730Z",
+    "slot": 5,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T09:47:30Z",
+    "timestamp_broker": "2026.09.22 12:47:30",
+    "timestamp_ny": "2026-09-22T05:47:30-04:00",
+    "symbol": "US30M",
+    "set_id": 2,
+    "anchor_tf": "M5",
+    "htf1": "M30",
+    "htf2": "H1",
+    "anchor_closed_bar_time": "2026.09.22 12:40:00",
+    "data_age_seconds": 450,
+    "spread_points": 2,
+    "spread_price": 2.0,
+    "point_size": 1.0,
+    "digits": 0,
+    "research_direction": "BUY",
+    "research_confidence_0_100": 45,
+    "research_topology": "launch_continuation_bet",
+    "strategy_alignment": "S2",
+    "tide": "long_only",
+    "regime": "bull_trend",
+    "ltf_state": "continuation",
+    "role_map": {
+      "force": [
+        "Strategy tide long_only"
+      ],
+      "inertia": [
+        "Board reason reclaim_tight_middle"
+      ],
+      "velocity": [
+        "px=close;bar=1;tide=long_only;struct_long=1;load_long=0;fire_long=1;close=52179;mid10=52145.6;mid100=52079.1;sma50=52102.1;emerged=0;need_samples=1;phase=continuation"
+      ],
+      "equilibrium": [],
+      "regime_gate": [
+        "S5 not used to license research row"
+      ],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act on freeze: FIRE_BUY",
+      "Board reason: reclaim_tight_middle",
+      "Unsuffixed demo Market Watch quote"
+    ],
+    "raw_snapshot": {
+      "open": 52140.0,
+      "high": 52181.0,
+      "low": 52137.0,
+      "close": 52179.0,
+      "cmp": "px=close;bar=1;tide=long_only;struct_long=1;load_long=0;fire_long=1;close=52179;mid10=52145.6;mid100=52079.1;sma50=52102.1;emerged=0;need_samples=1;phase=continuation",
+      "live_bid": 52170.0,
+      "live_ask": 52172.0,
+      "planned_sl": 52092.0,
+      "planned_sl_points": 80
+    },
+    "reason_locked_before_outcome": "Closed-bar S2 FIRE_BUY on set 2 with tide long_only. Research BUY bets that relation holds five minutes on the demo book.",
+    "known_counterevidence": [
+      "Research round-trip with wide protective stop; not an official desk FIRE license",
+      "Prior batch stopped out early on 3-spread stops"
+    ],
+    "warning_context": [
+      "Desk act WAIT_NO_TRADE for mentoring; Level 4 demo autonomy ordered by Mark",
+      "Foreign magic-771249 tickets on other symbols left untouched"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "forced research signal; Level 4 demo round-trip separate",
+    "entry_bid": 52170.0,
+    "entry_ask": 52172.0,
+    "entry_executable_price": 52172.0,
+    "planned_stop": 52092.0,
+    "evaluation_due_utc": "2026-09-22T09:52:30Z",
+    "outcome_status": "PENDING",
+    "exit_bid": null,
+    "exit_ask": null,
+    "exit_executable_price": null,
+    "net_points_after_spread": null,
+    "net_price_after_spread": null,
+    "commission_status": "NOT_INCLUDED",
+    "outcome_reason": "",
+    "post_outcome_review": "",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-wide-sl-80pts"
+  }
+]

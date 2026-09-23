@@ -1,0 +1,27 @@
+[
+  {
+    "signal_id": "20260922T123734Z_EURUSD_4_S2_1",
+    "symbol": "EURUSD",
+    "direction": "SELL"
+  },
+  {
+    "signal_id": "20260922T123734Z_USDCAD_3_S3_2",
+    "symbol": "USDCAD",
+    "direction": "BUY"
+  },
+  {
+    "signal_id": "20260922T123734Z_EURGBP_4_S1_3",
+    "symbol": "EURGBP",
+    "direction": "SELL"
+  },
+  {
+    "signal_id": "20260922T123734Z_EURJPY_2_S1_4",
+    "symbol": "EURJPY",
+    "direction": "BUY"
+  },
+  {
+    "signal_id": "20260922T123734Z_EURCAD_1_S2_5",
+    "symbol": "EURCAD",
+    "direction": "BUY"
+  }
+]

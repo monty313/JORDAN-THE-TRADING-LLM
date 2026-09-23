@@ -1,0 +1,142 @@
+{
+  "fills": [
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:59:48Z",
+      "signal_id": "20260922T095840Z_EURCNH_1_S4_1",
+      "symbol": "EURCNH",
+      "direction": "BUY",
+      "ticket": 58567939657,
+      "entry": 7.68076,
+      "sl": 7.67996,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:59:49Z",
+      "signal_id": "20260922T095840Z_EURJPY_1_S2_2",
+      "symbol": "EURJPY",
+      "direction": "SELL",
+      "ticket": 58567940004,
+      "entry": 179.923,
+      "sl": 180.003,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:59:49Z",
+      "signal_id": "20260922T095840Z_GBPJPY_2_S3_3",
+      "symbol": "GBPJPY",
+      "direction": "SELL",
+      "ticket": 58567940369,
+      "entry": 209.78,
+      "sl": 209.86,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:59:50Z",
+      "signal_id": "20260922T095840Z_USDCHF_1_S3_4",
+      "symbol": "USDCHF",
+      "direction": "SELL",
+      "ticket": 58567940558,
+      "entry": 0.81902,
+      "sl": 0.81982,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:59:50Z",
+      "signal_id": "20260922T095840Z_USDJPY_1_S3_5",
+      "symbol": "USDJPY",
+      "direction": "SELL",
+      "ticket": 58567940903,
+      "entry": 156.899,
+      "sl": 156.979,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    }
+  ],
+  "results": [
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T10:04:50Z",
+      "signal_id": "20260922T095840Z_EURCNH_1_S4_1",
+      "symbol": "EURCNH",
+      "direction": "BUY",
+      "ticket": 58567939657,
+      "entry": 7.68076,
+      "sl": 7.67996,
+      "exit": null,
+      "net_points": null,
+      "close_path": "stop",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T10:04:50Z",
+      "signal_id": "20260922T095840Z_EURJPY_1_S2_2",
+      "symbol": "EURJPY",
+      "direction": "SELL",
+      "ticket": 58567940004,
+      "entry": 179.923,
+      "sl": 180.003,
+      "exit": null,
+      "net_points": null,
+      "close_path": "stop",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T10:04:50Z",
+      "signal_id": "20260922T095840Z_GBPJPY_2_S3_3",
+      "symbol": "GBPJPY",
+      "direction": "SELL",
+      "ticket": 58567940369,
+      "entry": 209.78,
+      "sl": 209.86,
+      "exit": null,
+      "net_points": null,
+      "close_path": "stop",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T10:04:50Z",
+      "signal_id": "20260922T095840Z_USDCHF_1_S3_4",
+      "symbol": "USDCHF",
+      "direction": "SELL",
+      "ticket": 58567940558,
+      "entry": 0.81902,
+      "sl": 0.81982,
+      "exit": null,
+      "net_points": null,
+      "close_path": "stop",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T10:04:50Z",
+      "signal_id": "20260922T095840Z_USDJPY_1_S3_5",
+      "symbol": "USDJPY",
+      "direction": "SELL",
+      "ticket": 58567940903,
+      "entry": 156.899,
+      "sl": 156.979,
+      "exit": null,
+      "net_points": null,
+      "close_path": "stop",
+      "flat": true
+    }
+  ],
+  "left": []
+}

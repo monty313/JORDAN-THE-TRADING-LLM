@@ -1,0 +1,16 @@
+# Versioned shadow experiments. Status stays PROPOSED until Mark writes an approval.
+# The human table is experiment_registry.md. This file is the one the continuity bootstrap names.
+
+experiments:
+  - id: H-20260922-001
+    name: Executable price already through the named rail
+    status: PROPOSED
+    minimum_sample: 20 per group
+  - id: H-20260922-002
+    name: Spread wider than the phase average
+    status: PROPOSED
+    minimum_sample: 20 per group
+  - id: H-20260922-003
+    name: One cycle, one shared currency bet
+    status: PROPOSED
+    minimum_sample: 20 per group

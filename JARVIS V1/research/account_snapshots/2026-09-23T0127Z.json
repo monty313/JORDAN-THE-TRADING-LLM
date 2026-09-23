@@ -1,0 +1,14 @@
+{
+  "record_type": "account_snapshot",
+  "timestamp_utc": "2026-09-23T01:27:00Z",
+  "positions_read": false,
+  "score_closed_771249_after_1236": "unknown",
+  "score_definition": "closed net P/L on magic 771249 opened after 12:36 America/New_York on 2026-09-22",
+  "score_target": 38535,
+  "floating_counts_toward_score": false,
+  "baseline_path": "C:\\Users\\C2K\\Desktop\\Strategies - Copy\\007_JARVIS_Momentum_Conservation_Trading_Mentor_Baseline.md",
+  "baseline_sha256": "ae2d9b8e1f32d52c2557b562969678764e7e1f702f523a2f1a97ab4da8a958d0",
+  "fable_harness": "MISSING",
+  "execution_authority": "disabled",
+  "note": "This snapshot records the desk files. It is not a live position read."
+}

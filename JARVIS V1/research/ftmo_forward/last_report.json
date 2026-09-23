@@ -1,0 +1,263 @@
+{
+  "read_only": true,
+  "orders_sent": 0,
+  "rules_source": "https://ftmo.com/en/trading-objectives/",
+  "product": "FTMO Challenge 2-step",
+  "rules": {
+    "account": "simulated 100000",
+    "phase1_target_pct": 10,
+    "phase2_target_pct": 5,
+    "max_daily_loss_pct_of_initial": 5,
+    "daily_halt_used_pct": 3.0,
+    "max_loss_pct_static": 10,
+    "min_trading_days": 4,
+    "day_boundary": "Europe/Prague",
+    "risk_frac": 0.0035,
+    "prob_min": 0.56,
+    "stop_atr": 1.2,
+    "target_r": 2.0
+  },
+  "method": "Walk-forward logistic regression on pullback-continuation setups. Fit uses only trades resolved before the attempt. Constants were not searched on these windows.",
+  "symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "USDJPY",
+    "USDCAD"
+  ],
+  "bars_common": 49995,
+  "first_bar_utc": "2018-09-04T23:00:00+00:00",
+  "last_bar_utc": "2026-09-22T22:00:00+00:00",
+  "attempts": 12,
+  "phase1_passes": 0,
+  "phase1_pass_rate": 0.0,
+  "both_phases_passes": 0,
+  "both_phases_pass_rate": 0.0,
+  "consistent": false,
+  "design_slice": {
+    "ended_utc": "2019-01-31T20:00:00+00:00",
+    "note": "Scored before the first forward attempt. Every cell is negative after spread, so none was promoted into the forward test.",
+    "cells": [
+      {"setup": "pullback", "stop_atr": 1.6, "target_r": 1.0, "n": 448, "win_rate": 0.504, "mean_r": -0.04},
+      {"setup": "trend", "stop_atr": 1.2, "target_r": 1.0, "n": 7523, "win_rate": 0.483, "mean_r": -0.094},
+      {"setup": "fade", "stop_atr": 1.6, "target_r": 1.0, "n": 85, "win_rate": 0.447, "mean_r": -0.152}
+    ]
+  },
+  "detail": [
+    {
+      "start_utc": "2019-06-27T03:00:00+00:00",
+      "train_resolved": 917,
+      "train_win_rate": 0.328,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2019-10-31T03:00:00+00:00",
+      "train_resolved": 1321,
+      "train_win_rate": 0.335,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2020-03-09T20:00:00+00:00",
+      "train_resolved": 1717,
+      "train_win_rate": 0.34,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2020-07-13T23:00:00+00:00",
+      "train_resolved": 2103,
+      "train_win_rate": 0.339,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2020-11-17T00:00:00+00:00",
+      "train_resolved": 2441,
+      "train_win_rate": 0.338,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2021-03-25T05:00:00+00:00",
+      "train_resolved": 2804,
+      "train_win_rate": 0.341,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2021-07-29T08:00:00+00:00",
+      "train_resolved": 3208,
+      "train_win_rate": 0.336,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2021-12-02T09:00:00+00:00",
+      "train_resolved": 3601,
+      "train_win_rate": 0.335,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2022-04-07T14:00:00+00:00",
+      "train_resolved": 4003,
+      "train_win_rate": 0.337,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2022-08-11T14:00:00+00:00",
+      "train_resolved": 4407,
+      "train_win_rate": 0.336,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2022-12-15T15:00:00+00:00",
+      "train_resolved": 4778,
+      "train_win_rate": 0.338,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    },
+    {
+      "start_utc": "2023-04-21T09:00:00+00:00",
+      "train_resolved": 5161,
+      "train_win_rate": 0.334,
+      "model_fit": true,
+      "phase1": {
+        "passed": false,
+        "breach": null,
+        "balance": 100000.0,
+        "return_pct": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "trading_days": 0,
+        "bars": 2160
+      },
+      "phase2": null,
+      "both_phases": false
+    }
+  ]
+}

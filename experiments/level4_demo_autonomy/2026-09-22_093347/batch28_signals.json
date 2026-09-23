@@ -1,0 +1,397 @@
+[
+  {
+    "signal_id": "20260922T132125Z_USDCAD_1_S4_1",
+    "cycle_id": "20260922T132125Z",
+    "slot": 1,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T13:21:25Z",
+    "timestamp_broker": "2026.09.22 16:21:25",
+    "timestamp_ny": "2026-09-22T09:21:25-04:00",
+    "symbol": "USDCAD",
+    "set_id": 1,
+    "anchor_tf": "M1",
+    "htf1": "M15",
+    "htf2": "M30",
+    "anchor_closed_bar_time": "2026.09.22 16:17:00",
+    "data_age_seconds": 265,
+    "spread_points": 1,
+    "spread_price": 1e-05,
+    "point_size": 1e-05,
+    "digits": 5,
+    "research_direction": "BUY",
+    "research_confidence_0_100": 50,
+    "research_topology": "slingshot_load_continuation_bet",
+    "strategy_alignment": "S4",
+    "tide": "long_only",
+    "regime": "bull_trend",
+    "ltf_state": "launch",
+    "role_map": {
+      "force": [
+        "Strategy tide long_only"
+      ],
+      "inertia": [
+        "Board reason rsi2_reclaim_lower_band"
+      ],
+      "velocity": [
+        "px=close;bar=1;tide=long_only;slow_long=1;slow_short=0;load_long=0;load_short=0;fire_long=1;fire_short=0;rsi2=76.8953;lo=50.5811;rsi20=60.4068;mid20=60.3418;official_act=FIRE_BUY;phase=continuation;best=continuation;best_n=5;best_mean=0.00015200;emerged=0"
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act FIRE_BUY",
+      "Tradeable demo FX"
+    ],
+    "raw_snapshot": {
+      "open": 1.40495,
+      "high": 1.40509,
+      "low": 1.40495,
+      "close": 1.40504,
+      "cmp": "px=close;bar=1;tide=long_only;slow_long=1;slow_short=0;load_long=0;load_short=0;fire_long=1;fire_short=0;rsi2=76.8953;lo=50.5811;rsi20=60.4068;mid20=60.3418;official_act=FIRE_BUY;phase=continuation;best=continuation;best_n=5;best_mean=0.00015200;emerged=0",
+      "live_bid": 1.40476,
+      "live_ask": 1.40477,
+      "planned_sl": 1.40397,
+      "planned_sl_points": 80,
+      "sl_tier": "major",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Closed-bar S4 FIRE_BUY set 1 tide long_only. Research BUY five-minute demo; SL 80 pts (max of 80 and stops_level+spread; tier=major).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; desk mentoring act stays WAIT_NO_TRADE"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 1.40476,
+    "entry_ask": 1.40477,
+    "entry_executable_price": 1.40477,
+    "planned_stop": 1.40397,
+    "evaluation_due_utc": "2026-09-22T13:26:25Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-sl-major80-jpycnh250-nosek"
+  },
+  {
+    "signal_id": "20260922T132125Z_GBPAUD_3_S4_2",
+    "cycle_id": "20260922T132125Z",
+    "slot": 2,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T13:21:25Z",
+    "timestamp_broker": "2026.09.22 16:21:25",
+    "timestamp_ny": "2026-09-22T09:21:25-04:00",
+    "symbol": "GBPAUD",
+    "set_id": 3,
+    "anchor_tf": "M15",
+    "htf1": "H1",
+    "htf2": "H4",
+    "anchor_closed_bar_time": "2026.09.22 16:00:00",
+    "data_age_seconds": 1285,
+    "spread_points": 5,
+    "spread_price": 5e-05,
+    "point_size": 1e-05,
+    "digits": 5,
+    "research_direction": "BUY",
+    "research_confidence_0_100": 50,
+    "research_topology": "slingshot_load_continuation_bet",
+    "strategy_alignment": "S4",
+    "tide": "long_only",
+    "regime": "bull_trend",
+    "ltf_state": "launch",
+    "role_map": {
+      "force": [
+        "Strategy tide long_only"
+      ],
+      "inertia": [
+        "Board reason rsi2_reclaim_lower_band"
+      ],
+      "velocity": [
+        "px=close;bar=1;tide=long_only;slow_long=1;slow_short=0;load_long=0;load_short=0;fire_long=1;fire_short=0;rsi2=52.8548;lo=35.2181;rsi20=51.6897;mid20=50.3903;emerged=0;need_samples=1;phase=continuation"
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act FIRE_BUY",
+      "Tradeable demo FX"
+    ],
+    "raw_snapshot": {
+      "open": 1.87896,
+      "high": 1.87967,
+      "low": 1.87891,
+      "close": 1.87913,
+      "cmp": "px=close;bar=1;tide=long_only;slow_long=1;slow_short=0;load_long=0;load_short=0;fire_long=1;fire_short=0;rsi2=52.8548;lo=35.2181;rsi20=51.6897;mid20=50.3903;emerged=0;need_samples=1;phase=continuation",
+      "live_bid": 1.8792,
+      "live_ask": 1.8792499999999999,
+      "planned_sl": 1.87845,
+      "planned_sl_points": 80,
+      "sl_tier": "major",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Closed-bar S4 FIRE_BUY set 3 tide long_only. Research BUY five-minute demo; SL 80 pts (max of 80 and stops_level+spread; tier=major).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; desk mentoring act stays WAIT_NO_TRADE"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 1.8792,
+    "entry_ask": 1.8792499999999999,
+    "entry_executable_price": 1.8792499999999999,
+    "planned_stop": 1.87845,
+    "evaluation_due_utc": "2026-09-22T13:26:25Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-sl-major80-jpycnh250-nosek"
+  },
+  {
+    "signal_id": "20260922T132125Z_EURUSD_4_S2_3",
+    "cycle_id": "20260922T132125Z",
+    "slot": 3,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T13:21:25Z",
+    "timestamp_broker": "2026.09.22 16:21:25",
+    "timestamp_ny": "2026-09-22T09:21:25-04:00",
+    "symbol": "EURUSD",
+    "set_id": 4,
+    "anchor_tf": "M30",
+    "htf1": "H4",
+    "htf2": "D1",
+    "anchor_closed_bar_time": "2026.09.22 15:30:00",
+    "data_age_seconds": 3085,
+    "spread_points": 1,
+    "spread_price": 1e-05,
+    "point_size": 1e-05,
+    "digits": 5,
+    "research_direction": "SELL",
+    "research_confidence_0_100": 50,
+    "research_topology": "slingshot_load_continuation_bet",
+    "strategy_alignment": "S2",
+    "tide": "short_only",
+    "regime": "bear_trend",
+    "ltf_state": "loaded",
+    "role_map": {
+      "force": [
+        "Strategy tide short_only"
+      ],
+      "inertia": [
+        "Board reason emerged_wait_pullback"
+      ],
+      "velocity": [
+        "px=close;bar=1;tide=short_only;struct_long=0;struct_short=1;load_long=0;load_short=0;fire_long=0;fire_short=1;close=1.14562;mid10=1.14579;mid100=1.14721;sma50=1.14669;official_act=FIRE_SELL;phase=continuation;best=pullback;best_n=6;best_mean=0.00018167;emerged=1"
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act WAIT_LOADED",
+      "Tradeable demo FX"
+    ],
+    "raw_snapshot": {
+      "open": 1.14656,
+      "high": 1.14663,
+      "low": 1.14549,
+      "close": 1.14562,
+      "cmp": "px=close;bar=1;tide=short_only;struct_long=0;struct_short=1;load_long=0;load_short=0;fire_long=0;fire_short=1;close=1.14562;mid10=1.14579;mid100=1.14721;sma50=1.14669;official_act=FIRE_SELL;phase=continuation;best=pullback;best_n=6;best_mean=0.00018167;emerged=1",
+      "live_bid": 1.14573,
+      "live_ask": 1.14574,
+      "planned_sl": 1.14653,
+      "planned_sl_points": 80,
+      "sl_tier": "major",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Closed-bar S2 WAIT_LOADED set 4 tide short_only. Research SELL five-minute demo; SL 80 pts (max of 80 and stops_level+spread; tier=major).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; desk mentoring act stays WAIT_NO_TRADE"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 1.14573,
+    "entry_ask": 1.14574,
+    "entry_executable_price": 1.14573,
+    "planned_stop": 1.14653,
+    "evaluation_due_utc": "2026-09-22T13:26:25Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-sl-major80-jpycnh250-nosek"
+  },
+  {
+    "signal_id": "20260922T132125Z_USDJPY_1_S3_4",
+    "cycle_id": "20260922T132125Z",
+    "slot": 4,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T13:21:25Z",
+    "timestamp_broker": "2026.09.22 16:21:25",
+    "timestamp_ny": "2026-09-22T09:21:25-04:00",
+    "symbol": "USDJPY",
+    "set_id": 1,
+    "anchor_tf": "M1",
+    "htf1": "M15",
+    "htf2": "M30",
+    "anchor_closed_bar_time": "2026.09.22 16:16:00",
+    "data_age_seconds": 325,
+    "spread_points": 3,
+    "spread_price": 0.003,
+    "point_size": 0.001,
+    "digits": 3,
+    "research_direction": "BUY",
+    "research_confidence_0_100": 50,
+    "research_topology": "slingshot_load_continuation_bet",
+    "strategy_alignment": "S3",
+    "tide": "long_only",
+    "regime": "bull_trend",
+    "ltf_state": "loaded",
+    "role_map": {
+      "force": [
+        "Strategy tide long_only"
+      ],
+      "inertia": [
+        "Board reason emerged_wait_momentum"
+      ],
+      "velocity": [
+        "px=ohlc;bar=1;tide=long_only;body_long=0;body_short=0;close_long=1;rail_hi=157.258;rail_lo=157.237;o=157.25;c=157.26;official_act=WAIT_LOADED;phase=continuation;best=momentum;best_n=9;best_mean=0.01233333;emerged=0"
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act WAIT_LOADED",
+      "Tradeable demo FX"
+    ],
+    "raw_snapshot": {
+      "open": 157.25,
+      "high": 157.269,
+      "low": 157.246,
+      "close": 157.26,
+      "cmp": "px=ohlc;bar=1;tide=long_only;body_long=0;body_short=0;close_long=1;rail_hi=157.258;rail_lo=157.237;o=157.25;c=157.26;official_act=WAIT_LOADED;phase=continuation;best=momentum;best_n=9;best_mean=0.01233333;emerged=0",
+      "live_bid": 157.294,
+      "live_ask": 157.297,
+      "planned_sl": 157.047,
+      "planned_sl_points": 250,
+      "sl_tier": "jpy_cnh",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Closed-bar S3 WAIT_LOADED set 1 tide long_only. Research BUY five-minute demo; SL 250 pts (max of 250 and stops_level+spread; tier=jpy_cnh).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; desk mentoring act stays WAIT_NO_TRADE"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 157.294,
+    "entry_ask": 157.297,
+    "entry_executable_price": 157.297,
+    "planned_stop": 157.047,
+    "evaluation_due_utc": "2026-09-22T13:26:25Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-sl-major80-jpycnh250-nosek"
+  },
+  {
+    "signal_id": "20260922T132125Z_AUDJPY_1_S3_5",
+    "cycle_id": "20260922T132125Z",
+    "slot": 5,
+    "mode": "FORCED_SIGNAL_RESEARCH",
+    "timestamp_utc": "2026-09-22T13:21:25Z",
+    "timestamp_broker": "2026.09.22 16:21:25",
+    "timestamp_ny": "2026-09-22T09:21:25-04:00",
+    "symbol": "AUDJPY",
+    "set_id": 1,
+    "anchor_tf": "M1",
+    "htf1": "M15",
+    "htf2": "M30",
+    "anchor_closed_bar_time": "2026.09.22 16:18:00",
+    "data_age_seconds": 205,
+    "spread_points": 4,
+    "spread_price": 0.004,
+    "point_size": 0.001,
+    "digits": 3,
+    "research_direction": "BUY",
+    "research_confidence_0_100": 50,
+    "research_topology": "slingshot_load_continuation_bet",
+    "strategy_alignment": "S3",
+    "tide": "long_only",
+    "regime": "bull_trend",
+    "ltf_state": "loaded",
+    "role_map": {
+      "force": [
+        "Strategy tide long_only"
+      ],
+      "inertia": [
+        "Board reason emerged_wait_momentum"
+      ],
+      "velocity": [
+        "px=ohlc;bar=1;tide=long_only;body_long=0;body_short=0;close_long=1;rail_hi=111.808;rail_lo=111.795;o=111.805;c=111.809;official_act=WAIT_LOADED;phase=continuation;best=momentum;best_n=7;best_mean=0.01157143;emerged=0"
+      ],
+      "equilibrium": [],
+      "regime_gate": [],
+      "expansion": [
+        "UNDEFINED"
+      ],
+      "volume_confirm": []
+    },
+    "relations": [
+      "Official act WAIT_LOADED",
+      "Tradeable demo FX"
+    ],
+    "raw_snapshot": {
+      "open": 111.805,
+      "high": 111.811,
+      "low": 111.799,
+      "close": 111.809,
+      "cmp": "px=ohlc;bar=1;tide=long_only;body_long=0;body_short=0;close_long=1;rail_hi=111.808;rail_lo=111.795;o=111.805;c=111.809;official_act=WAIT_LOADED;phase=continuation;best=momentum;best_n=7;best_mean=0.01157143;emerged=0",
+      "live_bid": 111.833,
+      "live_ask": 111.837,
+      "planned_sl": 111.587,
+      "planned_sl_points": 250,
+      "sl_tier": "jpy_cnh",
+      "stops_level": 0
+    },
+    "reason_locked_before_outcome": "Closed-bar S3 WAIT_LOADED set 1 tide long_only. Research BUY five-minute demo; SL 250 pts (max of 250 and stops_level+spread; tier=jpy_cnh).",
+    "known_counterevidence": [
+      "Protective stop is research harness, not doctrine invalidation"
+    ],
+    "warning_context": [
+      "Level 4 demo autonomy; desk mentoring act stays WAIT_NO_TRADE"
+    ],
+    "desk_act": "WAIT_NO_TRADE",
+    "desk_block_reason": "Level 4 demo research round-trip",
+    "entry_bid": 111.833,
+    "entry_ask": 111.837,
+    "entry_executable_price": 111.837,
+    "planned_stop": 111.587,
+    "evaluation_due_utc": "2026-09-22T13:26:25Z",
+    "outcome_status": "PENDING",
+    "commission_status": "NOT_INCLUDED",
+    "doctrine_version": "007-v1-readonly",
+    "config_hash": "level4-demo-sl-major80-jpycnh250-nosek"
+  }
+]

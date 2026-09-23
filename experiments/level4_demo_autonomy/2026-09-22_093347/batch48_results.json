@@ -1,0 +1,71 @@
+{
+  "cycle_id": "20260922T153945Z",
+  "results": [
+    {
+      "signal_id": "20260922T153945Z_EURUSD_2_S1_1",
+      "symbol": "EURUSD",
+      "direction": "SELL",
+      "ticket": 58575856009,
+      "entry": 1.14335,
+      "sl": 1.14414,
+      "exit": 1.14341,
+      "point": 1e-05,
+      "close_path": "five_minute",
+      "net_points": -6.0,
+      "flat": true
+    },
+    {
+      "signal_id": "20260922T153945Z_EURCHF_1_S1_2",
+      "symbol": "EURCHF",
+      "direction": "BUY",
+      "ticket": 58575856202,
+      "entry": 0.93968,
+      "sl": 0.93888,
+      "exit": 0.93972,
+      "point": 1e-05,
+      "close_path": "five_minute",
+      "net_points": 4.0,
+      "flat": true
+    },
+    {
+      "signal_id": "20260922T153945Z_EURCAD_2_S1_3",
+      "symbol": "EURCAD",
+      "direction": "SELL",
+      "ticket": 58575856556,
+      "entry": 1.6088,
+      "sl": 1.6096,
+      "exit": 1.60897,
+      "point": 1e-05,
+      "close_path": "five_minute",
+      "net_points": -17.0,
+      "flat": true
+    },
+    {
+      "signal_id": "20260922T153945Z_USDCHF_1_S1_4",
+      "symbol": "USDCHF",
+      "direction": "BUY",
+      "ticket": 58575856626,
+      "entry": 0.82185,
+      "sl": 0.82105,
+      "exit": 0.82186,
+      "point": 1e-05,
+      "close_path": "five_minute",
+      "net_points": 1.0,
+      "flat": true
+    },
+    {
+      "signal_id": "20260922T153945Z_USDJPY_1_S1_5",
+      "symbol": "USDJPY",
+      "direction": "BUY",
+      "ticket": 58575856767,
+      "entry": 157.473,
+      "sl": 157.226,
+      "exit": 157.48,
+      "point": 0.001,
+      "close_path": "five_minute",
+      "net_points": 7.0,
+      "flat": true
+    }
+  ],
+  "reconciled_via": "mcp_history"
+}

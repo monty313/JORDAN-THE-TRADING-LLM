@@ -1,0 +1,9 @@
+﻿mode: LEVEL_4_AUTONOMOUS_DEMO
+magic: 771249
+volume: 0.01
+symbol_suffix: none
+exit: close_after_5_minutes
+stop_loss: none
+take_profit: none
+hold_ms: 300000
+execution_path: Scripts/Level4_Demo_RoundTrip.ex5

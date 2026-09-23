@@ -1,0 +1,3 @@
+﻿{"event":"mcp_trade_blocked","fallback":"mql5_script","ts_utc":"2026-09-22T09:38:28Z"}
+{"event": "batch_note", "ts_utc": "2026-09-22T09:48:40Z", "note": "Cycle 20260922T094730Z included FRA40/HK50/US30M with trade_mode disabled; execution batch is 20260922T094840Z tradeable FX. Foreign 771249 tickets left untouched."}
+{"event": "pass_verified_flat", "ts_utc": "2026-09-22T10:05:48Z", "cycle": "20260922T095840Z", "positions": 0, "orders": 0, "note": "No new opens; batch3 already closed and outcomes present"}

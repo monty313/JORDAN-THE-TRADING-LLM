@@ -1,0 +1,142 @@
+{
+  "fills": [
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:51:51Z",
+      "signal_id": "20260922T094840Z_AUDJPY_2_S3_1",
+      "symbol": "AUDJPY",
+      "direction": "SELL",
+      "ticket": 58567653391,
+      "entry": 111.717,
+      "sl": 111.792,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:51:51Z",
+      "signal_id": "20260922T094840Z_CADJPY_1_S3_2",
+      "symbol": "CADJPY",
+      "direction": "SELL",
+      "ticket": 58567653539,
+      "entry": 111.926,
+      "sl": 112.006,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:51:52Z",
+      "signal_id": "20260922T094840Z_CHFJPY_1_S3_3",
+      "symbol": "CHFJPY",
+      "direction": "SELL",
+      "ticket": 58567653689,
+      "entry": 191.796,
+      "sl": 191.875,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:51:52Z",
+      "signal_id": "20260922T094840Z_EURGBP_2_S3_4",
+      "symbol": "EURGBP",
+      "direction": "BUY",
+      "ticket": 58567653864,
+      "entry": 0.85778,
+      "sl": 0.85698,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    },
+    {
+      "event": "fill",
+      "ts_utc": "2026-09-22T09:51:53Z",
+      "signal_id": "20260922T094840Z_EURNZD_1_S2_5",
+      "symbol": "EURNZD",
+      "direction": "SELL",
+      "ticket": 58567654047,
+      "entry": 1.99608,
+      "sl": 1.99688,
+      "volume": 0.01,
+      "magic": 771249,
+      "retcode": 10009
+    }
+  ],
+  "results": [
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T09:56:53Z",
+      "signal_id": "20260922T094840Z_AUDJPY_2_S3_1",
+      "symbol": "AUDJPY",
+      "direction": "SELL",
+      "ticket": 58567653391,
+      "entry": 111.717,
+      "sl": 111.792,
+      "exit": 111.712,
+      "net_points": 5.0,
+      "close_path": "five_minute",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T09:56:53Z",
+      "signal_id": "20260922T094840Z_CADJPY_1_S3_2",
+      "symbol": "CADJPY",
+      "direction": "SELL",
+      "ticket": 58567653539,
+      "entry": 111.926,
+      "sl": 112.006,
+      "exit": null,
+      "net_points": null,
+      "close_path": "stop",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T09:56:53Z",
+      "signal_id": "20260922T094840Z_CHFJPY_1_S3_3",
+      "symbol": "CHFJPY",
+      "direction": "SELL",
+      "ticket": 58567653689,
+      "entry": 191.796,
+      "sl": 191.875,
+      "exit": null,
+      "net_points": null,
+      "close_path": "stop",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T09:56:53Z",
+      "signal_id": "20260922T094840Z_EURGBP_2_S3_4",
+      "symbol": "EURGBP",
+      "direction": "BUY",
+      "ticket": 58567653864,
+      "entry": 0.85778,
+      "sl": 0.85698,
+      "exit": null,
+      "net_points": null,
+      "close_path": "stop",
+      "flat": true
+    },
+    {
+      "event": "close",
+      "ts_utc": "2026-09-22T09:56:53Z",
+      "signal_id": "20260922T094840Z_EURNZD_1_S2_5",
+      "symbol": "EURNZD",
+      "direction": "SELL",
+      "ticket": 58567654047,
+      "entry": 1.99608,
+      "sl": 1.99688,
+      "exit": null,
+      "net_points": null,
+      "close_path": "stop",
+      "flat": true
+    }
+  ],
+  "left": []
+}

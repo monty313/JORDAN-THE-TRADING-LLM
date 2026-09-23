@@ -1,0 +1,13 @@
+---
+description: Safety rules for the native MetaTrader 5 MCP connection
+alwaysApply: true
+---
+
+# MT5 MCP
+
+- Demo account only unless the user explicitly names a live account.
+- Do not call trade, order, or position-mutate tools unless the user asked in this message.
+- Re-read positions and account state immediately before any mutate. Do not trust earlier chat context.
+- Never write API keys, MCP tokens, or MT5 passwords into source, README, or git.
+- Keep the MCP listener on 127.0.0.1. Do not expose it.
+- If a tool result and the user's screenshot disagree, stop and say so.

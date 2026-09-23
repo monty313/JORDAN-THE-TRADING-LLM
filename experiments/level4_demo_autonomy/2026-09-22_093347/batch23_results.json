@@ -1,0 +1,71 @@
+{
+  "cycle_id": "20260922T124458Z",
+  "results": [
+    {
+      "signal_id": "20260922T124458Z_USDCHF_2_S2_1",
+      "symbol": "USDCHF",
+      "direction": "SELL",
+      "ticket": 58571416007,
+      "entry": 0.81963,
+      "sl": 0.82043,
+      "exit": 0.81999,
+      "point": 1e-05,
+      "close_path": "five_minute",
+      "net_points": -36.0,
+      "flat": true
+    },
+    {
+      "signal_id": "20260922T124458Z_EURCHF_2_S2_2",
+      "symbol": "EURCHF",
+      "direction": "SELL",
+      "ticket": 58571416286,
+      "entry": 0.93919,
+      "sl": 0.93999,
+      "exit": 0.93944,
+      "point": 1e-05,
+      "close_path": "five_minute",
+      "net_points": -25.0,
+      "flat": true
+    },
+    {
+      "signal_id": "20260922T124458Z_EURAUD_1_S2_3",
+      "symbol": "EURAUD",
+      "direction": "BUY",
+      "ticket": 58571416605,
+      "entry": 1.61203,
+      "sl": 1.61123,
+      "exit": 1.61172,
+      "point": 1e-05,
+      "close_path": "five_minute",
+      "net_points": -31.0,
+      "flat": true
+    },
+    {
+      "signal_id": "20260922T124458Z_GBPCHF_2_S2_4",
+      "symbol": "GBPCHF",
+      "direction": "SELL",
+      "ticket": 58571416977,
+      "entry": 1.09484,
+      "sl": 1.09564,
+      "exit": 1.09504,
+      "point": 1e-05,
+      "close_path": "five_minute",
+      "net_points": -20.0,
+      "flat": true
+    },
+    {
+      "signal_id": "20260922T124458Z_GBPCAD_1_S2_5",
+      "symbol": "GBPCAD",
+      "direction": "BUY",
+      "ticket": 58571417308,
+      "entry": 1.87589,
+      "sl": 1.87508,
+      "exit": 1.87535,
+      "point": 1e-05,
+      "close_path": "five_minute",
+      "net_points": -54.0,
+      "flat": true
+    }
+  ],
+  "reconciled_via": "mcp_history"
+}

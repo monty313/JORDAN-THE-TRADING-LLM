@@ -1,0 +1,27 @@
+[
+  {
+    "signal_id": "20260922T144719Z_NZDUSD_4_S1_1",
+    "symbol": "NZDUSD",
+    "direction": "BUY"
+  },
+  {
+    "signal_id": "20260922T144719Z_EURUSD_2_S1_2",
+    "symbol": "EURUSD",
+    "direction": "SELL"
+  },
+  {
+    "signal_id": "20260922T144719Z_AUDCHF_0_S0_3",
+    "symbol": "AUDCHF",
+    "direction": "SELL"
+  },
+  {
+    "signal_id": "20260922T144719Z_USDJPY_1_S3_4",
+    "symbol": "USDJPY",
+    "direction": "BUY"
+  },
+  {
+    "signal_id": "20260922T144719Z_EURCHF_2_S2_5",
+    "symbol": "EURCHF",
+    "direction": "SELL"
+  }
+]
