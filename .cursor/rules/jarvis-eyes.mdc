@@ -5,9 +5,16 @@ alwaysApply: true
 
 # JARVIS Eyes
 
+```text
+THIS IS THE WORKING JARVIS. Frozen 2026-09-23 on GitHub main.
+Tag: jarvis-working-2026-09-23
+Do not commit new work onto main. Branch off that tag.
+Read WORKING_JARVIS.md.
+```
+
 ## Before any market answer
 
-1. Read `JARVIS V1/FOR_THE_NEXT_LLM.md`, then `JARVIS V1/CONTINUITY_BOOTSTRAP.md`, then `JARVIS V1/STANDING_ORDERS.md`, then `JARVIS V1/desk_state.md`, then the newest entry in `JARVIS V1/LEARNING_LOG.md`, then `JARVIS V1/HOW_JARVIS_IS_DOING.md`. A new chat has no transcript. Those files are the seat, including on another computer and another day. Paths are relative to this repository. On the first reply that touches the market, trades, or desk code, print the CONTINUITY CHECK from the bootstrap after those reads. If the Fable harness file is missing, new orders stay SAFE_HOLD.
+1. Read `WORKING_JARVIS.md`, then `JARVIS V1/FOR_THE_NEXT_LLM.md`, then `JARVIS V1/CONTINUITY_BOOTSTRAP.md`, then `JARVIS V1/STANDING_ORDERS.md`, then `JARVIS V1/desk_state.md`, then the newest entry in `JARVIS V1/LEARNING_LOG.md`, then `JARVIS V1/HOW_JARVIS_IS_DOING.md`. A new chat has no transcript. Those files are the seat, including on another computer and another day. Paths are relative to this repository. On the first reply that touches the market, trades, or desk code, print the CONTINUITY CHECK from the bootstrap after those reads. If the Fable harness file is missing, new orders stay SAFE_HOLD. This GitHub `main` is the working desk. Tag `jarvis-working-2026-09-23`. Later work is a branch.
 2. Read the latest `MQL5/Files/jarvis/board.csv` (via MT5 MCP). Also read `rolltide.csv` / RollTide.mq5 and Mark's screener when they are present. Official act still comes from the JarvisEyes board. RollTide and the screener do not vote.
 3. Re-read open positions from MT5 when discussing heat or the book.
 4. Read **legacy / gate / HA** rows (`L1`–`L4`, `G1`, `H1`) and their `active` + `cmp` columns **before** speaking — name each setup in plain language and say why it is on or off.

@@ -1,6 +1,13 @@
 # For Mark — how to open this same Jarvis on another computer
 
-Written 2026-09-22 22:20 America/New_York, when this folder was sealed for GitHub.
+```text
+THIS IS THE WORKING JARVIS. Frozen 2026-09-23 on GitHub main.
+Tag: jarvis-working-2026-09-23
+Later work is a branch off that tag, not a rewrite of main.
+Read WORKING_JARVIS.md.
+```
+
+Written 2026-09-22 22:20 America/New_York, when this folder was sealed for GitHub. The freeze that later chats must not lose is 2026-09-23.
 
 Jarvis is not the model name. Jarvis is this folder: the standing orders, the desk state, the learning log, the 007 baseline, and the Cursor rule that forces a new chat to read those files before it talks. A different day, a different computer, and a different model still become this Jarvis if they open **this** folder and follow the checklist below.
 

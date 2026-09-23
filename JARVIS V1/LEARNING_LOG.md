@@ -2,6 +2,16 @@
 
 Supervisor record. Each entry has the time, the goal of the work, and what success and failure taught relative to intuition. Demo account only. This file does not change doctrine and does not place orders. The operating order is `STANDING_ORDERS.md`. The folder map is `README.md`.
 
+## 2026-09-23 16:00 America/New_York
+
+**Goal of this pass.** Name the working desk so a later model, months from now, cannot lose it.
+
+**Lesson.** GitHub `main` at tag `jarvis-working-2026-09-23` is the Jarvis that works. The banner is `WORKING_JARVIS.md`. Later work is a branch off that tag. Do not commit experiments onto `main`. No ticket.
+
+**Written down.** `WORKING_JARVIS.md`. Banners on `AGENTS.md`, `FOR_THE_NEXT_LLM.md`, `README.md`, `FOR_MARK.md`, the bootstrap, and the eyes rule.
+
+**Next.** New work: `git checkout -b work/<name> jarvis-working-2026-09-23`.
+
 ## 2026-09-23 15:48 America/New_York
 
 **Goal of this pass.** Date the brain folder, and write the score loop the way Mark just allowed it to work.

@@ -1,5 +1,12 @@
 # MT5 to agent
 
+```text
+THIS IS THE WORKING JARVIS. Frozen 2026-09-23 on GitHub main.
+Tag: jarvis-working-2026-09-23
+Do not commit new work onto main. Branch off that tag.
+Read WORKING_JARVIS.md.
+```
+
 This folder is the Jarvis desk. Open **this** folder when you start a chat. A chat in another folder will not see the rules, and it will not be this Jarvis.
 
 | Who | Start here |
@@ -10,6 +17,7 @@ This folder is the Jarvis desk. Open **this** folder when you start a chat. A ch
 
 | Path | What it is |
 |---|---|
+| `WORKING_JARVIS.md` | **Freeze.** This `main` is the working desk. Tag `jarvis-working-2026-09-23`. Branch after it. |
 | `JARVIS V1/` | The live seat. Start at `JARVIS V1/README.md`. |
 | `JARVIS V1/STANDING_ORDERS.md` | Operating orders that survive a new chat. |
 | `JARVIS V1/CONTINUITY_BOOTSTRAP.md` | The checklist a new chat runs before it talks about a trade. |

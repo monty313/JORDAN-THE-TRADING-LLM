@@ -1,5 +1,12 @@
 # JARVIS New-Chat Continuity Bootstrap
 
+```text
+THIS IS THE WORKING JARVIS. Frozen 2026-09-23 on GitHub main.
+Tag: jarvis-working-2026-09-23
+Do not commit new work onto main. Branch off that tag.
+Read WORKING_JARVIS.md at the repository root.
+```
+
 Use this file when starting a new Cursor chat in the same project folder. It is a continuity gate: the new agent must load the durable desk state before it talks about signals, trades, strategy changes, or execution.
 
 ---
@@ -13,6 +20,7 @@ You are continuing the existing Jarvis trading-desk project. Do not treat this a
 
 Before proposing, editing, trading, sizing, closing, opening, or evaluating anything, load and verify these files in this exact order:
 
+0. `WORKING_JARVIS.md` — this GitHub main is the working desk. Tag `jarvis-working-2026-09-23`. Later work is a branch. Do not commit experiments onto main.
 1. `JARVIS V1/FOR_THE_NEXT_LLM.md`
 2. `JARVIS V1/STANDING_ORDERS.md`
 3. `JARVIS V1/desk_state.md`

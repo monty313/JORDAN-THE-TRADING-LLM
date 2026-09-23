@@ -70,6 +70,7 @@ These are scored so you can see them. They do not override that call:
 | `research/` | Thesis, monitor observations, and older studies. See `research/README.md`. |
 | `halted/` | Old scripts that must not be run. |
 | `../mentorship/JARVIS_MENTOR.md` | Required teaching. Two-clock test before an act. See `mentorship/README.md`. |
+| `../WORKING_JARVIS.md` | Freeze notice. This `main` is the working desk. Tag `jarvis-working-2026-09-23`. |
 | `brain/` | How he thinks. Dated packs. Start at `brain/README.md`. Latest: `2026-09-23_`. |
 
 `risk_floor` is the loss boundary. It is unset. `liquid_name_quota` is how many liquid names to monitor. A short count is not an order.
