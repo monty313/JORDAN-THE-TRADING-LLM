@@ -173,6 +173,8 @@ Fire when CCI 30 rejoins, back toward or through its shifted average, and both h
 
 Why it works: you are buying the light body as it stops fighting the heavy field and starts traveling with it. You are not buying "CCI 30 is low." Low without the heavy field is a snap-back the other way, or noise.
 
+The source specifies only that breath. The continuation of the same pair is the other clock. Both higher timeframes are still above their shifted averages, and on the anchor CCI 30 is already with CCI 100, both above their own lines, and price is leaving. The method classifies that aligned state as a launch. The source does not give it a separate entry. Do not fade it because the fast CCI is high, and do not write a second fire and pretend the source did.
+
 ### S2 — Dual Bollinger breath
 
 Same story on price instead of CCI. The wide band, period 100, deviation 0.5, shift +2, is inertia: the outer containment of the trend. The tight band, period 10, deviation 0.5, shift +2, is velocity. SMA 50 is the structural line that says the continuation is still the continuation.
@@ -181,7 +183,9 @@ Both higher timeframes hold price outside the wide band and the tight band, on t
 
 Fire when price reclaims the tight band and the wide containment is still true. Re-enter on a later touch of the tight band only while SMA 50 remains on the trend side of the wide band and the tide has not broken. Kill when the anchor accepts through the wide band, when SMA 50 no longer supports the side, or when the bands tangle into chop.
 
-The legacy name "trend reversion" is a bad name. This is continuation. You are not fading the trend. You are buying the dip that never left the wide field.
+The legacy name "trend reversion" is a bad name. The source is a breath inside a trend that never left the wide field. You are not fading the trend.
+
+The continuation of the same bands is the other reading. Price is already outside the wide band and the tight band on the anchor and on both supports, and SMA 50 is on that side. The method classifies that as a launch. The S2 source does not fire it. GV-015 does, on these exact bands. Live S2 stays the breath the source wrote. Do not fade the launch because price looks "too far" outside the tight band.
 
 ### S3 — Shifted price envelope
 
@@ -195,13 +199,17 @@ Wait while the higher timeframes are aligned and the anchor body has not cleared
 
 Why the shift exists: an unshifted average tells you where price is relative to a line that already includes the current bar's neighbors. A forward shift puts an older baseline under the current bar, so you can see that the tunnel itself has moved. Clearing a tunnel that is still advancing is conserved momentum. Clearing a tunnel that has already flattened is a late poke.
 
+The source specifies only that clearance. That is the launch. The breath of the same tunnel is the other clock. Both higher timeframes stay outside both rails. The anchor body comes back inside the tunnel, then clears it again on a later closed bar. The method classifies that second clearance as the release of a breath. The source does not write "buy the dip inside the tunnel." A wick is still not acceptance. Fading the first clearance because the fast price looks stretched is still refused.
+
 ### S4 — RSI tension snap
 
 RSI 2 is velocity. RSI 20 is inertia. Each carries Bollinger bands of period 20, deviation 0.5, shifted forward 2. Both higher timeframes need both RSIs on the trend side of those bands. On the anchor, RSI 20 stays above its middle while RSI 2 drops through its lower band. That is a fast stretch inside a slow trend that is still allowed.
 
 Fire when RSI 2 turns back out of that extreme and the higher timeframes are still there. Kill when RSI 20 loses its middle, either higher timeframe loses RSI force, or price structure contradicts the side.
 
-This is a breath with a very fast velocity sensor. It is not a license to sell a launch because RSI 2 is high. RSI 2 prints extremes constantly. The higher timeframes and RSI 20 decide whether the extreme is tension or the trend itself.
+This is a breath with a very fast velocity sensor. The source specifies only that breath: the fast RSI in the extreme, the slow RSI still on the side, both higher timeframes still there. The fire is the turn back out, not the print of the extreme.
+
+The continuation of the same pair is both RSI 2 and RSI 20 already on the trend side of their bands on the anchor as well as on both supports. The method classifies that as a launch. The source does not fire an already-stretched RSI 2. RSI 2 prints extremes constantly. When RSI 20 and both higher timeframes are still driving, the extreme is the trend. Selling it is the mistake.
 
 ### The one-line test
 
@@ -219,7 +227,7 @@ A fractal, a MACD cross, or a lone band touch does not fill a cell of that table
 
 ### Sibling sensor, not a second library
 
-`rsi + bb strategy.txt` tells the same story with different numbers: RSI 14, bands of period 10, deviation 1, shift 5, on three timeframes. All three above the upper band is the launch. The two higher timeframes above the upper band, and the anchor crossing back up through the middle, is the breath. Live acts use S4's sensors and the official sets. This file is the same principle in another costume. It does not add a set, and it does not replace RSI 2 / RSI 20.
+`rsi + bb strategy.txt` tells the same story with different numbers: RSI 14, bands of period 10, deviation 1, shift 5, on three timeframes. The source writes both sides, unlike S4. The momentum buy is the continuation: RSI above its upper band on all three timeframes. The pullback buy is the breath: the two higher timeframes stay above the upper band, and the anchor RSI crosses back up through the middle. Sells invert both. The sets written in that file are 1m/15m/30m, 5m/1h/4h, and 15m/4h/1d. The first matches official set 1. The other two do not match sets 2 and 3. Live acts still use S4's sensors (RSI 2 and RSI 20, bands of period 20, deviation 0.5, shift +2) and the official sets. This file is the same principle in another costume. It does not add a set, and it does not replace RSI 2 / RSI 20.
 
 ---
 
@@ -229,59 +237,61 @@ Sections 1 through 6 and section 8 of this folder are the audit language for tha
 
 The recurring repair is always the same. Most of these specs knew direction and forgot fuel. Oscillator magnitude was being asked to do the energy job. And several of them required the second timeframe only when they wanted to call the trade super. The second timeframe is the tide. It is required for every grade, or the grade is not a trade.
 
+Sections 1 through 6 of the folder are the physics those audits sit on, not extra strategies. Gravity is mass and orbit: timeframe first, then period. A stretch without the heavy mass is a snap-back. A stretch with the heavy mass and with fuel is an extension. The five finding failures are vetoes: one timeframe is not a regime, chop is a failed census, a cross without fuel is not early momentum, two of three is not a weak yes, and one sensor cannot hold two roles. The five utilization failures are execution vetoes: a stale state is not an entry, the license is re-read every closed bar, size decays from the event, a fast exit does not spend the license, and two tickers on one signal are one bet. Pullback and super are the breath and the launch, and they do not share an exit. A higher-timeframe state that still holds is a standing license for the next fresh lighter-clock event. Nested periods of one family, all on the same side of equilibrium and of their own line, are one force. There is no section 7 in the folder.
+
 ### STRAT-001 — Regime pulse
 
-Price versus the Bollinger middle is a mass. BB(200) middle is heavier than BB(20) middle. Higher-timeframe price above both middles is the tide. The anchor breath is a pullback to the BB(20) middle or lower band that closes back on the trend side. The launch is a close through the BB(20) upper band on the higher timeframe and on the anchor, as two separate reads. The higher-timeframe pierce is permission. The anchor pierce is the event. Exit is the fast oscillator completing its round trip, or the middle band flipping. "Full neutral chop" means the census failed. It is not an energy reading. This host still needs the energy gate before it is a trade.
+Price versus the Bollinger middle is a mass. BB(200) middle is heavier than BB(20) middle. Higher-timeframe price above both middles is the tide. The source specifies both trades. The breath is a pullback to the BB(20) middle or lower band that closes back on the trend side. The launch is a close through the BB(20) upper band on the higher timeframe and on the anchor, as two separate reads. The higher-timeframe pierce is permission. The anchor pierce is the event. Do not enter the launch on the touch of the band, and do not enter the breath on the dip before the close back. Exit is the fast oscillator completing its round trip, or the middle band flipping. "Full neutral chop" means the census failed. It is not an energy reading. This host still needs the energy gate before it is a trade.
 
 ### STRAT-002 — CCI surge
 
-H1 CCI(30) and CCI(100), and the same pair on M15, all on one side of zero. That is S1's family with the zero line as equilibrium instead of a shifted SMA. Mixed signs on either timeframe are flat. Both anchor CCIs beyond +100 is a louder displacement, not a super grade. Super still waits on great movement from the energy gate. The fast exit is M15 RSI(7) crossing 50 against the position. The trail is the slower CCI crossing zero against. Re-entry while both clocks stay on the side is the standing license.
+H1 CCI(30) and CCI(100), and the same pair on M15, all on one side of zero. That is S1's family with the zero line as equilibrium instead of a shifted SMA. The source specifies the continuation: both clocks already agree, both periods already on the same side of zero. Mixed signs on either timeframe are flat. Both anchor CCIs beyond +100 is a louder displacement, not a super grade. Super still waits on great movement from the energy gate. The breath of the same pair would be the fast CCI dipping through zero while the slow CCI and both clocks stay on the side, with the fire on the rejoin. The source does not write that dip as an entry. It fires the aligned state and the fresh cross that completes it, and it re-enters while both clocks stay on the side. The fast exit is M15 RSI(7) crossing 50 against the position. The trail is the slower CCI crossing zero against.
 
 ### STRAT-003 — CCI trinity
 
-CCI(14), CCI(100), CCI(900), each with its own SMA(20). All three on the same side of equilibrium and of their own average is one compounded force. Any one off-side is no signal, including a clean 2-of-3. The fastest member times the entry. The slower members license. For a launch-grade hold, the exit clock is the mid member, not the fastest, or the trade is reclassified as a scalp. The higher-timeframe trinity belongs on every entry, not only the super branch.
+CCI(14), CCI(100), CCI(900), each with its own SMA(20). All three on the same side of equilibrium and of their own average is one compounded force. The source specifies that continuation, and it specifies the refusal of the breath that would break it. Any one off-side is no signal, including a clean 2-of-3. The method can see the shape of a breath — the fastest member dips against the two slower members, then rejoins — but the source classifies that dip as unanimity failure, not as a loaded entry. Do not promote it. The fastest member times the entry only while all three still agree. The slower members license. For a launch-grade hold, the exit clock is the mid member, not the fastest, or the trade is reclassified as a scalp. The higher-timeframe trinity belongs on every entry, not only the super branch.
 
 ### STRAT-004 — SMA stack
 
-Price above SMA(50), above SMA(4), and above SMA(4) shifted forward. The shifted copy is the persistence test on a mass. SMA(50) dominates if they disagree. The cross of price back through SMA(4) is the mirror of the entry, so it is the exit. The higher-timeframe stack is the tide for every grade. A stop "1% beyond the extreme" places a price. It does not size the account. Those are different units.
+Price above SMA(50), above SMA(4), and above SMA(4) shifted forward. The source specifies the continuation: the stack is already aligned, and the fresh event is the stack completing, not a dip. The shifted copy is the persistence test on a mass. SMA(50) dominates if they disagree. The breath of the same stack would be price dipping through SMA(4) while SMA(50), the shifted copy, and the higher-timeframe stack still hold, with the fire on the recross. The source does not write that dip as an entry. It writes the cross back through SMA(4) as the exit, the mirror of the entry. The higher-timeframe stack is the tide for every grade. A stop "1% beyond the extreme" places a price. It does not size the account. Those are different units.
 
 ### STRAT-005 — SMA reversion rally
 
-This is the breath in moving-average clothing. SMA(30) above SMA(50) is the slow field. The entry event is price crossing back above SMA(30) after the dip, or RSI(5) crossing back above 50. Exit when RSI(5) completes the round trip through 40, or when price closes through SMA(50). Two trigger paths under one license are one signal source. They share one risk budget. They never open two positions.
+The source specifies the breath. SMA(30) above SMA(50) is the slow field. The entry event is price crossing back above SMA(30) after the dip, or RSI(5) crossing back above 50. The fire is the rejoin, not the dip. The continuation of the same relation is price already above SMA(30) and SMA(50) on the anchor and on the higher timeframe, with no fresh cross. The method classifies that as a launch. The source does not fire it. The same SMA relation on the higher timeframe is the source's heavier license, not a second recipe. Exit when RSI(5) completes the round trip through 40, or when price closes through SMA(50). Two trigger paths under one license are one signal source. They share one risk budget. They never open two positions.
 
 ### STRAT-006 — Energy gate
 
 This is not a strategy. It is the fuel question, and it is the piece the other hosts were missing.
 
-On each timeframe, ADX(14) above its own SMA(1) shifted forward 5, and ATR(14) above its own SMA(1) shifted forward 5, and ADX above a floor near 20. The lighter clock failing is nothing happening. The lighter clock passing while the heavier clock is dead is still nothing happening. Partial heavier-clock fuel is tradable. Both clocks passing is great movement. ADX and ATR never receive a directional job. Import this gate into a directional host. Do not trade it alone, and do not let a directional host trade without it.
+On each timeframe, ADX(14) above its own SMA(1) shifted forward 5, and ATR(14) above its own SMA(1) shifted forward 5, and ADX above a floor near 20. The lighter clock failing is nothing happening. The lighter clock passing while the heavier clock is dead is still nothing happening. Partial heavier-clock fuel is tradable, which licenses a breath and refuses a launch. Both clocks passing is great movement, which licenses the breath and the launch. ADX and ATR never receive a directional job, so they have no pullback entry and no continuation entry of their own. Import this gate into a directional host. Do not trade it alone, and do not let a directional host trade without it.
 
 ### STRAT-007 — SMA fan
 
-Five shifted SMA(4) copies, parallel and all on one side of SMA(50). That is unanimity by shift instead of by period. A fan that crosses itself is no signal. Entry is the bar the fan finishes aligning, not the twentieth bar it stays pretty. Re-straightening after a break is a new event under the same license, if the license is still true.
+Five shifted SMA(4) copies, parallel and all on one side of SMA(50). That is unanimity by shift instead of by period. The source specifies the continuation: entry is the bar the fan finishes aligning, not the twentieth bar it stays pretty. A fan that crosses itself is no signal. The breath of the same fan would be price touching back toward a fan that is still straight, with the fire on the bounce. The source does not write that touch as an entry. Re-straightening after a break is a new alignment event under the same license, if the license is still true. That is another launch of the fan, not a pullback into it.
 
 ### STRAT-008 — CCI band outbreak
 
-Bollinger bands drawn on CCI(30), CCI(100), and CCI(300). All three closing outside their own upper band is a launch on an oscillator instead of on price. All three inside their bands is compression: nothing happening, entries masked. Exit is any member crossing its own middle band against the position. Two of three outside the band is no signal. The pierce algebra does not care whether the band was computed on price or on CCI.
+Bollinger bands drawn on CCI(30), CCI(100), and CCI(300). The source specifies the continuation: all three closing outside their own upper band is a launch on an oscillator instead of on price. All three inside their bands is compression: nothing happening, entries masked. The breath would be the fast CCI back inside its band while the two slower members stay outside, then rejoining. The source classifies two of three as no signal, so that dip is not an entry it wrote. Do not trade it as a breath of this host. Exit is any member crossing its own middle band against the position. The pierce algebra does not care whether the band was computed on price or on CCI.
 
 ### STRAT-009 — Opening-bell breakout
 
-The cash open is a known energy injection. It can stand in for the measured energy gate. It stands in for nothing else. The event is the first confirmed anchor close beyond the prior range, inside a short window after the open. A later extended state is stale. Direction still needs a heavier-clock mass, a mirrored exit back inside the range, and a license that dies when the window dies. A clock is not a strategy.
+The cash open is a known energy injection. It can stand in for the measured energy gate. It stands in for nothing else. The source specifies the continuation: the first confirmed anchor close beyond the prior range, inside a short window after the open. A later extended state is stale. The breath of the same range would be a retest of the broken level, still inside the window, while the heavier clock stays on that side, with the fire on the bounce. The source does not write that retest. Direction still needs a heavier-clock mass, a mirrored exit back inside the range, and a license that dies when the window dies. A clock is not a strategy.
 
 ### STRAT-010 — Red-folder news with a weekly bias
 
-Weekly positioning is a very heavy, very slow mass. A red-folder release is another known energy spike. The trade, if it exists, is still a breath: after the first spike, inside a short window, pull back to the heavy average in the direction of the weekly mass, and only if the actual-versus-forecast agrees with that mass. Never against the weekly mass. Several instruments keyed to the same weekly extreme are one signal.
+Weekly positioning is a very heavy, very slow mass. A red-folder release is another known energy spike. The source specifies only the breath: after the first spike, inside a short window, pull back to the heavy average in the direction of the weekly mass, and only if the actual-versus-forecast agrees with that mass. The fire is that pullback, not the spike. The continuation is the spike itself, price leaving with the news. The method classifies that first burst as a launch. The source refuses to trade it, and it refuses any entry against the weekly mass. Several instruments keyed to the same weekly extreme are one signal.
 
 ### STRAT-011 — Shifted CCI aligner
 
-This is the persistence test written without decoration. H1 CCI(140) above zero and above its own SMA(1) shifted forward 4 bars is uninterrupted momentum. One closed bar back through that shifted line interrupts it. New entries stop. M5 CCI(14) crossing zero with that license is the event. Crossing back is the mirror exit. While the H1 license holds, the next fresh M5 cross is a new trade. ATR here sizes the stop. It does not, by itself, classify energy. The energy gate is still imported.
+This is the persistence test written without decoration. H1 CCI(140) above zero and above its own SMA(1) shifted forward 4 bars is uninterrupted momentum. One closed bar back through that shifted line interrupts it. New entries stop. The source's event is an M5 CCI(14) zero-cross in the license direction. That cross is the breath: the fast CCI was on the other side of zero and has rejoined, while the heavy CCI is still persistent. The continuation of the same pair is M5 CCI already above zero and extending, with no fresh cross, while H1 is still persistent. The method classifies that extended state as a launch. The source does not fire it. It fires the cross, and the cross back is the mirror exit. While the H1 license holds, the next fresh M5 cross is a new trade. ATR here sizes the stop. It does not, by itself, classify energy. The energy gate is still imported.
 
 ### GV-014 and GV-015 — the factory, gold
 
 These are tested instances of the same relation, not a new religion. They were walked forward on gold. They are pool units. They are not a claim of a smooth daily income.
 
-GV-014 is a breath on set 2's clocks: anchor 5m, supports 30m and 1h. The tide is gold outside both a wide tunnel and a tight tunnel on 30m and on 1h (SMA 200 plus one standard deviation, and SMA 20 plus one standard deviation). The event is the first 5m close back inside the tight upper band while that tide holds. The exit is a 30m close through SMA(4) shifted one bar. The heavier clock exits. The lighter clock enters. Shorts mirror. One position. No pyramid.
+GV-014 is a breath on set 2's clocks: anchor 5m, supports 30m and 1h. The source specifies only that breath. The tide is gold outside both a wide tunnel and a tight tunnel on 30m and on 1h (SMA 200 plus one standard deviation, and SMA 20 plus one standard deviation). The event is the first 5m close back inside the tight upper band while that tide holds. The fire is the snap back in, not the fact that price is outside. The continuation of the same tunnels is the 5m close already outside both bands while 30m and 1h are outside both. The method classifies that as a launch. The source does not fire it. It waits for the return inside the tight band. The exit is a 30m close through SMA(4) shifted one bar. The heavier clock exits. The lighter clock enters. Shorts mirror. One position. No pyramid.
 
-GV-015 is S2's exact bands — period 100 and period 10, deviation 0.5, shift +2 — on set 3's clocks: 15m anchor, 1h and 4h support. The first entry is the launch: the anchor closes outside both bands and above SMA 50, with both supports already outside both bands. The re-entry is the breath: a later touch of the tight band while SMA 50 is still on the trend side of the wide band. Exit is a close through SMA 50. The machine-learning file on top of GV-015 scores the probability of a signal that the rules already produced. It does not create permission, and it does not override a failed tide.
+GV-015 is S2's exact bands — period 100 and period 10, deviation 0.5, shift +2 — on set 3's clocks: 15m anchor, 1h and 4h support, gold by default. The source specifies both trades. The first entry is the continuation: the anchor closes outside both the wide band and the tight band and beyond SMA 50, and both gravity timeframes are already outside both bands. The re-entry is the breath: a later touch of the tight band while SMA 50 still supports the wide band and price is still beyond SMA 50. Exit is a close through SMA 50. Shorts mirror. The machine-learning file on top of GV-015 scores an already-legal signal. It does not create permission, and it does not override a failed tide. The Python harness around both units measures them. It is not a third strategy.
 
 ---
 
@@ -293,17 +303,21 @@ The guide's own last page already knows the split. Strong, rising fuel favors ri
 
 ### Trend recipes — they are launches, and they are late on purpose
 
-A trend system enters after the move has begun and exits after it has turned. That lateness is the price of confirmation. It matches the launch, not the breath. On this desk the confirmation has to include the heavier clock. A daily 50/200 cross, by itself, is one clock.
+A trend system enters after the move has begun and exits after it has turned. That lateness is the price of confirmation. It matches the launch, not the breath. On this desk the confirmation has to include the heavier clock. A daily 50/200 cross, by itself, is one clock. The guide writes these seven as launches. The breath of each one is stated below as the method's reading of the same sensors, unless the guide itself already wrote the pullback.
 
-| Guide | What it actually is | What survives |
-|---|---|---|
-| 1. 50/200 moving-average cross | A slow mass and a faster mass on one chart. The cross is an event. The slope of both averages is the persistence test. | Legal as a tide on a high timeframe. Illegal as a scalp trigger. Whipsaw in chop is the census failure. EMA and SMA are not interchangeable; pick one and keep the role. |
-| 2. Range breakout | Compression, then a body that clears the box, with participation. A wick is not a break. A close back inside is the mirror exit. | This is S3's shape: body clearance, not a poke. The retest entry is the breath after the launch has already been proven. Volume, when the feed has it, confirms. It never sets the side. |
-| 3. Donchian / turtle | A new N-bar extreme is a launch. The shorter channel is a slower exit than a scalp clock and a faster exit than the entry channel, so the trade can breathe without giving the whole move back. | The asymmetry is the launch exit rule: do not exit on the same line that got you in. Skip-after-a-winner and ATR size are risk hygiene. They do not replace the heavier clock. |
-| 4. ADX and DI | ADX is fuel. DI is direction. Fuel below the floor means do not take directional trades. Rising fuel is better than fuel that is merely high. Very high and falling is exhaustion, not a fresh entry. | This is STRAT-006 said with DI as the direction sensor. ADX falling is not a short. |
-| 5. Rate of change through zero | A momentum flip is an event. Without a heavier trend filter it is noise, and against the heavier trend it is usually a snap-back, not a new tide. | Keep it only as a velocity event inside an already-legal tide. |
-| 6. Parabolic SAR | A trailing stop that tightens as the trend ages. In a range it flips every other bar. | Use it as an exit manager inside a tide another sensor already set. Do not let the flip choose a side against the heavier clock. The initial dot can be far; size comes from that distance, not from confidence. |
-| 7. EMA ribbon 8/13/21/34/55 | A unanimity fan. Fanned and stacked is one force. Bunched is no signal. The entry that matches this desk is the pullback onto the fast edge of a ribbon that is still stacked, not the first excited fan-out. | A close through the slowest average is the structural kill. A touch of the fastest average is the breath, not the stop. |
+**1. Fifty and two hundred.** The source specifies a launch on one daily chart: the 50-period average crosses above the 200, both sloping up, entered on the next open. The death cross is the exit. Whipsaw in chop is the census failure. EMA and SMA are not interchangeable; pick one and keep the role. On this desk that cross is legal as a tide on a heavy clock. It is illegal as a scalp trigger. The breath of the same pair is the lighter clock dipping against a 50 that is still above a rising 200, with the fire on the rejoin. The guide does not write that dip. It writes the cross.
+
+**2. Range breakout.** The source specifies the launch: a body that closes beyond a range tested on both sides, with volume above its recent average. A wick is not a break. A close back inside is the mirror exit. The guide also writes the breath: wait for price to pull back and retest the broken level as support, and enter on the bounce. That retest is legal only after the launch has already been proven and the heavier clock is on the same side. Volume confirms. It never sets the side. This is S3's shape.
+
+**3. Donchian turtle.** The source specifies the launch: a close beyond the 20-bar high, or below the 20-bar low. The 10-bar channel is the exit, slower than a scalp clock and faster than the entry channel, so the trade can breathe without giving the whole move back. Do not exit on the same line that got you in. Skip-after-a-winner and ATR size are risk hygiene. They do not replace the heavier clock. The breath of the same channel would be a pullback that stays beyond the broken extreme and then leaves again. The guide does not write that retest. It writes the new N-bar extreme. Fading the new high because it is "extended" is the mistake.
+
+**4. ADX and DI.** ADX is fuel. DI is direction. The source specifies a continuation only when fuel is alive: +DI crosses above −DI while ADX is above a floor near 25 and still rising. Fuel below the floor means do not take directional trades. ADX falling is not a short. Very high and falling is exhaustion, not a fresh entry. This is STRAT-006 said with DI as the direction sensor. The breath of the same pair is price dipping while +DI is still above −DI and ADX is still climbing, with the fire on the turn back with DI. The guide's entry is the DI cross itself, which is the launch of direction once fuel agrees. It does not write a separate dip entry. A heavier clock still has to name the tide. ADX on one chart cannot.
+
+**5. Rate of change.** The source specifies a momentum flip through zero, with a same-chart filter that price is already on the trend side of a 50-period average. Without that filter the flip is noise. Against a heavier trend it is usually a snap-back, not a new tide. The method keeps ROC only as a velocity event inside an already-legal tide. If the heavier clock is on the side and ROC crosses back through zero with it, that cross is the breath's rejoin. If ROC is already through zero and still accelerating while both clocks agree, the method classifies that as a launch. The guide writes the cross, not the already-extended print. Do not fade a ROC that is stretched in the direction of the tide.
+
+**6. Parabolic SAR.** The source specifies a flip of the dot from one side of price to the other, and it wants the system always in. In a range it flips every other bar. On this desk the dot is an exit manager inside a tide another sensor already set. It does not choose a side against the heavier clock. The initial dot can be far; size comes from that distance, not from confidence. The continuation is a dot already on the trend side of price while the heavier clock agrees and fuel is expanding. That is a launch you trail, not a fade. The breath is price tagging back toward the dot while the heavier clock and the dot's side still hold, with the fire only if price rejects the dot and leaves again. The guide writes the flip as a reversal into the new side. The method refuses that reversal when it fights the heavier clock.
+
+**7. EMA ribbon.** Periods 8, 13, 21, 34, 55. Fanned and stacked in order is one force. Bunched is no signal. The guide writes both clocks of the same ribbon. The breath is the one that matches this desk: price pulls back onto the fast edge, the 8 or the 13, while the stack is still ordered, and the fire is the bounce. A touch of the fastest average is the breath, not the stop. The continuation is the aggressive entry the guide also writes: the first bar the ribbon fans out and stacks after being bunched. That is a launch. A close through the slowest average, the 55, is the structural kill. The heavier timeframe still has to agree before either entry is a fire. A pretty fan on the anchor against a heavier clock is a local state.
 
 ### Reversion recipes — they are breaths, and they are illegal against the tide
 
@@ -311,25 +325,31 @@ Mean reversion is the snap-back of a stretch that has no heavy mass behind it. I
 
 The entry detail the guide gets right, and that this desk already uses: touching an extreme is not the entry. The entry is the turn back — the close back inside the band, the cross back through 30, the cross back through +2. The extreme is the load. The exit from the extreme is the release. Entering on the touch is buying the loaded state.
 
-| Guide | What it actually is | What survives |
-|---|---|---|
-| 8. Bollinger fade | A close back inside the outer band, target the middle. Riding the band is a launch. A squeeze is stored energy about to choose a side. | Fade only when the heavier clock has already said range. If the heavier clock is trending, this setup is S2's breath or it is nothing. Do not fade a squeeze. |
-| 9. RSI 30/70 | The signal is the cross back out of the zone. Divergence is weakening velocity. It is a warning. It is not a side. | Against a confirmed tide, skip it. RSI(2) extremes are S4's velocity sensor, not a standalone fade. |
-| 10. VWAP fade | Session fair price. Institutions execute around it, so distance from it pulls back on an ordinary day. On a trend day, price leaves and does not come back. | Intraday only. It resets daily. Map it as equilibrium. Trade the rejection back toward it only when the higher intraday clock is not in a launch. A trend day switches this recipe off and turns the day into S3. |
-| 11. Keltner fade | Same pierce-and-return algebra as Bollinger, with ATR width so a spike does not instantly widen the band and hide the extreme. | Same rule as the Bollinger fade. When Bollinger width is inside the Keltner width, that is compression. Wait for the break and trade that side. Do not fade it. |
-| 12. Z-score | Distance from a rolling mean in standard deviations. The entry is the cross back inside +2 or -2. A print beyond 3 is a momentum event. Stand aside. | A number of standard deviations is still just distance. The heavier clock decides whether it is a fade or a launch. |
-| 13. Stochastic | %K crossing %D inside an extreme zone is a velocity turn. It stays pinned in a trend and looks like a setup the whole way. | A higher-timeframe stochastic can be context. It cannot outvote the tide. Fast settings add noise, not a new principle. |
-| 14. Williams %R | The same extreme-exit idea on an inverted scale. A very fast travel from one extreme to the other is a momentum burst. Trade the burst, not the fade. | The burst clause is the launch exception written into a fade system. Honor it. The scale runs backward from RSI. Read the zone before you name the side. |
+These seven are breaths only when the heavier clock has already called a range. Inside a tide they are illegal as fades. The continuation of each one is what the same extreme means when the heavier clock is driving.
+
+**8. Bollinger fade.** The source specifies the breath inside a range: price tags the outer band, and the next candle closes back inside. The target is the middle. Riding the band is not that trade. The method classifies a close that stays outside the band, with the heavier clock on the same side and fuel expanding, as a launch. Do not fade it. A squeeze, bands at their narrowest, is stored energy about to choose a side. Wait for the break and trade that side. If the heavier clock is trending, this setup is S2's breath — a dip that never left the wide field — or it is nothing.
+
+**9. RSI 30/70.** The source specifies the breath: RSI enters the zone, then crosses back out. The cross back is the fire. Divergence is weakening velocity. It is a warning. It is not a side. Against a confirmed tide, skip the fade. The continuation is RSI pinned in the extreme while the heavier clock and the slow sensor are still driving. The method classifies that pin as a launch. RSI(2) extremes are S4's velocity sensor, not a standalone fade. The guide's two-period variant, oversold below 10 and overbought above 90, is the same rule with a faster orbit.
+
+**10. VWAP fade.** Session fair price. The source specifies an intraday breath: price stretches beyond a deviation band, a rejection candle prints, volume is present, and the target is VWAP. It resets daily, so it is not a swing tide. The continuation is the trend day the guide already names: price accepts beyond the outer band and does not come back. The method classifies that day as a launch. Stop fading and join, which on this desk is S3 language, and only with the higher intraday clock. Volume confirms a rejection. It does not set the side. The first minutes of the session are not a reading. VWAP has not accumulated.
+
+**11. Keltner fade.** Same pierce-and-return algebra as Bollinger, with ATR width so a spike does not instantly widen the band and hide the extreme. The source specifies the breath: a close back inside the channel, target the middle EMA. The continuation is the squeeze the guide writes into the same chapter: when Bollinger width sits inside the Keltner width, that is compression. Wait for the break and trade that side. The method classifies the break, with the heavier clock agreeing, as a launch. Do not fade it. A Keltner extreme while the heavier clock is trending is the same illegal fade as the Bollinger ride.
+
+**12. Z-score.** Distance from a rolling mean in standard deviations. The source specifies the breath: Z goes beyond +2 or −2, then crosses back inside. The target is zero. A print beyond 3 is a momentum event. The guide says stand aside. The method classifies a Z that stays beyond 2, with the heavier clock on that side and fuel still expanding, as a launch. A number of standard deviations is still just distance. The heavier clock decides whether the cross back inside is a legal breath in a range, or a trap against a tide.
+
+**13. Stochastic.** The source specifies the breath: both %K and %D inside the extreme zone, then %K crosses %D back out of it. The cross is the fire. The touch of 80 or 20 is the load. It stays pinned in a trend and looks like a setup the whole way. That pin, with the heavier clock driving, is the continuation. The method classifies it as a launch. Do not fade it. A higher-timeframe stochastic can be context. It cannot outvote the tide. Fast settings add noise, not a new principle.
+
+**14. Williams %R.** The same extreme-exit idea on a scale that runs backward from RSI. Above −20 is the hot zone. Below −80 is the cold zone. Read the zone before you name the side. The source specifies the breath: %R enters the zone, then exits it, and the next candle confirms. The source also specifies the continuation, in one clause: a very fast travel from one extreme to the other in a handful of bars is a momentum burst. Trade the burst, not the fade. The method classifies that burst, when the heavier clock agrees, as a launch. Honor it. A slow extreme against the tide is still an illegal fade.
 
 ---
 
 ## 7. What else is in the folder, and what Jarvis does with it
 
-**Venice VWAP note.** The only sentences that belong to this method: know the one-hour tide before you scalp, and if price accepts beyond the outer band, stop fading and join. Volume confirms a rejection. It does not set the side. The advertised win rate, the session table, and the offer to code an EA are not doctrine.
+**Venice VWAP note.** The note writes a one-chart fade: tag a deviation band around VWAP, with volume above its average and a rejection candle, target VWAP. The only sentences that belong to this method: know the one-hour tide before you scalp, and if price accepts beyond the outer band, stop fading and join. That acceptance is the continuation. The method classifies it as a launch. The fade is the breath, and it is legal only when the higher clock is not already leaving. Volume confirms a rejection. It does not set the side. The same note's EMA alternative is a breath the source does write: price pulls back to the 9 EMA while the 9 is with the 21 and ADX is above 25, and the fire is the close back through the 9. The continuation of that pair is price already leaving with both averages stacked and ADX still rising. The method classifies that as a launch. The note does not fire it. It fires the pullback to the 9. The advertised win rates, the session table, and the offer to code an EA are not doctrine.
 
-**Venice "real edges" note.** Order-flow reading, market making, latency, and statistical pairs are other businesses. They need data and infrastructure this desk does not trade with. They do not change tide, breath, or launch. Leave them.
+**Venice "real edges" note.** Order-flow reading, market making, latency arbitrage, statistical pairs, news-speed scalping, microstructure patterns, and opening-auction imbalances are other businesses. The note's retail leftovers — support and resistance bounces, and a volatility-compression breakout — are the same breath and launch this file already has, without a sensor spec precise enough to fire. They need data and infrastructure this desk does not trade with, or they are names without a kill. They do not change tide, breath, or launch. Leave them. Do not treat a latency race or a queue jump as a strategy to learn here.
 
-**Student results sheet.** Other people's named studies: order blocks, supply and demand, a reversal method, Fibonacci, a DXY study, an SID method. The sheet is a list of students and claimed win rates. It does not specify a sensor, a set, or a kill condition. A win rate without the relation is not a principle. Jarvis does not fire from a name on that sheet.
+**Student results sheet.** Other people's named studies: order blocks, supply and demand, a reversal method, Fibonacci, a DXY study, an SID method, and, under those same headings, head and shoulders and M-and-W patterns. The sheet is a list of students and claimed win rates. It does not specify a sensor, a set, or a kill condition. A win rate without the relation is not a principle. Jarvis does not fire from a name on that sheet. There is no pullback rule and no continuation rule to classify, because the source never wrote either one.
 
 **Factory backtest code.** `prep.py`, `sweep.py`, `wf.py`, `engine.py`, and the rest are how GV-014 and GV-015 were measured. They are not rules of trading. A passing walk-forward says the relation showed up in that sample. It does not relax the tide, the closed-bar rule, or the risk gate.
 
@@ -364,6 +384,32 @@ If you can only say that a condition "is true right now" and you cannot point to
 - Holding because the entry used to be valid.
 - Adding size to get back a loss.
 - Treating a loaded, unreleased breath as indecision. That wait is the skill.
+
+---
+
+## Coverage
+
+`strategy - Copy` is a duplicate of this folder. It is not a second strategy set.
+
+| Source | Where it is |
+|---|---|
+| `section-1.md` gravity, mass, orbit, snap-back versus extension | Sections 2 and 5 |
+| `section-2.md` five finding failures | Sections 2 and 3, and the opening of section 5 |
+| `section-3.md` five utilization failures | Sections 2 and 3, and the opening of section 5 |
+| `section-4.md` pullback versus super | Sections 2 and 5 |
+| `section-5.md` higher-timeframe persistence and re-entry | Sections 2 and 5 |
+| `section-6.md` multi-period unanimity | Sections 2 and 5 |
+| `section-8.md` STRAT-001 through STRAT-011, including STRAT-0009 and STRAT-0010 | Section 5. There is no section 7 in the folder. |
+| `new_trading_strategies.md` and `new_trading_strategies (1).md` (the same four) | Section 4. Extra-confidence four-timeframe stacks stay reference, not a fifth official set. |
+| `rsi + bb strategy.txt` | Section 4, sibling sensor |
+| `factory_full\GV-014-XAU-L1.md` and `GV014_gravity_snap.pine` | Section 5 |
+| `factory_full\GV015_tunnel_rider.pine` | Section 5 |
+| `factory_full\ml15.py` | Section 5. It scores GV-015. It is not a strategy. |
+| `factory_full\README_FACTORY.txt` and the Python harness | Section 7. Measurement, not a rule. |
+| `Strategies to replicate in Algo Trading.docx.html` (the fourteen) | Section 6 |
+| `venice strate.txt` | Section 7 |
+| `venice strat 2.txt` | Section 7. Named and refused. |
+| `Student Strategy Tests.xlsx - Student Results.csv` | Section 7. Names only. Refused as fires. |
 
 ---
 
