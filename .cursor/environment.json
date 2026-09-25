@@ -1,0 +1,5 @@
+{
+  "name": "JARVIS trading desk",
+  "user": "ubuntu",
+  "install": "python3 -m pip install --user numpy tzdata"
+}
