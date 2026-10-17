@@ -1,5 +1,7 @@
 # The Method
 
+One multi-timeframe momentum method for the Jarvis desk. The heavier clock permits the side. The lighter clock times the bar. There are two trades inside that relation: a pullback while the heavier clock still holds, and a continuation when the lighter clock is already leaving with it. Every strategy in the desktop `strategy` folder is rewritten onto that relation so Jarvis can see why a setup works, not only the indicator rules that fire it.
+
 Written for Jarvis and Jordan. Read this after `doctrine/007_JARVIS_Momentum_Conservation_Trading_Mentor_Baseline.md` and `mentorship/JARVIS_MENTOR.md`.
 
 Those two files are the contract. They name the sets, the sensors, and the acts. This file is the reason the contract is shaped the way it is. If this file and the baseline ever disagree on a period, a shift, a timeframe set, or an act, the baseline wins. The baseline is read-only. This file does not create a new official strategy and it does not authorize a live order.
