@@ -1,29 +1,65 @@
-# MT5 to agent
+# JORDAN-THE-TRADING-LLM
 
-```text
-THIS IS THE WORKING JARVIS. Frozen 2026-09-23 on GitHub main.
-Tag: jarvis-working-2026-09-23
-Do not commit new work onto main. Branch off that tag.
-Read WORKING_JARVIS.md.
-```
+## Project mission
+Develop and operate a trading/market intelligence system focused on JORDAN THE TRADING LLM.
 
-This folder is the Jarvis desk. Open **this** folder when you start a chat. A chat in another folder will not see the rules, and it will not be this Jarvis.
+## What this repository currently contains
+Top-level structure:
+- `.cursor` (dir)
+- `.gitignore` (file)
+- `AGENTS.md` (file)
+- `docs` (dir)
+- `doctrine` (dir)
+- `experiments` (dir)
+- `FOR_MARK.md` (file)
+- `HANDOFF.md` (file)
+- `JARVIS V1` (dir)
+- `jOB.txt` (file)
+- `mentorship` (dir)
+- `README.md` (file)
+- `rolltide mq5.txt` (file)
+- `WORKING_JARVIS.md` (file)
 
-| Who | Start here |
-|---|---|
-| Mark, including on another computer | `FOR_MARK.md` |
-| The next model | `AGENTS.md`, then `JARVIS V1/FOR_THE_NEXT_LLM.md` |
-| How he is actually doing | `JARVIS V1/HOW_JARVIS_IS_DOING.md` |
+Primary languages/tooling detected: Python (145), Markdown (43), MQL5 (2), YAML (2)
 
-| Path | What it is |
-|---|---|
-| `WORKING_JARVIS.md` | **Freeze.** This `main` is the working desk. Tag `jarvis-working-2026-09-23`. Branch after it. |
-| `JARVIS V1/` | The live seat. Start at `JARVIS V1/README.md`. |
-| `JARVIS V1/STANDING_ORDERS.md` | Operating orders that survive a new chat. |
-| `JARVIS V1/CONTINUITY_BOOTSTRAP.md` | The checklist a new chat runs before it talks about a trade. |
-| `experiments/` | Halted morning research batches. Do not move those files. |
-| `jOB.txt` | A job posting. It is not a trading rule. |
-| `.cursor/rules/jarvis-eyes.mdc` | Loaded automatically in this project. |
-| `mentorship/JARVIS_MENTOR.md` | Required before a market act. Two-clock test. It does not place trades. |
+Likely key implementation files:
+- `README.md`
 
-Debug logs named `debug-*.log` belong to Cursor debug sessions. Leave logs from other sessions where they are.
+## Quickstart (operator + LLM friendly)
+Use this sequence first, then adapt to repo-specific details.
+
+1. Clone and enter repo:
+   ```bash
+   git clone https://github.com/monty313/JORDAN-THE-TRADING-LLM.git
+   cd JORDAN-THE-TRADING-LLM
+   ```
+2. Setup environment/dependencies:
+   ```bash
+   Inspect dependencies from project files before first run.
+   ```
+3. Run locally:
+   ```bash
+   Run the main entrypoint/script discovered in the repository structure.
+   ```
+4. Validate changes:
+   ```bash
+   Run the repository test command once identified (or add one if missing).
+   ```
+
+## Operating intent (CEO-mode guide for future LLMs)
+When continuing this project, optimize for business outcome first:
+
+- Preserve or improve strategy quality, reliability, and reproducibility.
+- Prefer small, testable, reversible changes over broad rewrites.
+- Keep docs synchronized with code behavior.
+- Add explicit assumptions, constraints, and success criteria in every major change.
+
+## Delivery checklist
+- [ ] Environment setup is deterministic.
+- [ ] Primary run path is documented and works.
+- [ ] Validation/test path is documented and works.
+- [ ] Key risks and TODOs are tracked in the handoff file.
+
+## Branch and release notes
+- Default branch: `main`
+- Keep PRs focused and attach proof-of-run or proof-of-test for behavior changes.
